@@ -1,0 +1,16 @@
+use_frameworks!
+
+platform :ios, 7.0
+inhibit_all_warnings!
+
+target 'HWExtension_Example' do
+  pod 'HWExtension', :path => '../'
+
+  target 'HWExtension_Tests' do
+    inherit! :search_paths
+    
+    #   pod list:
+#    pod 'MBProgressHUD', '1.0.0'
+
+  end
+end

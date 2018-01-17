@@ -1,0 +1,55 @@
+{
+  "name": "HWExtension",
+  "version": "1.0.0",
+  "summary": "some convenient extension and tools.",
+  "homepage": "https://github.com/wanghouwen/HWExtension",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "wanghouwen": "wanghouwen123@126.com"
+  },
+  "source": {
+    "git": "https://github.com/wanghouwen/HWExtension.git",
+    "tag": "1.0.0"
+  },
+  "requires_arc": true,
+  "platforms": {
+    "ios": "7.0"
+  },
+  "public_header_files": "HWExtension/Classes/HWDefines.h",
+  "source_files": "HWExtension/Classes/HWDefines.h",
+  "subspecs": [
+    {
+      "name": "Category",
+      "public_header_files": "HWExtension/Classes/Category/HWCategorys.h",
+      "source_files": "HWExtension/Classes/Category/*.{h,m,js}"
+    },
+    {
+      "name": "UI",
+      "resource_bundles": {
+        "HWExtension": [
+          "HWExtension/Assets/*.png"
+        ]
+      },
+      "public_header_files": "HWExtension/Classes/UI/*.h",
+      "source_files": "HWExtension/Classes/UI/*.{h,m}",
+      "dependencies": {
+        "HWExtension/Category": [
+
+        ]
+      }
+    },
+    {
+      "name": "Tool",
+      "public_header_files": "HWExtension/Classes/Tool/*.h",
+      "source_files": "HWExtension/Classes/Tool/*.{h,m}",
+      "dependencies": {
+        "HWExtension/Category": [
+
+        ]
+      }
+    }
+  ]
+}
