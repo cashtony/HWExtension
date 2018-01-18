@@ -11,6 +11,6 @@
 #import "HWCategorys.h"
 #import "HWFileHelper.h"
 
-@interface HWSandboxBrowser : UIViewController
+@interface HWSandboxBrowserViewController : UIViewController
 
 @end

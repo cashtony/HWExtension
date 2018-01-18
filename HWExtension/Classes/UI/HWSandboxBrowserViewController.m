@@ -6,9 +6,9 @@
 //  Copyright © 2017年 wanghouwen. All rights reserved.
 //
 
-#import "HWSandboxBrowser.h"
+#import "HWSandboxBrowserViewController.h"
 
-@interface HWSandboxBrowser () <UITableViewDelegate, UITableViewDataSource>
+@interface HWSandboxBrowserViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;      //
 @property (nonatomic, copy) NSString *currentPath;         //
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation HWSandboxBrowser
+@implementation HWSandboxBrowserViewController
 
 #pragma mark - setter
 

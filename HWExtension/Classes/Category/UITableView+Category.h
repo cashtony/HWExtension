@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HWTableViewViewModel.h"
+#import <objc/runtime.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,12 +16,6 @@ typedef void(^CellInitBlock)(__kindof UITableViewCell * _Nonnull cell, NSIndexPa
 
 typedef __kindof UITableViewHeaderFooterView * _Nonnull (^DequeueHeaderFooterNilBlock)(NSInteger section);
 typedef void(^HeaderFooterInitBlock)(__kindof UITableViewHeaderFooterView * _Nonnull headerFooter, NSInteger section);
-
-@interface UITableView (ViewModel)
-
-@property (nonatomic, strong) HWTableViewViewModel *viewModel;  //
-
-@end
 
 @interface UITableView (Utils)
 

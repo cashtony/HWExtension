@@ -8,44 +8,6 @@
 
 #import "UITableView+Category.h"
 
-@interface UIView (UITableView)
-@property (nonatomic, assign) BOOL _didInitialize_;    //
-@end
-
-@implementation UIView (UITableView)
-
-- (BOOL)_didInitialize_ {
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)set_didInitialize_:(BOOL)_didInitialize_ {
-    objc_setAssociatedObject(self, @selector(_didInitialize_), @(_didInitialize_), OBJC_ASSOCIATION_ASSIGN);
-}
-
-@end
-
-@implementation UITableView (ViewModel)
-
-- (HWTableViewViewModel *)viewModel {
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)setViewModel:(HWTableViewViewModel *)viewModel {
-    if (self.viewModel != viewModel) {
-        objc_setAssociatedObject(self, @selector(viewModel), viewModel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        
-        if (viewModel) {
-            self.delegate = viewModel.tableViewDelegate;
-            self.dataSource = viewModel.tableViewDataSource;
-        } else {
-            self.delegate = nil;
-            self.dataSource = nil;
-        }
-    }
-}
-
-@end
-
 @implementation UITableView (Utils)
 
 + (instancetype)plainStyleTableViewWithFrame:(CGRect)frame delegate:(id<UITableViewDelegate>)delegate dataSource:(id<UITableViewDataSource>)dataSource {
@@ -85,9 +47,12 @@
         }
     }
     
-    if (!cell._didInitialize_ && initBlock) {
-        initBlock(cell, indexPath);
-        cell._didInitialize_ = YES;
+    if (cell && initBlock) {
+        BOOL didInitialize = [objc_getAssociatedObject(cell, _cmd) boolValue];
+        if (!didInitialize) {
+            initBlock(cell, indexPath);
+            objc_setAssociatedObject(cell, _cmd, @(YES), OBJC_ASSOCIATION_ASSIGN);
+        }
     }
     
     return cell;
@@ -115,9 +80,12 @@
         }
     }
     
-    if (!headerFooter._didInitialize_ && initBlock) {
-        initBlock(headerFooter, section);
-        headerFooter._didInitialize_ = YES;
+    if (headerFooter && initBlock) {
+        BOOL didInitialize = [objc_getAssociatedObject(headerFooter, _cmd) boolValue];
+        if (!didInitialize) {
+            initBlock(headerFooter, section);
+            objc_setAssociatedObject(headerFooter, _cmd, @(YES), OBJC_ASSOCIATION_ASSIGN);
+        }
     }
     
     return headerFooter;

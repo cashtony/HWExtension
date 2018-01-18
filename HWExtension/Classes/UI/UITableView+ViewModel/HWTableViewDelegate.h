@@ -28,9 +28,9 @@
 // callback block
 @property (nonatomic, copy) DisplayCellCallbackBlock displayCellForRowAtIndexPathCallbackBlock;                                 //
 @property (nonatomic, copy) DisplayHeaderViewOrFooterViewCallbackBlock displayHeaderViewOrFooterViewForSectionCallbackBlock;    //
-@property (nonatomic, copy) SelectOrDeselectRowCallbackBlock selectOrDeselectRowAtIndexPathCallbackBlock;                       //
-@property (nonatomic, copy) HighlightOrUnhighlightRowCallbackBlock highlightOrUnhighlightRowAtIndexPathCallbackBlock;           //
-@property (nonatomic, copy) EditingRowCallbackBlock editingRowAtIndexPathCallbackCallbackBlock;                                 //
-@property (nonatomic, copy) AccessoryButtonTappedCallbackBlock accessoryButtonTappedForRowWithIndexPathCallbackBlock;           //
+@property (nonatomic, copy) SelectOrDeselectRowCallbackBlock selectOrDeselectRowAtIndexPathCallbackBlock; //
+@property (nonatomic, copy) HighlightOrUnhighlightRowCallbackBlock highlightOrUnhighlightRowAtIndexPathCallbackBlock; //
+@property (nonatomic, copy) EditingRowCallbackBlock editingRowAtIndexPathCallbackCallbackBlock; //
+@property (nonatomic, copy) AccessoryButtonTappedCallbackBlock accessoryButtonTappedForRowWithIndexPathCallbackBlock; //
 
 @end

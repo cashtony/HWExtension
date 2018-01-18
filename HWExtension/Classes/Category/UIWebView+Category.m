@@ -228,7 +228,7 @@
     frame_t.childFrames = dic[@"childFrames"];
     frame_t.globalContext = dic[@"globalContext"];
     frame_t.javaScriptContext = dic[@"javaScriptContext"];
-    frame_t.isMainFrame = [(NSObject *)frame performSelector:@selector(isMainFrame)];
+    frame_t.isMainFrame = [[(NSObject *)frame performSelector:@selector(isMainFrame)] boolValue];
     
     return frame_t;
 }

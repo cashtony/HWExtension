@@ -9,9 +9,6 @@
 #ifndef HWCategorys_h
 #define HWCategorys_h
 
-#import "NSObject+Category.h"
-
-#import "NSNumber+Category.h"
 #import "NSArray+Category.h"
 #import "NSData+Category.h"
 
@@ -41,5 +38,7 @@
 
 #import "UIViewController+Category.h"
 #import "UINavigationController+Category.h"
+
+#import "UIGraphics+Extension.h"
 
 #endif /* HWCategorys_h */

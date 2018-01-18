@@ -18,25 +18,32 @@
   "platforms": {
     "ios": "7.0"
   },
-  "public_header_files": "HWExtension/Classes/HWDefines.h",
-  "source_files": "HWExtension/Classes/HWDefines.h",
   "subspecs": [
     {
       "name": "Category",
       "public_header_files": "HWExtension/Classes/Category/HWCategorys.h",
-      "source_files": "HWExtension/Classes/Category/*.{h,m,js}"
+      "source_files": "HWExtension/Classes/Category/*.{h,m,js}",
+      "resource_bundles": {
+        "HWExtension": [
+          "HWExtension/Classes/Category/JSBundle.bundle"
+        ]
+      }
     },
     {
       "name": "UI",
-      "resource_bundles": {
-        "HWExtension": [
-          "HWExtension/Assets/*.png"
-        ]
-      },
-      "public_header_files": "HWExtension/Classes/UI/*.h",
-      "source_files": "HWExtension/Classes/UI/*.{h,m}",
+      "public_header_files": [
+        "HWExtension/Classes/UI/*.h",
+        "HWExtension/Classes/UI/UITableView+ViewModel/*.h"
+      ],
+      "source_files": [
+        "HWExtension/Classes/UI/*.{h,m}",
+        "HWExtension/Classes/UI/UITableView+ViewModel/*.{h,m}"
+      ],
       "dependencies": {
         "HWExtension/Category": [
+
+        ],
+        "HWExtension/Tool": [
 
         ]
       }
@@ -44,12 +51,7 @@
     {
       "name": "Tool",
       "public_header_files": "HWExtension/Classes/Tool/*.h",
-      "source_files": "HWExtension/Classes/Tool/*.{h,m}",
-      "dependencies": {
-        "HWExtension/Category": [
-
-        ]
-      }
+      "source_files": "HWExtension/Classes/Tool/*.{h,m}"
     }
   ]
 }

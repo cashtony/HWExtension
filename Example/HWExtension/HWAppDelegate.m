@@ -7,11 +7,18 @@
 //
 
 #import "HWAppDelegate.h"
+#import "HWSandboxBrowserViewController.h"
 
 @implementation HWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    UINavigationController *rootVC = [[UINavigationController alloc] initWithRootViewController:[[HWSandboxBrowserViewController alloc] init]];
+    self.window.rootViewController = rootVC;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

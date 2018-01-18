@@ -10,7 +10,6 @@ target 'HWExtension_Example' do
     inherit! :search_paths
     
     #   pod list:
-#    pod 'MBProgressHUD', '1.0.0'
 
   end
 end
