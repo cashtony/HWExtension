@@ -1,6 +1,6 @@
 //
-//  HWSandboxBrowser.h
-//  HWExtensionExample
+//  HWSandboxBrowserViewController.h
+//  HWExtension
 //
 //  Created by wanghouwen on 2017/12/21.
 //  Copyright © 2017年 wanghouwen. All rights reserved.

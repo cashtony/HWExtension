@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol HWWKWebViewHookDelegate;
 
+@interface HWScriptMessageHandler : NSObject <WKScriptMessageHandler>
+@property (nonatomic, copy) void(^scriptMessageHandler)(WKUserContentController *userContentController, WKScriptMessage *message);
+@end
+
 @interface WKWebView (Category)
 
 // 注入JS 脚本

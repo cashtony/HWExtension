@@ -8,10 +8,6 @@
 
 #import "WKWebView+Category.h"
 
-@interface HWScriptMessageHandler : NSObject <WKScriptMessageHandler>
-@property (nonatomic, copy) void(^scriptMessageHandler)(WKUserContentController *userContentController, WKScriptMessage *message);
-@end
-
 @implementation HWScriptMessageHandler
 
 #pragma mark - WKScriptMessageHandler

@@ -20,7 +20,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    executeReturnValueBlock(self.cellForRowAtIndexPathBlock, nil, tableView, indexPath);
+    executeReturnValueBlock(self.cellForRowAtIndexPathBlock, [UITableViewCell new], tableView, indexPath);
 }
 
 /*

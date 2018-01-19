@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
     s.requires_arc = true
     
-    s.ios.deployment_target = '7.0'
+    s.ios.deployment_target = '8.0'
         
     s.subspec 'Category' do |ss|
         ss.public_header_files = 'HWExtension/Classes/Category/HWCategorys.h'
