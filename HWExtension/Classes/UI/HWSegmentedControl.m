@@ -158,26 +158,23 @@
     }
 }
 
-// 遍历构造初始化
-+ (instancetype)segmentedCtrolWithTitles:(NSArray<NSString *> *)titles frame:(CGRect)frame actionHandler:(SelectedAction)handler {
-    return [[self alloc] initWithTitles:titles selectedIndex:0 frame:frame actionHandler:handler];
++ (instancetype)segmentedControlWithTitles:(NSArray<NSString *> *)titles actionHandler:(SelectedAction)handler {
+    return [[self alloc] initWithTitles:titles selectedIndex:0 actionHandler:handler];
 }
 
-// 遍历构造初始化
-+ (instancetype)segmentedCtrolWithTitles:(NSArray<NSString *> *)titles selectedIndex:(NSUInteger)selectedIndex frame:(CGRect)frame actionHandler:(SelectedAction)handler {
-    return [[self alloc] initWithTitles:titles selectedIndex:selectedIndex frame:frame actionHandler:handler];
++ (instancetype)segmentedControlWithTitles:(NSArray<NSString *> *)titles selectedIndex:(NSUInteger)index actionHandler:(SelectedAction)handler {
+    return [[self alloc] initWithTitles:titles selectedIndex:index actionHandler:handler];
 }
 
-- (instancetype)initWithTitles:(NSArray<NSString *> *)titles frame:(CGRect)frame actionHandler:(SelectedAction)handler {
-    return [self initWithTitles:titles selectedIndex:0 frame:frame actionHandler:handler];
+- (instancetype)initWithTitles:(NSArray<NSString *> *)titles actionHandler:(SelectedAction)handler {
+    return [self initWithTitles:titles selectedIndex:0 actionHandler:handler];
 }
 
-// 遍历构造初始化
-- (instancetype)initWithTitles:(NSArray<NSString *> *)titles selectedIndex:(NSUInteger)selectedIndex frame:(CGRect)frame actionHandler:(SelectedAction)handler {
-    if (self = [super initWithFrame:frame]) {
+- (instancetype)initWithTitles:(NSArray<NSString *> *)titles selectedIndex:(NSUInteger)index actionHandler:(SelectedAction)handler {
+    if (self = [super init]) {
         [self setup];
         self.titles = titles;
-        self.selectedIndex = selectedIndex;
+        self.selectedIndex = index;
         self.actionhandler = handler;
     }
     return self;

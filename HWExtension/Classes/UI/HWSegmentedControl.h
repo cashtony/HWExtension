@@ -14,8 +14,8 @@
 @class HWSegmentedControlItem;
 @class HWSegmentedControl;
 
-typedef void (^HWSegmentedControlEnumeration)(HWSegmentedControlItem *item, NSUInteger index, BOOL isSelected, BOOL *stop);
-typedef void (^SelectedAction)(HWSegmentedControl *segmentedCtrol, NSString *title, NSUInteger index, NSUInteger lastSelectedIndex);
+typedef void (^HWSegmentedControlEnumeration)(HWSegmentedControlItem *item, NSUInteger index, BOOL selected, BOOL *stop);
+typedef void (^SelectedAction)(HWSegmentedControl *segment, NSString *title, NSUInteger index, NSUInteger lastIndex);
 
 // item width 风格
 typedef NS_ENUM(NSInteger, HWSegmentedControlItemWidthStyle) {
@@ -61,17 +61,10 @@ typedef NS_ENUM(NSInteger, HWSegmentedControlAnimationLineStyle) {
 
 #pragma mark - initialize
 
-// 遍历构造初始化
-+ (instancetype)segmentedCtrolWithTitles:(NSArray<NSString *> *)titles frame:(CGRect)frame actionHandler:(SelectedAction)handler;
-
-// 遍历构造初始化
-+ (instancetype)segmentedCtrolWithTitles:(NSArray<NSString *> *)titles selectedIndex:(NSUInteger)selectedIndex frame:(CGRect)frame actionHandler:(SelectedAction)handler;
-
-// 遍历构造初始化
-- (instancetype)initWithTitles:(NSArray<NSString *> *)titles frame:(CGRect)frame actionHandler:(SelectedAction)handler;
-
-// 遍历构造初始化
-- (instancetype)initWithTitles:(NSArray<NSString *> *)titles selectedIndex:(NSUInteger)selectedIndex frame:(CGRect)frame actionHandler:(SelectedAction)handler;
++ (instancetype)segmentedControlWithTitles:(NSArray<NSString *> *)titles actionHandler:(SelectedAction)handler;
++ (instancetype)segmentedControlWithTitles:(NSArray<NSString *> *)titles selectedIndex:(NSUInteger)index actionHandler:(SelectedAction)handler;
+- (instancetype)initWithTitles:(NSArray<NSString *> *)titles actionHandler:(SelectedAction)handler;
+- (instancetype)initWithTitles:(NSArray<NSString *> *)titles selectedIndex:(NSUInteger)index actionHandler:(SelectedAction)handler;
 
 // 选中第几个, execute: 是否触发 actionhandler
 - (void)setSelectedIndex:(NSUInteger)selectedIndex executeActionHandler:(BOOL)execute;
