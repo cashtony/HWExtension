@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "HWDefines.h"
+#import "NSObject+Category.h"
 
 #if __IPHONE_8_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED
 #import <Photos/Photos.h>

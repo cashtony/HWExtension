@@ -9,6 +9,8 @@
 #ifndef HWCategorys_h
 #define HWCategorys_h
 
+#import "NSObject+Category.h"
+
 #import "NSArray+Category.h"
 #import "NSData+Category.h"
 
@@ -20,6 +22,7 @@
 #import "NSDate+Category.h"
 #import "NSTimer+Category.h"
 #import "UIDevice+Category.h"
+#import "UIGestureRecognizer+Category.h"
 
 #import "UIColor+Category.h"
 #import "UIImage+Category.h"

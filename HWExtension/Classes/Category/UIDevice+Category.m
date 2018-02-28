@@ -46,10 +46,10 @@
     // 用户未选择权限
     if (status == AVAuthorizationStatusNotDetermined) {
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-            executeBlock(complete, granted ? AVAuthorizationStatusAuthorized : AVAuthorizationStatusDenied);
+            performBlock(complete, granted ? AVAuthorizationStatusAuthorized : AVAuthorizationStatusDenied);
         }];
     } else {
-        executeBlock(complete, status);
+        performBlock(complete, status);
     }
 }
 
@@ -66,13 +66,13 @@
             ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
             
             [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-                executeBlock(complete, ALAuthorizationStatusAuthorized);
+                performBlock(complete, ALAuthorizationStatusAuthorized);
                 *stop = TRUE;
             } failureBlock:^(NSError *error) {
-                executeBlock(complete, ALAuthorizationStatusDenied);
+                performBlock(complete, ALAuthorizationStatusDenied);
             }];
         } else {
-            executeBlock(complete, status);
+            performBlock(complete, status);
         }
     } else {
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
@@ -80,10 +80,10 @@
         // 用户未选择权限
         if (status == PHAuthorizationStatusNotDetermined) {
             [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-                executeBlock(complete, (ALAuthorizationStatus)status);
+                performBlock(complete, (ALAuthorizationStatus)status);
             }];
         } else {
-            executeBlock(complete, (ALAuthorizationStatus)status);
+            performBlock(complete, (ALAuthorizationStatus)status);
         }
     }
 }

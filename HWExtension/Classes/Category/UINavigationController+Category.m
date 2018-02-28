@@ -24,7 +24,7 @@
         });\
     }
 #else
-    #define AddMemoryMonitorForViewController(vc, isPop) {}
+#define AddMemoryMonitorForViewController(vc, isPop) {}
 #endif
 
 @implementation UINavigationController (Category)

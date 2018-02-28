@@ -1,13 +1,10 @@
 PODS:
   - HWExtension (1.0.0):
     - HWExtension/Category (= 1.0.0)
-    - HWExtension/Tool (= 1.0.0)
     - HWExtension/UI (= 1.0.0)
   - HWExtension/Category (1.0.0)
-  - HWExtension/Tool (1.0.0)
   - HWExtension/UI (1.0.0):
     - HWExtension/Category
-    - HWExtension/Tool
 
 DEPENDENCIES:
   - HWExtension (from `../`)
@@ -17,8 +14,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  HWExtension: 663030182ca8782d9e22bcbef97069127b0a239a
+  HWExtension: dcf8aa61eee1c2f43e570f2d820e6c50a6028476
 
-PODFILE CHECKSUM: 99570d09c964847098f3a9f62c94d28e8baace0e
+PODFILE CHECKSUM: ce7332f24009516228847ee715c7ee2a30843e86
 
 COCOAPODS: 1.4.0.rc.1

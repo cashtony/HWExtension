@@ -32,11 +32,16 @@
 		5D2A8EEF20062B4B003C4BD4 /* NSMutableAttributedString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A8EC220062B4B003C4BD4 /* NSMutableAttributedString+Category.m */; };
 		5D2A8EF320062B4B003C4BD4 /* HWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A8EC920062B4B003C4BD4 /* HWWebViewController.m */; };
 		5D2A8EF420062B4B003C4BD4 /* HWDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A8ECB20062B4B003C4BD4 /* HWDatePicker.m */; };
+		5D686CEA202C78D30049967A /* UIGestureRecognizer+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D686CE9202C78D30049967A /* UIGestureRecognizer+Category.m */; };
+		5D68FCF8204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D68FCF3204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m */; };
+		5D68FCF9204688B800AEBE93 /* HWInteractiveModalTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D68FCF4204688B800AEBE93 /* HWInteractiveModalTransition.m */; };
+		5D68FCFA204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D68FCF5204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m */; };
+		5D68FCFD20468A5F00AEBE93 /* HWSandboxBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D68FCFC20468A5F00AEBE93 /* HWSandboxBrowserViewController.m */; };
+		5D68FD072046A76000AEBE93 /* ToolResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D68FD062046A76000AEBE93 /* ToolResources.bundle */; };
 		5DBD183E200F471E005A94E3 /* HWFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD1838200F471D005A94E3 /* HWFileHelper.m */; };
 		5DBD183F200F471E005A94E3 /* HWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD1839200F471D005A94E3 /* HWDirectoryWatcher.m */; };
 		5DCFE97F2011F8FC000C4AF9 /* HWSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFE97D2011F8FC000C4AF9 /* HWSegmentedControl.m */; };
 		5DCFE98220120599000C4AF9 /* HWCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFE98120120599000C4AF9 /* HWCountDownButton.m */; };
-		5DF9EFD020107C06001D9306 /* HWSandboxBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF9EFCE20107C06001D9306 /* HWSandboxBrowserViewController.m */; };
 		5DF9EFE120108514001D9306 /* HWTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF9EFD820108514001D9306 /* HWTableViewDataSource.m */; };
 		5DF9EFE220108514001D9306 /* HWTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF9EFD920108514001D9306 /* HWTableViewViewModel.m */; };
 		5DF9EFE320108514001D9306 /* HWTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF9EFDE20108514001D9306 /* HWTableViewDelegate.m */; };
@@ -129,6 +134,18 @@
 		5D2A8ECB20062B4B003C4BD4 /* HWDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDatePicker.m; sourceTree = "<group>"; };
 		5D2A8ECF20062B4B003C4BD4 /* HWDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDatePicker.h; sourceTree = "<group>"; };
 		5D2A8ED120062B4B003C4BD4 /* HWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWWebViewController.h; sourceTree = "<group>"; };
+		5D686CE8202C78D30049967A /* UIGestureRecognizer+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Category.h"; sourceTree = "<group>"; };
+		5D686CE9202C78D30049967A /* UIGestureRecognizer+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Category.m"; sourceTree = "<group>"; };
+		5D68FCF2204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInteractiveModalTransitionNavigationController.h; sourceTree = "<group>"; };
+		5D68FCF3204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInteractiveModalTransitionViewController.m; sourceTree = "<group>"; };
+		5D68FCF4204688B800AEBE93 /* HWInteractiveModalTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInteractiveModalTransition.m; sourceTree = "<group>"; };
+		5D68FCF5204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInteractiveModalTransitionNavigationController.m; sourceTree = "<group>"; };
+		5D68FCF6204688B800AEBE93 /* HWInteractiveModalTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInteractiveModalTransition.h; sourceTree = "<group>"; };
+		5D68FCF7204688B800AEBE93 /* HWInteractiveModalTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInteractiveModalTransitionViewController.h; sourceTree = "<group>"; };
+		5D68FCFB20468A5F00AEBE93 /* HWSandboxBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSandboxBrowserViewController.h; sourceTree = "<group>"; };
+		5D68FCFC20468A5F00AEBE93 /* HWSandboxBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSandboxBrowserViewController.m; sourceTree = "<group>"; };
+		5D68FD062046A76000AEBE93 /* ToolResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ToolResources.bundle; sourceTree = "<group>"; };
+		5D68FD092046BBFC00AEBE93 /* HWDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDefines.h; sourceTree = "<group>"; };
 		5DBD1838200F471D005A94E3 /* HWFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWFileHelper.m; sourceTree = "<group>"; };
 		5DBD1839200F471D005A94E3 /* HWDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDirectoryWatcher.m; sourceTree = "<group>"; };
 		5DBD183C200F471D005A94E3 /* HWFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWFileHelper.h; sourceTree = "<group>"; };
@@ -137,9 +154,6 @@
 		5DCFE97E2011F8FC000C4AF9 /* HWSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSegmentedControl.h; sourceTree = "<group>"; };
 		5DCFE98120120599000C4AF9 /* HWCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWCountDownButton.m; sourceTree = "<group>"; };
 		5DCFE983201205F2000C4AF9 /* HWCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWCountDownButton.h; sourceTree = "<group>"; };
-		5DF9EFCD20106DA8001D9306 /* HWDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDefines.h; sourceTree = "<group>"; };
-		5DF9EFCE20107C06001D9306 /* HWSandboxBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSandboxBrowserViewController.m; sourceTree = "<group>"; };
-		5DF9EFCF20107C06001D9306 /* HWSandboxBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSandboxBrowserViewController.h; sourceTree = "<group>"; };
 		5DF9EFD820108514001D9306 /* HWTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTableViewDataSource.m; sourceTree = "<group>"; };
 		5DF9EFD920108514001D9306 /* HWTableViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTableViewViewModel.m; sourceTree = "<group>"; };
 		5DF9EFDA20108514001D9306 /* HWTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTableViewDelegate.h; sourceTree = "<group>"; };
@@ -221,7 +235,6 @@
 		5D2A8E8E20062B4B003C4BD4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				5DF9EFCD20106DA8001D9306 /* HWDefines.h */,
 				5D2A8EB220062B4B003C4BD4 /* HWCategorys.h */,
 				5D2A8EA420062B4B003C4BD4 /* NSObject+Category.h */,
 				5D2A8EB920062B4B003C4BD4 /* NSObject+Category.m */,
@@ -247,6 +260,8 @@
 				5D2A8E9A20062B4B003C4BD4 /* UIImage+Category.m */,
 				5D2A8E9E20062B4B003C4BD4 /* NSTimer+Category.h */,
 				5D2A8EC120062B4B003C4BD4 /* NSTimer+Category.m */,
+				5D686CE8202C78D30049967A /* UIGestureRecognizer+Category.h */,
+				5D686CE9202C78D30049967A /* UIGestureRecognizer+Category.m */,
 				5D2A8EAA20062B4B003C4BD4 /* UIView+Utils.h */,
 				5D2A8E9420062B4B003C4BD4 /* UIView+Utils.m */,
 				5D2A8EBA20062B4B003C4BD4 /* UIControl+Category.h */,
@@ -262,7 +277,6 @@
 				5D2A8EA120062B4B003C4BD4 /* UITableViewCell+Category.h */,
 				5D2A8EBC20062B4B003C4BD4 /* UITableViewCell+Category.m */,
 				5D2A8EA620062B4B003C4BD4 /* HWEvaluateJavaScriptError.h */,
-				5DF9EFE720108E5C001D9306 /* JSBundle.bundle */,
 				5D2A8EB020062B4B003C4BD4 /* HWHTTPCookieRuntimeSupport.h */,
 				5D2A8E9620062B4B003C4BD4 /* UIWebView+Category.h */,
 				5D2A8EB720062B4B003C4BD4 /* UIWebView+Category.m */,
@@ -274,6 +288,7 @@
 				5D2A8E9B20062B4B003C4BD4 /* UINavigationController+Category.m */,
 				5DF9EFEC20109562001D9306 /* UIGraphics+Extension.h */,
 				5DF9EFED20109562001D9306 /* UIGraphics+Extension.m */,
+				5DF9EFE720108E5C001D9306 /* JSBundle.bundle */,
 			);
 			name = Category;
 			path = ../HWExtension/Classes/Category;
@@ -290,21 +305,37 @@
 				5DCFE98120120599000C4AF9 /* HWCountDownButton.m */,
 				5D2A8ED120062B4B003C4BD4 /* HWWebViewController.h */,
 				5D2A8EC920062B4B003C4BD4 /* HWWebViewController.m */,
-				5DF9EFCF20107C06001D9306 /* HWSandboxBrowserViewController.h */,
-				5DF9EFCE20107C06001D9306 /* HWSandboxBrowserViewController.m */,
+				5D68FCF1204688B800AEBE93 /* InteractiveModalTransition */,
 				5DF9EFD720108514001D9306 /* UITableView+ViewModel */,
 			);
 			name = UI;
 			path = ../HWExtension/Classes/UI;
 			sourceTree = "<group>";
 		};
+		5D68FCF1204688B800AEBE93 /* InteractiveModalTransition */ = {
+			isa = PBXGroup;
+			children = (
+				5D68FCF6204688B800AEBE93 /* HWInteractiveModalTransition.h */,
+				5D68FCF4204688B800AEBE93 /* HWInteractiveModalTransition.m */,
+				5D68FCF7204688B800AEBE93 /* HWInteractiveModalTransitionViewController.h */,
+				5D68FCF3204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m */,
+				5D68FCF2204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.h */,
+				5D68FCF5204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m */,
+			);
+			path = InteractiveModalTransition;
+			sourceTree = "<group>";
+		};
 		5DBD1837200F471D005A94E3 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				5D68FD092046BBFC00AEBE93 /* HWDefines.h */,
 				5DBD183C200F471D005A94E3 /* HWFileHelper.h */,
 				5DBD1838200F471D005A94E3 /* HWFileHelper.m */,
 				5DBD183D200F471D005A94E3 /* HWDirectoryWatcher.h */,
 				5DBD1839200F471D005A94E3 /* HWDirectoryWatcher.m */,
+				5D68FCFB20468A5F00AEBE93 /* HWSandboxBrowserViewController.h */,
+				5D68FCFC20468A5F00AEBE93 /* HWSandboxBrowserViewController.m */,
+				5D68FD062046A76000AEBE93 /* ToolResources.bundle */,
 			);
 			name = Tool;
 			path = ../HWExtension/Classes/Tool;
@@ -507,6 +538,7 @@
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				5DF9EFE820108E5C001D9306 /* JSBundle.bundle in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				5D68FD072046A76000AEBE93 /* ToolResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +665,7 @@
 				5D2A8EDF20062B4B003C4BD4 /* UIButton+Category.m in Sources */,
 				5D2A8ED620062B4B003C4BD4 /* NSMutableString+Category.m in Sources */,
 				5DF9EFE120108514001D9306 /* HWTableViewDataSource.m in Sources */,
+				5D68FCF8204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m in Sources */,
 				5DCFE98220120599000C4AF9 /* HWCountDownButton.m in Sources */,
 				5D2A8EE320062B4B003C4BD4 /* NSString+Category.m in Sources */,
 				5DF9EFE320108514001D9306 /* HWTableViewDelegate.m in Sources */,
@@ -641,24 +674,27 @@
 				5D2A8EE020062B4B003C4BD4 /* UIControl+Category.m in Sources */,
 				5D2A8EEA20062B4B003C4BD4 /* UITableViewCell+Category.m in Sources */,
 				5DF9EFE220108514001D9306 /* HWTableViewViewModel.m in Sources */,
+				5D68FCFD20468A5F00AEBE93 /* HWSandboxBrowserViewController.m in Sources */,
 				6003F59E195388D20070C39A /* HWAppDelegate.m in Sources */,
 				5D2A8EE820062B4B003C4BD4 /* NSObject+Category.m in Sources */,
 				6003F5A7195388D20070C39A /* HWViewController.m in Sources */,
 				5D2A8EED20062B4B003C4BD4 /* NSAttributedString+Category.m in Sources */,
 				5DCFE97F2011F8FC000C4AF9 /* HWSegmentedControl.m in Sources */,
-				5DF9EFD020107C06001D9306 /* HWSandboxBrowserViewController.m in Sources */,
 				5D2A8EE620062B4B003C4BD4 /* UIWebView+Category.m in Sources */,
+				5D686CEA202C78D30049967A /* UIGestureRecognizer+Category.m in Sources */,
 				5DBD183F200F471E005A94E3 /* HWDirectoryWatcher.m in Sources */,
 				5D2A8EDE20062B4B003C4BD4 /* UINavigationController+Category.m in Sources */,
 				5D2A8EE420062B4B003C4BD4 /* NSData+Category.m in Sources */,
 				5D2A8ED720062B4B003C4BD4 /* UIImageView+Category.m in Sources */,
 				5D2A8EDB20062B4B003C4BD4 /* WKWebView+Category.m in Sources */,
 				5D2A8EE120062B4B003C4BD4 /* UIDevice+Category.m in Sources */,
+				5D68FCF9204688B800AEBE93 /* HWInteractiveModalTransition.m in Sources */,
 				5DF9EFEB20109210001D9306 /* UITableView+ViewModel.m in Sources */,
 				5DBD183E200F471E005A94E3 /* HWFileHelper.m in Sources */,
 				5D2A8EDA20062B4B003C4BD4 /* NSArray+Category.m in Sources */,
 				5D2A8EDD20062B4B003C4BD4 /* UIImage+Category.m in Sources */,
 				5D2A8EE520062B4B003C4BD4 /* UIViewController+Category.m in Sources */,
+				5D68FCFA204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m in Sources */,
 				5D2A8EEE20062B4B003C4BD4 /* NSTimer+Category.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				5D2A8EDC20062B4B003C4BD4 /* UITableView+Category.m in Sources */,

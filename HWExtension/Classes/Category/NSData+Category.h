@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonCrypto.h>
 
 typedef NS_ENUM(NSInteger, HWSHAType) {
     HWSHAType1 = 1,

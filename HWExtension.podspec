@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '8.0'
         
     s.subspec 'Category' do |ss|
-        ss.public_header_files = 'HWExtension/Classes/Category/HWCategorys.h'
+        ss.public_header_files = 'HWExtension/Classes/Category/*.h'
         ss.source_files = 'HWExtension/Classes/Category/*.{h,m,js}'
         ss.resource_bundles = {
             'HWExtension' => ['HWExtension/Classes/Category/JSBundle.bundle']
@@ -28,14 +28,9 @@ Pod::Spec.new do |s|
     end
     
     s.subspec 'UI' do |ss|
-        ss.public_header_files = 'HWExtension/Classes/UI/*.h', 'HWExtension/Classes/UI/UITableView+ViewModel/*.h'
-        ss.source_files = 'HWExtension/Classes/UI/*.{h,m}', 'HWExtension/Classes/UI/UITableView+ViewModel/*.{h,m}'
+        ss.public_header_files = 'HWExtension/Classes/UI/*.h', 'HWExtension/Classes/UI/*/*.h'
+        ss.source_files = 'HWExtension/Classes/UI/*.{h,m}', 'HWExtension/Classes/UI/*/*.{h,m}'
         ss.dependency 'HWExtension/Category'
-        ss.dependency 'HWExtension/Tool'
     end
     
-    s.subspec 'Tool' do |ss|
-        ss.public_header_files = 'HWExtension/Classes/Tool/*.h'
-        ss.source_files = 'HWExtension/Classes/Tool/*.{h,m}'
-    end
 end

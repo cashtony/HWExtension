@@ -21,7 +21,7 @@
   "subspecs": [
     {
       "name": "Category",
-      "public_header_files": "HWExtension/Classes/Category/HWCategorys.h",
+      "public_header_files": "HWExtension/Classes/Category/*.h",
       "source_files": "HWExtension/Classes/Category/*.{h,m,js}",
       "resource_bundles": {
         "HWExtension": [
@@ -33,25 +33,17 @@
       "name": "UI",
       "public_header_files": [
         "HWExtension/Classes/UI/*.h",
-        "HWExtension/Classes/UI/UITableView+ViewModel/*.h"
+        "HWExtension/Classes/UI/*/*.h"
       ],
       "source_files": [
         "HWExtension/Classes/UI/*.{h,m}",
-        "HWExtension/Classes/UI/UITableView+ViewModel/*.{h,m}"
+        "HWExtension/Classes/UI/*/*.{h,m}"
       ],
       "dependencies": {
         "HWExtension/Category": [
 
-        ],
-        "HWExtension/Tool": [
-
         ]
       }
-    },
-    {
-      "name": "Tool",
-      "public_header_files": "HWExtension/Classes/Tool/*.h",
-      "source_files": "HWExtension/Classes/Tool/*.{h,m}"
     }
   ]
 }

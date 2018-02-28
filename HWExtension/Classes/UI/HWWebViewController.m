@@ -208,15 +208,15 @@
         
         BOOL flg = [self.delegate webViewControllerShouldStartLoad:self request:navigationAction.request
                                                     navigationType:typeMap[@(navigationAction.navigationType)].integerValue];
-        executeBlock(decisionHandler, flg ? WKNavigationActionPolicyAllow : WKNavigationActionPolicyCancel);
+        performBlock(decisionHandler, flg ? WKNavigationActionPolicyAllow : WKNavigationActionPolicyCancel);
     } else {
-        executeBlock(decisionHandler, WKNavigationActionPolicyAllow);
+        performBlock(decisionHandler, WKNavigationActionPolicyAllow);
     }
 }
 
 // 在收到响应后，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
-    executeBlock(decisionHandler, WKNavigationResponsePolicyAllow);
+    performBlock(decisionHandler, WKNavigationResponsePolicyAllow);
 }
 
 
@@ -297,7 +297,7 @@
 // 加载状态回调
 - (void)loadStatusCallBackWithStatus:(HWWebViewLoadStatus)status error:(NSError *)err {
     
-    executeBlock(self.loadStatusBlock, self, self.identifier, status, err);
+    performBlock(self.loadStatusBlock, self, self.identifier, status, err);
     
     if (status == HWWebViewLoadStatusLoading) {
         performSelector(self.delegate, @selector(webViewControllerDidStartLoading:), self);
@@ -410,9 +410,7 @@
 
 - (UIView *)badNetworkView {
     if (!_badNetworkView) {
-        _badNetworkView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64)];
-        
-        self.badNetworkImage.size = kScreenSize;
+        _badNetworkView = [[UIView alloc] initWithFrame:self.view.bounds];
         
         self.badNetworkImage.centerX = _badNetworkView.width / 2.0;
         self.badNetworkImage.centerY = _badNetworkView.centerY - 94;
@@ -579,14 +577,14 @@ NSMutableDictionary <NSString *, NSString *>*globalCookies() {
         
         [self.wkWebView evaluateScript:jsString complete:^(id _Nullable value, NSError * _Nullable error) {
             __strong typeof(ws) ss = ws;
-            executeBlock(complete, value, NO, error, ss);
+            performBlock(complete, value, NO, error, ss);
         }];
         
     } else {
         
         [self.webView evaluateScript:jsString withSourceURL:nil complete:^(JSValue * _Nullable value, NSError * _Nullable error) {
             __strong typeof(ws) ss = ws;
-            executeBlock(complete, value, YES, error, ss);
+            performBlock(complete, value, YES, error, ss);
         }];
     }
 }
@@ -599,12 +597,12 @@ NSMutableDictionary <NSString *, NSString *>*globalCookies() {
     if (kWebKitAvailable) {
         [self.wkWebView callJSFunction:functionName arguments:arguments complete:^(id  _Nullable value, NSError * _Nullable error) {
             __strong typeof(self) strongSelf = weakSelf;
-            executeBlock(complete, value, NO, error, strongSelf);
+            performBlock(complete, value, NO, error, strongSelf);
         }];
     } else {
         [self.webView callJSFunction:functionName arguments:arguments complete:^(JSValue * _Nullable value, NSError * _Nullable error) {
             __strong typeof(self) strongSelf = weakSelf;
-            executeBlock(complete, value, YES, error, strongSelf);
+            performBlock(complete, value, YES, error, strongSelf);
         }];
     }
 }

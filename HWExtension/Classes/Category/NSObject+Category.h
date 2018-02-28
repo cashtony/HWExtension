@@ -9,6 +9,26 @@
 #import <Foundation/Foundation.h>
 #import <objc/message.h>
 
+// perform block
+#define performBlock(b, ...) if (b) { b(__VA_ARGS__); }
+
+// perform block
+#define performReturnValueBlock(b, nilReturnValue, ...) if (b) { return b(__VA_ARGS__); } else { return nilReturnValue; }
+
+// perform Selector
+#define performSelector(T, S, ...)  \
+if (T && [(NSObject *)T respondsToSelector:S]) \
+{   \
+[(NSObject *)T performSelector:S withObjects:__VA_ARGS__];  \
+}
+
+// perform Selector
+#define performReturnValueSelector(T, S, ...) \
+if (T && [(NSObject *)T respondsToSelector:S]) \
+{   \
+return [(NSObject *)T performSelector:S withObjects:__VA_ARGS__];   \
+}
+
 //  属性引用类型
 typedef NS_ENUM(NSInteger, HWPropertyRefType) {
     HWPropertyRefTypeAssign,    // assign

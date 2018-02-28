@@ -7,6 +7,7 @@
 //
 
 #import "NSData+Category.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 @implementation NSData (Enumerator)
 
