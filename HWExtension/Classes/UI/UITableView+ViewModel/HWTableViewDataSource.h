@@ -24,7 +24,7 @@
 @property (nonatomic, copy) ConfigEnableBlock canMoveRowAtIndexPathBlock;  // canMove Row At IndexPath
 
 // edit callback block
-@property (nonatomic, copy) CommitEditingCallbackBlock commitEditingRowAtIndexPathCallbackBlock; // commitEditing callback
-@property (nonatomic, copy) MoveRowCallbackBlock moveRowAtIndexPathCallbackBlock;                // moveRow callback
+@property (nonatomic, copy) CommitEditingHandlerBlock commitEditingRowAtIndexPathHandlerBlock; // commitEditing handler
+@property (nonatomic, copy) MoveRowHandlerBlock moveRowAtIndexPathHandlerBlock;                // moveRow callback
 
 @end

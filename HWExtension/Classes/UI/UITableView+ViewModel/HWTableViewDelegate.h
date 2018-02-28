@@ -25,12 +25,12 @@
 @property (nonatomic, copy) ConfigEnableBlock shouldIndentWhileEditingRowAtIndexPathBlock;    //
 @property (nonatomic, copy) ConfigEnableBlock shouldShowMenuForRowAtIndexPathBlock;           //
 
-// callback block
-@property (nonatomic, copy) DisplayCellCallbackBlock displayCellForRowAtIndexPathCallbackBlock;                                 //
-@property (nonatomic, copy) DisplayHeaderViewOrFooterViewCallbackBlock displayHeaderViewOrFooterViewForSectionCallbackBlock;    //
-@property (nonatomic, copy) SelectOrDeselectRowCallbackBlock selectOrDeselectRowAtIndexPathCallbackBlock; //
-@property (nonatomic, copy) HighlightOrUnhighlightRowCallbackBlock highlightOrUnhighlightRowAtIndexPathCallbackBlock; //
-@property (nonatomic, copy) EditingRowCallbackBlock editingRowAtIndexPathCallbackCallbackBlock; //
-@property (nonatomic, copy) AccessoryButtonTappedCallbackBlock accessoryButtonTappedForRowWithIndexPathCallbackBlock; //
+// handler block
+@property (nonatomic, copy) DisplayCellHandlerBlock displayCellForRowAtIndexPathHandlerBlock;                                 //
+@property (nonatomic, copy) DisplayHeaderViewOrFooterViewHandlerBlock displayHeaderViewOrFooterViewForSectionHandlerBlock;    //
+@property (nonatomic, copy) SelectOrDeselectRowHandlerBlock selectOrDeselectRowAtIndexPathHandlerBlock; //
+@property (nonatomic, copy) HighlightOrUnhighlightRowHandlerBlock highlightOrUnhighlightRowAtIndexPathHandlerBlock; //
+@property (nonatomic, copy) EditingRowHandlerBlock editingRowAtIndexPathCallbackHandlerBlock; //
+@property (nonatomic, copy) AccessoryButtonTappedHandlerBlock accessoryButtonTappedForRowWithIndexPathHandlerBlock; //
 
 @end

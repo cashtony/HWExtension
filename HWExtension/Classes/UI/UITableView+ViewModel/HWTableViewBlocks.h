@@ -10,7 +10,7 @@
 #define HWTableViewBlocks_h
 
 #import <UIKit/UIKit.h>
-#import "HWDefines.h"
+#import "NSObject+Category.h"
 
 // com
 typedef BOOL (^ConfigEnableBlock)(UITableView *tableView, NSIndexPath *indexPath);
@@ -24,9 +24,9 @@ typedef NSString *(^ConfigHeaderOrFooterTitleBlock)(UITableView *tableView, NSIn
 typedef NSInteger (^ConfigSectionForSectionIndexTitleBlock)(UITableView *tableView, NSString *sectionIndexTitle, NSInteger atIndex);
 typedef NSArray <NSString *>*(^ConfigSectionIndexTitlesBlock)(UITableView *tableView);
 
-// edit callback block
-typedef void (^CommitEditingCallbackBlock)(UITableView *tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath *indexPath);
-typedef void (^MoveRowCallbackBlock)(UITableView *tableView, NSIndexPath *sourceIndexPath, NSIndexPath *destinationIndexPath);
+// edit handler block
+typedef void (^CommitEditingHandlerBlock)(UITableView *tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath *indexPath);
+typedef void (^MoveRowHandlerBlock)(UITableView *tableView, NSIndexPath *sourceIndexPath, NSIndexPath *destinationIndexPath);
 
 ///     UITableViewDelegate blocks
 
@@ -39,12 +39,12 @@ typedef CGFloat (^ConfigHeaderOrFooterHeightBlock)(UITableView *tableView, NSInt
 typedef UIView *(^ConfigHeaderViewOrFooterViewBlock)(UITableView *tableView, NSInteger section, BOOL isHeader);
 typedef NSArray<UITableViewRowAction *> *(^ConfigEditActionsBlock)(UITableView *tableView, NSIndexPath *indexPath);
 
-// callback block
-typedef void(^DisplayCellCallbackBlock)(UITableView *tableView, UITableViewCell *cell, NSIndexPath *indexPath, BOOL didEnd);
-typedef void(^DisplayHeaderViewOrFooterViewCallbackBlock)(UITableView *tableView, UIView *view, NSInteger section, BOOL isHeader, BOOL didEnd);
-typedef void(^SelectOrDeselectRowCallbackBlock)(UITableView *tableView, NSIndexPath *indexPath, BOOL select);
-typedef void(^HighlightOrUnhighlightRowCallbackBlock)(UITableView *tableView, NSIndexPath *indexPath, BOOL highlight);
-typedef void(^EditingRowCallbackBlock)(UITableView *tableView, NSIndexPath *indexPath, BOOL didEnd);
-typedef void(^AccessoryButtonTappedCallbackBlock)(UITableView *tableView, NSIndexPath *indexPath);
+// handler block
+typedef void(^DisplayCellHandlerBlock)(UITableView *tableView, UITableViewCell *cell, NSIndexPath *indexPath, BOOL didEnd);
+typedef void(^DisplayHeaderViewOrFooterViewHandlerBlock)(UITableView *tableView, UIView *view, NSInteger section, BOOL isHeader, BOOL didEnd);
+typedef void(^SelectOrDeselectRowHandlerBlock)(UITableView *tableView, NSIndexPath *indexPath, BOOL select);
+typedef void(^HighlightOrUnhighlightRowHandlerBlock)(UITableView *tableView, NSIndexPath *indexPath, BOOL highlight);
+typedef void(^EditingRowHandlerBlock)(UITableView *tableView, NSIndexPath *indexPath, BOOL didEnd);
+typedef void(^AccessoryButtonTappedHandlerBlock)(UITableView *tableView, NSIndexPath *indexPath);
 
 #endif /* HWTableViewBlocks_h */
