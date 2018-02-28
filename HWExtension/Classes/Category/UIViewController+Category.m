@@ -26,7 +26,7 @@ const NSString *HWPopBackIdentifierPrefix = @"pop_back_identifier_from_";
         });\
     }
 #else
-    #define AddMemoryMonitorForViewController(vc, isPop) {}
+    #define AddMemoryMonitorForViewController(vc, isPop) {NSLog(@"%@,%@", vc, @(isPop));}
 #endif
 
 @implementation UIViewController (Category)
