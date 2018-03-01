@@ -683,7 +683,11 @@ const void * _Nonnull HWKeyValueObserversKey = &HWKeyValueObserversKey;
         info.dataType                = HWPropertyDataTypeUnknown;
         info.refType                 = HWPropertyRefTypeAssign;
         
+        /* name */
         info.name = [NSString stringWithUTF8String:property_getName(property)];
+        info.getterMethod = [info.name copy];
+        info.setterMethod = [info.name copy];
+        
         info.attributes = [NSString stringWithUTF8String:property_getAttributes(property)];
         
         unsigned int count;
@@ -725,6 +729,10 @@ const void * _Nonnull HWKeyValueObserversKey = &HWKeyValueObserversKey;
                 info.isNonatomic = YES;
             } else if ([obj.name isEqualToString:@"V"]) {
                 info.ivarName = obj.value;
+            } else if ([obj.name isEqualToString:@"G"]) {
+                info.getterMethod = obj.value;
+            } else if ([obj.name isEqualToString:@"S"]) {
+                info.setterMethod = obj.value;
             }
         }];
         

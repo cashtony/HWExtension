@@ -12,7 +12,7 @@
 
 - (CGSize)aspectScaleToFitSize:(CGSize)size {
     
-    CGSize fitedSize = CGSizeZero;
+    CGSize fitedSize = CGSizeMake(size.width, size.height);
     
     if (self.size.width != 0.0f && self.size.height != 0.0f && size.height != 0.0f) {
         
@@ -37,7 +37,7 @@
     if (self.image) {
         return [self.image aspectScaleToFitSize:size];
     }
-    return CGSizeZero;
+    return size;
 }
 
 @end

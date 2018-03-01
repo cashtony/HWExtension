@@ -8,22 +8,6 @@
 
 #import "UIDevice+Category.h"
 
-@implementation HWApplicationInfo;
-
-- (NSString *)description {
-    return self.keyValueDictionary.description;
-}
-
-/* replaced : original */
-+ (NSDictionary <NSString *, NSString *>*)replacedPropertyNames {
-    return @{@"bundleID" : @"applicationIdentifier",
-             @"build"    : @"bundleVersion",
-             @"version"  : @"shortVersionString"
-             };
-}
-
-@end
-
 @implementation UIDevice (Authorization)
 
 + (BOOL)isCameraDeviceAvailable:(UIImagePickerControllerCameraDevice)cameraDevice {
@@ -98,6 +82,24 @@
 
 @end
 
+#if DEBUG
+
+@implementation HWApplicationInfo;
+
+- (NSString *)description {
+    return self.keyValueDictionary.description;
+}
+
+/* replaced : original */
++ (NSDictionary <NSString *, NSString *>*)replacedPropertyNames {
+    return @{@"bundleID" : @"applicationIdentifier",
+             @"build"    : @"bundleVersion",
+             @"version"  : @"shortVersionString"
+             };
+}
+
+@end
+
 @implementation UIDevice (Applications)
 
 @class LSApplicationWorkspace;
@@ -158,6 +160,8 @@
 }
 
 @end
+
+#endif
 
 /*!
  *  LSApplicationProxy instance methods

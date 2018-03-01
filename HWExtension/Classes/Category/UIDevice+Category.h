@@ -39,6 +39,8 @@
 
 @end
 
+#if DEBUG
+
 @interface UIDevice (Applications)
 
 + (NSArray <HWApplicationInfo *>*)installedApplications;    //
@@ -70,3 +72,5 @@
 @property (nonatomic, assign) BOOL isAppStoreVendable;          //
 
 @end
+
+#endif

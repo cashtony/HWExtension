@@ -181,6 +181,8 @@ typedef void(^KeyValueObserverChangedBlock)(NSString *keyPath, id object, NSDict
 
 @interface HWPropertyInfo : NSObject
 @property (nonatomic, copy) NSString *name;                         //
+@property (nonatomic, copy) NSString *getterMethod;                 // getter
+@property (nonatomic, copy) NSString *setterMethod;                 // setter
 @property (nonatomic, copy) NSString *ivarName;                     // 对应的实例变量名字
 @property (nonatomic, assign) HWPropertyDataType dataType;          // 数据类型
 @property (nonatomic, assign) HWPropertyRefType refType;            // 引用类型
