@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'HWExtension'
-    s.version          = '1.0.1'
+    s.version          = '1.0.2'
     s.summary          = 'some convenient extension and tools.'
     s.homepage         = 'https://github.com/wanghouwen/HWExtension'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -28,9 +28,19 @@ Pod::Spec.new do |s|
     end
     
     s.subspec 'UI' do |ss|
-        ss.public_header_files = 'HWExtension/Classes/UI/*.h', 'HWExtension/Classes/UI/*/*.h'
-        ss.source_files = 'HWExtension/Classes/UI/*.{h,m}', 'HWExtension/Classes/UI/*/*.{h,m}'
+        ss.public_header_files = 'HWExtension/Classes/UI/*.h'
+        ss.source_files = 'HWExtension/Classes/UI/*.{h,m}'
         ss.dependency 'HWExtension/Category'
+        
+        ss.subspec 'InteractiveModalTransition' do |sss|
+            sss.public_header_files = 'HWExtension/Classes/UI/InteractiveModalTransition/*.h'
+            sss.source_files = 'HWExtension/Classes/UI/InteractiveModalTransition/*.{h,m}'
+        end
+        
+        ss.subspec 'UITableView+ViewModel' do |sss|
+            sss.public_header_files = 'HWExtension/Classes/UI/UITableView+ViewModel/*.h'
+            sss.source_files = 'HWExtension/Classes/UI/UITableView+ViewModel/*.{h,m}'
+        end
     end
     
 end
