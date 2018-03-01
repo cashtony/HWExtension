@@ -1,9 +1,15 @@
 PODS:
-  - HWExtension (1.0.0):
-    - HWExtension/Category (= 1.0.0)
-    - HWExtension/UI (= 1.0.0)
-  - HWExtension/Category (1.0.0)
-  - HWExtension/UI (1.0.0):
+  - HWExtension (1.0.2):
+    - HWExtension/Category (= 1.0.2)
+    - HWExtension/UI (= 1.0.2)
+  - HWExtension/Category (1.0.2)
+  - HWExtension/UI (1.0.2):
+    - HWExtension/Category
+    - HWExtension/UI/InteractiveModalTransition (= 1.0.2)
+    - HWExtension/UI/UITableView+ViewModel (= 1.0.2)
+  - HWExtension/UI/InteractiveModalTransition (1.0.2):
+    - HWExtension/Category
+  - HWExtension/UI/UITableView+ViewModel (1.0.2):
     - HWExtension/Category
 
 DEPENDENCIES:
@@ -14,7 +20,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  HWExtension: dcf8aa61eee1c2f43e570f2d820e6c50a6028476
+  HWExtension: 868e46f732523c30404d265e8a4ba409868bb804
 
 PODFILE CHECKSUM: ce7332f24009516228847ee715c7ee2a30843e86
 
