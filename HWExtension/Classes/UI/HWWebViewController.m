@@ -76,7 +76,7 @@
     if (self = [self init]) {
         self.identifier = identifier ? [identifier copy] : nil;
         self.loadStatusBlock = loadStatus ? [loadStatus copy] : nil;
-        self.url = url ? [url copy] : nil;
+        self.url = url;
     }
     return self;
 }
@@ -144,20 +144,24 @@
     
     _url = url ? [url copy] : nil;
     
-    if (url== nil || url.length == 0) return;
-    
-    NSString *urlString = [url copy];
-    if ([url rangeOfString:@"timeStmp="].location == NSNotFound) {
-        if (![url containsString:@"?"])
-            urlString = [url stringByAppendingString:[NSString stringWithFormat:@"?timeStmp=%@", @([[NSDate date] timeIntervalSince1970])]] ;
-        else
-            urlString = [url stringByAppendingString:[NSString stringWithFormat:@"&timeStmp=%@", @([[NSDate date] timeIntervalSince1970])]];
+    if (url && url.length) {
+        
+        NSString *timeStamp = @"timeStamp_t=";
+        
+        NSString *urlString = [url copy];
+        
+        if ([urlString rangeOfString:timeStamp].location == NSNotFound) {
+            if (![urlString containsString:@"?"])
+                urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"?%@%@", timeStamp, @([[NSDate date] timeIntervalSince1970])]] ;
+            else
+                urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"&%@%@", timeStamp, @([[NSDate date] timeIntervalSince1970])]];
+        }
+        
+        NSURL *url_t = [urlString hw_URL];
+        [self loadRequest:[NSMutableURLRequest requestWithURL:url_t cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30]];
+    } else {
+        [self loadRequest:[NSMutableURLRequest requestWithURL:[@"" hw_URL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30]];
     }
-    
-    NSURL *url_t = [urlString hw_URL];
-    
-    _url = url_t.absoluteString;
-    [self loadRequest:[NSMutableURLRequest requestWithURL:url_t cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30]];
 }
 
 - (void)setHtmlString:(NSString *)htmlString {
@@ -318,21 +322,15 @@
             return;
         }
         
-        BOOL canShowBadNetworkView = [error.userInfo[NSURLErrorFailingURLStringErrorKey] containsString:self.url];
+        BOOL canShowBadNetworkView = [[error.userInfo[NSURLErrorFailingURLStringErrorKey] stringByReplacingOccurrencesOfString:@"/" withString:@""] containsString:[self.url stringByReplacingOccurrencesOfString:@"/" withString:@""]];
         
         if (canShowBadNetworkView) {
-            NSAttributedString *errMsg = [@"页面获取失败\n请稍后重试" attributedStringWithColor:[UIColor grayColor] font:[UIFont systemFontOfSize:20] range:NSMakeRange(0, 6)];
+            NSAttributedString *errMsg = [@"页面获取失败\n请稍后重试" attributedStringWithColor:[UIColor grayColor] font:[UIFont systemFontOfSize:13]];
             
             if (error.code >= 300 || error.code < 200) {
                 
-                if (error.code == NSURLErrorTimedOut ||
-                    error.code == NSURLErrorCannotFindHost ||
-                    error.code == NSURLErrorCannotConnectToHost ||
-                    error.code == NSURLErrorNetworkConnectionLost ||
-                    error.code == NSURLErrorDNSLookupFailed ||
-                    error.code == NSURLErrorResourceUnavailable ||
-                    error.code == NSURLErrorNotConnectedToInternet) {
-                    errMsg = [@"网络异常\n请检查网络设置或稍后重试" attributedStringWithColor:[UIColor grayColor] font:[UIFont systemFontOfSize:20] range:NSMakeRange(0, 4)];
+                if (error.code == NSURLErrorNotConnectedToInternet) {
+                    errMsg = [@"当前网络不可用\n请检查您的网络设置" attributedStringWithColor:[UIColor grayColor] font:[UIFont systemFontOfSize:13]];
                 }
             }
             
@@ -412,8 +410,8 @@
     if (!_badNetworkView) {
         _badNetworkView = [[UIView alloc] initWithFrame:self.view.bounds];
         
-        self.badNetworkImage.centerX = _badNetworkView.width / 2.0;
-        self.badNetworkImage.centerY = _badNetworkView.centerY - 94;
+        self.badNetworkImage.centerX = _badNetworkView.width / 2.0f;
+        self.badNetworkImage.centerY = _badNetworkView.height / 2.0f;
         [_badNetworkView addSubview:self.badNetworkImage];
         
         [self.badNetworkImage addSubview:self.errorDescriptionLabel];
@@ -426,10 +424,10 @@
     self.errorDescriptionLabel.attributedText = message;
     self.errorDescriptionLabel.textAlignment = NSTextAlignmentCenter;
     [self.errorDescriptionLabel sizeToFit];
-    self.errorDescriptionLabel.top = self.badNetworkImage.height / 2.0 + 50;
+    self.errorDescriptionLabel.top = (self.badNetworkImage.height - self.reloadBtn.height - 15.0f) / 2.0f;
     self.errorDescriptionLabel.centerX = self.badNetworkImage.width / 2.0;
     
-    self.reloadBtn.top = self.errorDescriptionLabel.bottom + 25;
+    self.reloadBtn.top = self.errorDescriptionLabel.bottom + 15;
     self.reloadBtn.centerX = self.badNetworkImage.width / 2.0;
     
     return self.badNetworkView;
@@ -439,8 +437,8 @@
     if (!_badNetworkImage) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"bad_network@2x" ofType:@"png"];
         _badNetworkImage = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
+        _badNetworkImage.size = [_badNetworkImage aspectScaleToFitSize:CGSizeMake(self.view.width * 0.6, self.view.height * 0.6)];
         _badNetworkImage.userInteractionEnabled = YES;
-        _badNetworkImage.frame = CGRectMake(0, 0, _badNetworkImage.image.size.width, _badNetworkImage.image.size.height);
     }
     return _badNetworkImage;
 }
@@ -459,8 +457,8 @@
 - (UIButton *)reloadBtn {
     if (!_reloadBtn) {
         _reloadBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        _reloadBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-        [_reloadBtn setTitle:@"重新尝试" forState:UIControlStateNormal];
+        _reloadBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+        [_reloadBtn setTitle:@"刷新" forState:UIControlStateNormal];
         [_reloadBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [_reloadBtn sizeToFit];
         [_reloadBtn addTarget:self action:@selector(reload) forControlEvents:UIControlEventTouchUpOutside];
