@@ -1,17 +1,21 @@
 //
 //  CPTXYAxis+Category.m
-//  HXXjb
+//  HWExtension
 //
 //  Created by houwen.wang on 16/8/19.
-//  Copyright © 2016年 com.shhxzq. All rights reserved.
+//  Copyright © 2016年 houwen.wang. All rights reserved.
 //
 
 #import "CPTXYAxis+Category.h"
 
 @implementation CPTXYAxis (Category)
 
++ (void)load {
+    [self exchangeImplementations:@selector(drawGridLinesInContext:isMajor:) otherMethod:@selector(hw_drawGridLinesInContext:isMajor:) isInstance:YES];
+}
+
 // 替换原有类的实现
-- (void)drawGridLinesInContext:(nonnull CGContextRef)context isMajor:(BOOL)major {
+- (void)hw_drawGridLinesInContext:(nonnull CGContextRef)context isMajor:(BOOL)major {
     CPTLineStyle *lineStyle = (major ? self.majorGridLineStyle : self.minorGridLineStyle);
     
     if (lineStyle) {
@@ -28,14 +32,14 @@
         CPTMutablePlotRange *labeledRange = nil;
         
         switch (self.labelingPolicy) {
-            case CPTAxisLabelingPolicyNone:
-            case CPTAxisLabelingPolicyLocationsProvided: {
-                labeledRange = [[self.plotSpace plotRangeForCoordinate:self.coordinate] mutableCopy];
-                CPTPlotRange *theVisibleRange = self.visibleRange;
-                if (theVisibleRange) {
-                    [labeledRange intersectionPlotRange:theVisibleRange];
-                }
-            } break;
+                case CPTAxisLabelingPolicyNone:
+                case CPTAxisLabelingPolicyLocationsProvided: {
+                    labeledRange = [[self.plotSpace plotRangeForCoordinate:self.coordinate] mutableCopy];
+                    CPTPlotRange *theVisibleRange = self.visibleRange;
+                    if (theVisibleRange) {
+                        [labeledRange intersectionPlotRange:theVisibleRange];
+                    }
+                } break;
                 
             default:
                 break;

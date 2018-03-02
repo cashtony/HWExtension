@@ -901,6 +901,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D6EBF08E5B80CB83815053D5 /* Pods-HWExtension_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
@@ -920,6 +921,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7CB1FE25F73CF540978F8D0C /* Pods-HWExtension_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";

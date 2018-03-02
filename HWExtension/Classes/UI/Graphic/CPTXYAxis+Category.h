@@ -1,13 +1,13 @@
 //
 //  CPTXYAxis+Category.h
-//  HXXjb
+//  HWExtension
 //
 //  Created by houwen.wang on 16/8/19.
-//  Copyright © 2016年 com.shhxzq. All rights reserved.
+//  Copyright © 2016年 houwen.wang. All rights reserved.
 //
 
-#import <CorePlot/CorePlot.h>
-#import <objc/runtime.h>
+#import "CorePlot.h"
+#import "NSObject+Category.h"
 
 @interface CPTXYAxis (Category)
 

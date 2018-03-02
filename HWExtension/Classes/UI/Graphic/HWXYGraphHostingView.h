@@ -7,7 +7,7 @@
 //
 //  曲线图
 
-#import <CorePlot/CorePlot.h>
+#import "CorePlot.h"
 #import "CPTXYAxis+Category.h"
 #import "HWXYGraphInteractionView.h"
 #import "HWCategorys.h"
