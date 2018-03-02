@@ -21,18 +21,18 @@
   "subspecs": [
     {
       "name": "Category",
-      "public_header_files": "HWExtension/Classes/Category/*.h",
-      "source_files": "HWExtension/Classes/Category/*.{h,m,js}",
+      "public_header_files": "HWExtension/Category/*.h",
+      "source_files": "HWExtension/Category/*.{h,m,js}",
       "resource_bundles": {
         "HWExtension": [
-          "HWExtension/Classes/Category/JSBundle.bundle"
+          "HWExtension/Category/JSBundle.bundle"
         ]
       }
     },
     {
       "name": "UI",
-      "public_header_files": "HWExtension/Classes/UI/*.h",
-      "source_files": "HWExtension/Classes/UI/*.{h,m}",
+      "public_header_files": "HWExtension/UI/*.h",
+      "source_files": "HWExtension/UI/*.{h,m}",
       "dependencies": {
         "HWExtension/Category": [
 
@@ -40,19 +40,19 @@
       },
       "subspecs": [
         {
-          "name": "InteractiveModalTransition",
-          "public_header_files": "HWExtension/Classes/UI/ModalTransition/*.h",
-          "source_files": "HWExtension/Classes/UI/ModalTransition/*.{h,m}"
+          "name": "ModalTransition",
+          "public_header_files": "HWExtension/UI/ModalTransition/*.h",
+          "source_files": "HWExtension/UI/ModalTransition/*.{h,m}"
         },
         {
           "name": "UITableView+ViewModel",
-          "public_header_files": "HWExtension/Classes/UI/UITableView+ViewModel/*.h",
-          "source_files": "HWExtension/Classes/UI/UITableView+ViewModel/*.{h,m}"
+          "public_header_files": "HWExtension/UI/UITableView+ViewModel/*.h",
+          "source_files": "HWExtension/UI/UITableView+ViewModel/*.{h,m}"
         },
         {
           "name": "Graphic",
-          "public_header_files": "HWExtension/Classes/UI/Graphic/*.h",
-          "source_files": "HWExtension/Classes/UI/Graphic/*.{h,m}",
+          "public_header_files": "HWExtension/UI/Graphic/*.h",
+          "source_files": "HWExtension/UI/Graphic/*.{h,m}",
           "dependencies": {
             "CorePlot": [
               "~>2.2"

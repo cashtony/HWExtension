@@ -20,31 +20,31 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '8.0'
     
     s.subspec 'Category' do |ss|
-        ss.public_header_files = 'HWExtension/Classes/Category/*.h'
-        ss.source_files = 'HWExtension/Classes/Category/*.{h,m,js}'
+        ss.public_header_files = 'HWExtension/Category/*.h'
+        ss.source_files = 'HWExtension/Category/*.{h,m,js}'
         ss.resource_bundles = {
-            'HWExtension' => ['HWExtension/Classes/Category/JSBundle.bundle']
+            'HWExtension' => ['HWExtension/Category/JSBundle.bundle']
         }
     end
     
     s.subspec 'UI' do |ss|
-        ss.public_header_files = 'HWExtension/Classes/UI/*.h'
-        ss.source_files = 'HWExtension/Classes/UI/*.{h,m}'
+        ss.public_header_files = 'HWExtension/UI/*.h'
+        ss.source_files = 'HWExtension/UI/*.{h,m}'
         ss.dependency 'HWExtension/Category'
         
-        ss.subspec 'InteractiveModalTransition' do |sss|
-            sss.public_header_files = 'HWExtension/Classes/UI/ModalTransition/*.h'
-            sss.source_files = 'HWExtension/Classes/UI/ModalTransition/*.{h,m}'
+        ss.subspec 'ModalTransition' do |sss|
+            sss.public_header_files = 'HWExtension/UI/ModalTransition/*.h'
+            sss.source_files = 'HWExtension/UI/ModalTransition/*.{h,m}'
         end
         
         ss.subspec 'UITableView+ViewModel' do |sss|
-            sss.public_header_files = 'HWExtension/Classes/UI/UITableView+ViewModel/*.h'
-            sss.source_files = 'HWExtension/Classes/UI/UITableView+ViewModel/*.{h,m}'
+            sss.public_header_files = 'HWExtension/UI/UITableView+ViewModel/*.h'
+            sss.source_files = 'HWExtension/UI/UITableView+ViewModel/*.{h,m}'
         end
         
         ss.subspec 'Graphic' do |sss|
-            sss.public_header_files = 'HWExtension/Classes/UI/Graphic/*.h'
-            sss.source_files = 'HWExtension/Classes/UI/Graphic/*.{h,m}'
+            sss.public_header_files = 'HWExtension/UI/Graphic/*.h'
+            sss.source_files = 'HWExtension/UI/Graphic/*.{h,m}'
             sss.dependency 'CorePlot', '~>2.2'
         end
     end

@@ -7,12 +7,12 @@ PODS:
   - HWExtension/UI (1.0.3):
     - HWExtension/Category
     - HWExtension/UI/Graphic (= 1.0.3)
-    - HWExtension/UI/InteractiveModalTransition (= 1.0.3)
+    - HWExtension/UI/ModalTransition (= 1.0.3)
     - HWExtension/UI/UITableView+ViewModel (= 1.0.3)
   - HWExtension/UI/Graphic (1.0.3):
     - CorePlot (~> 2.2)
     - HWExtension/Category
-  - HWExtension/UI/InteractiveModalTransition (1.0.3):
+  - HWExtension/UI/ModalTransition (1.0.3):
     - HWExtension/Category
   - HWExtension/UI/UITableView+ViewModel (1.0.3):
     - HWExtension/Category
@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
-  HWExtension: 45dc30c0387e2f64d7ef6a6171142c2251e5690c
+  HWExtension: 6a9e4b43b6fad5cd7ed55f9f64ba0baff8a9e565
 
 PODFILE CHECKSUM: 7d9bbebf997ed40eb36380b228ef5296d1c2bf1a
 
