@@ -19,10 +19,10 @@
 /**
  BuildMachineOSBuild = 17C88;
  CFBundleDevelopmentRegion = en;
- CFBundleExecutable = HWExtensionExample;
- CFBundleIdentifier = "wanghouwen.HWExtensionExample";
+ CFBundleExecutable = HWExtension;
+ CFBundleIdentifier = "wanghouwen.HWExtension";
  CFBundleInfoDictionaryVersion = "6.0";
- CFBundleName = HWExtensionExample;
+ CFBundleName = HWExtension;
  CFBundleNumericVersion = 0;
  CFBundlePackageType = APPL;
  CFBundleShortVersionString = "1.0";

@@ -1,15 +1,20 @@
 PODS:
-  - HWExtension (1.0.2):
-    - HWExtension/Category (= 1.0.2)
-    - HWExtension/UI (= 1.0.2)
-  - HWExtension/Category (1.0.2)
-  - HWExtension/UI (1.0.2):
+  - CorePlot (2.2)
+  - HWExtension (1.0.3):
+    - HWExtension/Category (= 1.0.3)
+    - HWExtension/UI (= 1.0.3)
+  - HWExtension/Category (1.0.3)
+  - HWExtension/UI (1.0.3):
     - HWExtension/Category
-    - HWExtension/UI/InteractiveModalTransition (= 1.0.2)
-    - HWExtension/UI/UITableView+ViewModel (= 1.0.2)
-  - HWExtension/UI/InteractiveModalTransition (1.0.2):
+    - HWExtension/UI/Graphic (= 1.0.3)
+    - HWExtension/UI/InteractiveModalTransition (= 1.0.3)
+    - HWExtension/UI/UITableView+ViewModel (= 1.0.3)
+  - HWExtension/UI/Graphic (1.0.3):
+    - CorePlot (~> 2.2)
     - HWExtension/Category
-  - HWExtension/UI/UITableView+ViewModel (1.0.2):
+  - HWExtension/UI/InteractiveModalTransition (1.0.3):
+    - HWExtension/Category
+  - HWExtension/UI/UITableView+ViewModel (1.0.3):
     - HWExtension/Category
 
 DEPENDENCIES:
@@ -20,8 +25,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  HWExtension: 868e46f732523c30404d265e8a4ba409868bb804
+  CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
+  HWExtension: 45dc30c0387e2f64d7ef6a6171142c2251e5690c
 
-PODFILE CHECKSUM: ce7332f24009516228847ee715c7ee2a30843e86
+PODFILE CHECKSUM: 7d9bbebf997ed40eb36380b228ef5296d1c2bf1a
 
 COCOAPODS: 1.4.0.rc.1

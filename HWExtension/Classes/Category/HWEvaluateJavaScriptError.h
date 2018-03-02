@@ -1,6 +1,6 @@
 //
 //  HWEvaluateJavaScriptError.h
-//  HWExtensionExample
+//  HWExtension
 //
 //  Created by wanghouwen on 2018/1/2.
 //  Copyright © 2018年 wanghouwen. All rights reserved.

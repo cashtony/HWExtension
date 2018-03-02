@@ -214,7 +214,7 @@
     });
 }
 
-- (UIImage *)imageWithSpacingFromImages:(NSArray <UIImage *>*)images spacing:(CGFloat)spacing {
++ (UIImage *)imageWithSpacingFromImages:(NSArray <UIImage *>*)images spacing:(CGFloat)spacing {
     
     if (images == nil || images.count == 0) return nil;
     
@@ -234,7 +234,7 @@
     });
 }
 
-- (UIImage *)imageOverlyingFromImages:(NSArray <NSDictionary <NSNumber *, UIImage *>*>*)attributedImages {
++ (UIImage *)imageOverlyingFromImages:(NSArray <NSDictionary <NSNumber *, UIImage *>*>*)attributedImages {
     
     if (attributedImages == nil || attributedImages.count == 0) return nil;
     

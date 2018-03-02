@@ -28,6 +28,7 @@
 #import "UIImage+Category.h"
 
 #import "UIView+Utils.h"
+#import "UILabel+Category.h"
 #import "UIControl+Category.h"
 #import "UIButton+Category.h"
 #import "UIBarButtonItem+Category.h"

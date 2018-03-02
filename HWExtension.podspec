@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'HWExtension'
-    s.version          = '1.0.2'
+    s.version          = '1.0.3'
     s.summary          = 'some convenient extension and tools.'
     s.homepage         = 'https://github.com/wanghouwen/HWExtension'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     
     s.ios.deployment_target = '8.0'
-        
+    
     s.subspec 'Category' do |ss|
         ss.public_header_files = 'HWExtension/Classes/Category/*.h'
         ss.source_files = 'HWExtension/Classes/Category/*.{h,m,js}'
@@ -33,13 +33,19 @@ Pod::Spec.new do |s|
         ss.dependency 'HWExtension/Category'
         
         ss.subspec 'InteractiveModalTransition' do |sss|
-            sss.public_header_files = 'HWExtension/Classes/UI/InteractiveModalTransition/*.h'
-            sss.source_files = 'HWExtension/Classes/UI/InteractiveModalTransition/*.{h,m}'
+            sss.public_header_files = 'HWExtension/Classes/UI/ModalTransition/*.h'
+            sss.source_files = 'HWExtension/Classes/UI/ModalTransition/*.{h,m}'
         end
         
         ss.subspec 'UITableView+ViewModel' do |sss|
             sss.public_header_files = 'HWExtension/Classes/UI/UITableView+ViewModel/*.h'
             sss.source_files = 'HWExtension/Classes/UI/UITableView+ViewModel/*.{h,m}'
+        end
+        
+        ss.subspec 'Graphic' do |sss|
+            sss.public_header_files = 'HWExtension/Classes/UI/Graphic/*.h'
+            sss.source_files = 'HWExtension/Classes/UI/Graphic/*.{h,m}'
+            sss.dependency 'CorePlot', '~>2.2'
         end
     end
     

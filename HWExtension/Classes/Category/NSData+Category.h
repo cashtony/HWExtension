@@ -1,6 +1,6 @@
 //
 //  NSData+Category.h
-//  HWExtensionExample
+//  HWExtension
 //
 //  Created by wanghouwen on 2017/12/14.
 //  Copyright © 2017年 wanghouwen. All rights reserved.

@@ -7,7 +7,7 @@
 //
 
 #import "HWAppDelegate.h"
-#import "HWSandboxBrowserViewController.h"
+#import "HWRootViewController.h"
 
 @implementation HWAppDelegate
 
@@ -15,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    UINavigationController *rootVC = [[UINavigationController alloc] initWithRootViewController:[[HWSandboxBrowserViewController alloc] init]];
+    HWRootViewController *rootVC = [[HWRootViewController alloc] init];
     self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
     

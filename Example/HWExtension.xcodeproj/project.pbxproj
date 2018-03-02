@@ -33,15 +33,21 @@
 		5D2A8EF320062B4B003C4BD4 /* HWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A8EC920062B4B003C4BD4 /* HWWebViewController.m */; };
 		5D2A8EF420062B4B003C4BD4 /* HWDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A8ECB20062B4B003C4BD4 /* HWDatePicker.m */; };
 		5D686CEA202C78D30049967A /* UIGestureRecognizer+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D686CE9202C78D30049967A /* UIGestureRecognizer+Category.m */; };
-		5D68FCF8204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D68FCF3204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m */; };
-		5D68FCF9204688B800AEBE93 /* HWInteractiveModalTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D68FCF4204688B800AEBE93 /* HWInteractiveModalTransition.m */; };
-		5D68FCFA204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D68FCF5204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m */; };
 		5D68FCFD20468A5F00AEBE93 /* HWSandboxBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D68FCFC20468A5F00AEBE93 /* HWSandboxBrowserViewController.m */; };
 		5D68FD072046A76000AEBE93 /* ToolResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D68FD062046A76000AEBE93 /* ToolResources.bundle */; };
 		5DBD183E200F471E005A94E3 /* HWFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD1838200F471D005A94E3 /* HWFileHelper.m */; };
 		5DBD183F200F471E005A94E3 /* HWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD1839200F471D005A94E3 /* HWDirectoryWatcher.m */; };
+		5DCFDE702048FC7A000DF646 /* HWRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */; };
+		5DCFDE732048FD69000DF646 /* HWGraphicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */; };
+		5DCFDE7B20492CCC000DF646 /* HWInteractiveModalTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE7620492CCC000DF646 /* HWInteractiveModalTransitionViewController.m */; };
+		5DCFDE7C20492CCC000DF646 /* HWInteractiveModalTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE7720492CCC000DF646 /* HWInteractiveModalTransition.m */; };
+		5DCFDE7D20492CCC000DF646 /* HWInteractiveModalTransitionNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE7820492CCC000DF646 /* HWInteractiveModalTransitionNavigationController.m */; };
 		5DCFE97F2011F8FC000C4AF9 /* HWSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFE97D2011F8FC000C4AF9 /* HWSegmentedControl.m */; };
 		5DCFE98220120599000C4AF9 /* HWCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFE98120120599000C4AF9 /* HWCountDownButton.m */; };
+		5DE928D92048153200BCC3E3 /* HWXYGraphInteractionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE928D72048153200BCC3E3 /* HWXYGraphInteractionView.m */; };
+		5DE928DA2048153200BCC3E3 /* HWXYGraphHostingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE928D82048153200BCC3E3 /* HWXYGraphHostingView.m */; };
+		5DE928DD20481C7D00BCC3E3 /* CPTXYAxis+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE928DC20481C7D00BCC3E3 /* CPTXYAxis+Category.m */; };
+		5DE928E020481F9B00BCC3E3 /* UILabel+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE928DF20481F9B00BCC3E3 /* UILabel+Category.m */; };
 		5DF9EFE120108514001D9306 /* HWTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF9EFD820108514001D9306 /* HWTableViewDataSource.m */; };
 		5DF9EFE220108514001D9306 /* HWTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF9EFD920108514001D9306 /* HWTableViewViewModel.m */; };
 		5DF9EFE320108514001D9306 /* HWTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF9EFDE20108514001D9306 /* HWTableViewDelegate.m */; };
@@ -136,12 +142,6 @@
 		5D2A8ED120062B4B003C4BD4 /* HWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWWebViewController.h; sourceTree = "<group>"; };
 		5D686CE8202C78D30049967A /* UIGestureRecognizer+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Category.h"; sourceTree = "<group>"; };
 		5D686CE9202C78D30049967A /* UIGestureRecognizer+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Category.m"; sourceTree = "<group>"; };
-		5D68FCF2204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInteractiveModalTransitionNavigationController.h; sourceTree = "<group>"; };
-		5D68FCF3204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInteractiveModalTransitionViewController.m; sourceTree = "<group>"; };
-		5D68FCF4204688B800AEBE93 /* HWInteractiveModalTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInteractiveModalTransition.m; sourceTree = "<group>"; };
-		5D68FCF5204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInteractiveModalTransitionNavigationController.m; sourceTree = "<group>"; };
-		5D68FCF6204688B800AEBE93 /* HWInteractiveModalTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInteractiveModalTransition.h; sourceTree = "<group>"; };
-		5D68FCF7204688B800AEBE93 /* HWInteractiveModalTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInteractiveModalTransitionViewController.h; sourceTree = "<group>"; };
 		5D68FCFB20468A5F00AEBE93 /* HWSandboxBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSandboxBrowserViewController.h; sourceTree = "<group>"; };
 		5D68FCFC20468A5F00AEBE93 /* HWSandboxBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSandboxBrowserViewController.m; sourceTree = "<group>"; };
 		5D68FD062046A76000AEBE93 /* ToolResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ToolResources.bundle; sourceTree = "<group>"; };
@@ -150,10 +150,28 @@
 		5DBD1839200F471D005A94E3 /* HWDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDirectoryWatcher.m; sourceTree = "<group>"; };
 		5DBD183C200F471D005A94E3 /* HWFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWFileHelper.h; sourceTree = "<group>"; };
 		5DBD183D200F471D005A94E3 /* HWDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDirectoryWatcher.h; sourceTree = "<group>"; };
+		5DCFDE6E2048FC7A000DF646 /* HWRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRootViewController.h; sourceTree = "<group>"; };
+		5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWRootViewController.m; sourceTree = "<group>"; };
+		5DCFDE712048FD69000DF646 /* HWGraphicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWGraphicViewController.h; sourceTree = "<group>"; };
+		5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWGraphicViewController.m; sourceTree = "<group>"; };
+		5DCFDE7520492CCC000DF646 /* HWInteractiveModalTransitionNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInteractiveModalTransitionNavigationController.h; sourceTree = "<group>"; };
+		5DCFDE7620492CCC000DF646 /* HWInteractiveModalTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInteractiveModalTransitionViewController.m; sourceTree = "<group>"; };
+		5DCFDE7720492CCC000DF646 /* HWInteractiveModalTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInteractiveModalTransition.m; sourceTree = "<group>"; };
+		5DCFDE7820492CCC000DF646 /* HWInteractiveModalTransitionNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWInteractiveModalTransitionNavigationController.m; sourceTree = "<group>"; };
+		5DCFDE7920492CCC000DF646 /* HWInteractiveModalTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInteractiveModalTransition.h; sourceTree = "<group>"; };
+		5DCFDE7A20492CCC000DF646 /* HWInteractiveModalTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInteractiveModalTransitionViewController.h; sourceTree = "<group>"; };
 		5DCFE97D2011F8FC000C4AF9 /* HWSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSegmentedControl.m; sourceTree = "<group>"; };
 		5DCFE97E2011F8FC000C4AF9 /* HWSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSegmentedControl.h; sourceTree = "<group>"; };
 		5DCFE98120120599000C4AF9 /* HWCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWCountDownButton.m; sourceTree = "<group>"; };
 		5DCFE983201205F2000C4AF9 /* HWCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWCountDownButton.h; sourceTree = "<group>"; };
+		5DE928D52048153200BCC3E3 /* HWXYGraphInteractionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWXYGraphInteractionView.h; sourceTree = "<group>"; };
+		5DE928D62048153200BCC3E3 /* HWXYGraphHostingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWXYGraphHostingView.h; sourceTree = "<group>"; };
+		5DE928D72048153200BCC3E3 /* HWXYGraphInteractionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWXYGraphInteractionView.m; sourceTree = "<group>"; };
+		5DE928D82048153200BCC3E3 /* HWXYGraphHostingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWXYGraphHostingView.m; sourceTree = "<group>"; };
+		5DE928DB20481C7C00BCC3E3 /* CPTXYAxis+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPTXYAxis+Category.h"; sourceTree = "<group>"; };
+		5DE928DC20481C7D00BCC3E3 /* CPTXYAxis+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPTXYAxis+Category.m"; sourceTree = "<group>"; };
+		5DE928DE20481F9B00BCC3E3 /* UILabel+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Category.h"; sourceTree = "<group>"; };
+		5DE928DF20481F9B00BCC3E3 /* UILabel+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Category.m"; sourceTree = "<group>"; };
 		5DF9EFD820108514001D9306 /* HWTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTableViewDataSource.m; sourceTree = "<group>"; };
 		5DF9EFD920108514001D9306 /* HWTableViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTableViewViewModel.m; sourceTree = "<group>"; };
 		5DF9EFDA20108514001D9306 /* HWTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTableViewDelegate.h; sourceTree = "<group>"; };
@@ -264,6 +282,8 @@
 				5D686CE9202C78D30049967A /* UIGestureRecognizer+Category.m */,
 				5D2A8EAA20062B4B003C4BD4 /* UIView+Utils.h */,
 				5D2A8E9420062B4B003C4BD4 /* UIView+Utils.m */,
+				5DE928DE20481F9B00BCC3E3 /* UILabel+Category.h */,
+				5DE928DF20481F9B00BCC3E3 /* UILabel+Category.m */,
 				5D2A8EBA20062B4B003C4BD4 /* UIControl+Category.h */,
 				5D2A8EA320062B4B003C4BD4 /* UIControl+Category.m */,
 				5D2A8EBD20062B4B003C4BD4 /* UIButton+Category.h */,
@@ -305,24 +325,12 @@
 				5DCFE98120120599000C4AF9 /* HWCountDownButton.m */,
 				5D2A8ED120062B4B003C4BD4 /* HWWebViewController.h */,
 				5D2A8EC920062B4B003C4BD4 /* HWWebViewController.m */,
-				5D68FCF1204688B800AEBE93 /* InteractiveModalTransition */,
+				5DE928D42048153200BCC3E3 /* Graphic */,
+				5DCFDE7420492CCC000DF646 /* ModalTransition */,
 				5DF9EFD720108514001D9306 /* UITableView+ViewModel */,
 			);
 			name = UI;
 			path = ../HWExtension/Classes/UI;
-			sourceTree = "<group>";
-		};
-		5D68FCF1204688B800AEBE93 /* InteractiveModalTransition */ = {
-			isa = PBXGroup;
-			children = (
-				5D68FCF6204688B800AEBE93 /* HWInteractiveModalTransition.h */,
-				5D68FCF4204688B800AEBE93 /* HWInteractiveModalTransition.m */,
-				5D68FCF7204688B800AEBE93 /* HWInteractiveModalTransitionViewController.h */,
-				5D68FCF3204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m */,
-				5D68FCF2204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.h */,
-				5D68FCF5204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m */,
-			);
-			path = InteractiveModalTransition;
 			sourceTree = "<group>";
 		};
 		5DBD1837200F471D005A94E3 /* Tool */ = {
@@ -339,6 +347,32 @@
 			);
 			name = Tool;
 			path = ../HWExtension/Classes/Tool;
+			sourceTree = "<group>";
+		};
+		5DCFDE7420492CCC000DF646 /* ModalTransition */ = {
+			isa = PBXGroup;
+			children = (
+				5DCFDE7520492CCC000DF646 /* HWInteractiveModalTransitionNavigationController.h */,
+				5DCFDE7620492CCC000DF646 /* HWInteractiveModalTransitionViewController.m */,
+				5DCFDE7720492CCC000DF646 /* HWInteractiveModalTransition.m */,
+				5DCFDE7820492CCC000DF646 /* HWInteractiveModalTransitionNavigationController.m */,
+				5DCFDE7920492CCC000DF646 /* HWInteractiveModalTransition.h */,
+				5DCFDE7A20492CCC000DF646 /* HWInteractiveModalTransitionViewController.h */,
+			);
+			path = ModalTransition;
+			sourceTree = "<group>";
+		};
+		5DE928D42048153200BCC3E3 /* Graphic */ = {
+			isa = PBXGroup;
+			children = (
+				5DE928DB20481C7C00BCC3E3 /* CPTXYAxis+Category.h */,
+				5DE928DC20481C7D00BCC3E3 /* CPTXYAxis+Category.m */,
+				5DE928D52048153200BCC3E3 /* HWXYGraphInteractionView.h */,
+				5DE928D72048153200BCC3E3 /* HWXYGraphInteractionView.m */,
+				5DE928D62048153200BCC3E3 /* HWXYGraphHostingView.h */,
+				5DE928D82048153200BCC3E3 /* HWXYGraphHostingView.m */,
+			);
+			path = Graphic;
 			sourceTree = "<group>";
 		};
 		5DF9EFD720108514001D9306 /* UITableView+ViewModel */ = {
@@ -396,9 +430,13 @@
 			children = (
 				6003F59C195388D20070C39A /* HWAppDelegate.h */,
 				6003F59D195388D20070C39A /* HWAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				5DCFDE6E2048FC7A000DF646 /* HWRootViewController.h */,
+				5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */,
+				5DCFDE712048FD69000DF646 /* HWGraphicViewController.h */,
+				5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */,
 				6003F5A5195388D20070C39A /* HWViewController.h */,
 				6003F5A6195388D20070C39A /* HWViewController.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -578,10 +616,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HWExtension_Example/Pods-HWExtension_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework",
 				"${BUILT_PRODUCTS_DIR}/HWExtension/HWExtension.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CorePlot.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HWExtension.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,11 +669,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HWExtension_Tests/Pods-HWExtension_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CorePlot.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -666,9 +706,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D2A8EDF20062B4B003C4BD4 /* UIButton+Category.m in Sources */,
+				5DCFDE702048FC7A000DF646 /* HWRootViewController.m in Sources */,
 				5D2A8ED620062B4B003C4BD4 /* NSMutableString+Category.m in Sources */,
 				5DF9EFE120108514001D9306 /* HWTableViewDataSource.m in Sources */,
-				5D68FCF8204688B800AEBE93 /* HWInteractiveModalTransitionViewController.m in Sources */,
 				5DCFE98220120599000C4AF9 /* HWCountDownButton.m in Sources */,
 				5D2A8EE320062B4B003C4BD4 /* NSString+Category.m in Sources */,
 				5DF9EFE320108514001D9306 /* HWTableViewDelegate.m in Sources */,
@@ -681,24 +721,29 @@
 				6003F59E195388D20070C39A /* HWAppDelegate.m in Sources */,
 				5D2A8EE820062B4B003C4BD4 /* NSObject+Category.m in Sources */,
 				6003F5A7195388D20070C39A /* HWViewController.m in Sources */,
+				5DE928E020481F9B00BCC3E3 /* UILabel+Category.m in Sources */,
 				5D2A8EED20062B4B003C4BD4 /* NSAttributedString+Category.m in Sources */,
 				5DCFE97F2011F8FC000C4AF9 /* HWSegmentedControl.m in Sources */,
 				5D2A8EE620062B4B003C4BD4 /* UIWebView+Category.m in Sources */,
+				5DE928D92048153200BCC3E3 /* HWXYGraphInteractionView.m in Sources */,
 				5D686CEA202C78D30049967A /* UIGestureRecognizer+Category.m in Sources */,
 				5DBD183F200F471E005A94E3 /* HWDirectoryWatcher.m in Sources */,
+				5DCFDE7C20492CCC000DF646 /* HWInteractiveModalTransition.m in Sources */,
+				5DCFDE7B20492CCC000DF646 /* HWInteractiveModalTransitionViewController.m in Sources */,
 				5D2A8EDE20062B4B003C4BD4 /* UINavigationController+Category.m in Sources */,
 				5D2A8EE420062B4B003C4BD4 /* NSData+Category.m in Sources */,
 				5D2A8ED720062B4B003C4BD4 /* UIImageView+Category.m in Sources */,
 				5D2A8EDB20062B4B003C4BD4 /* WKWebView+Category.m in Sources */,
+				5DE928DA2048153200BCC3E3 /* HWXYGraphHostingView.m in Sources */,
 				5D2A8EE120062B4B003C4BD4 /* UIDevice+Category.m in Sources */,
-				5D68FCF9204688B800AEBE93 /* HWInteractiveModalTransition.m in Sources */,
 				5DF9EFEB20109210001D9306 /* UITableView+ViewModel.m in Sources */,
+				5DCFDE732048FD69000DF646 /* HWGraphicViewController.m in Sources */,
 				5DBD183E200F471E005A94E3 /* HWFileHelper.m in Sources */,
 				5D2A8EDA20062B4B003C4BD4 /* NSArray+Category.m in Sources */,
 				5D2A8EDD20062B4B003C4BD4 /* UIImage+Category.m in Sources */,
 				5D2A8EE520062B4B003C4BD4 /* UIViewController+Category.m in Sources */,
-				5D68FCFA204688B800AEBE93 /* HWInteractiveModalTransitionNavigationController.m in Sources */,
 				5D2A8EEE20062B4B003C4BD4 /* NSTimer+Category.m in Sources */,
+				5DCFDE7D20492CCC000DF646 /* HWInteractiveModalTransitionNavigationController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				5D2A8EDC20062B4B003C4BD4 /* UITableView+Category.m in Sources */,
 				5D2A8ED920062B4B003C4BD4 /* UIView+Utils.m in Sources */,
@@ -707,6 +752,7 @@
 				5D2A8EF420062B4B003C4BD4 /* HWDatePicker.m in Sources */,
 				5D2A8ED820062B4B003C4BD4 /* NSDate+Category.m in Sources */,
 				5D2A8EF320062B4B003C4BD4 /* HWWebViewController.m in Sources */,
+				5DE928DD20481C7D00BCC3E3 /* CPTXYAxis+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

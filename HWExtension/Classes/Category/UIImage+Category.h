@@ -44,8 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (Graphics)
 
 - (UIImage *)imageWithCornerRadius:(CGFloat)cornerRadius;
-- (UIImage *)imageWithSpacingFromImages:(NSArray <UIImage *>*)images spacing:(CGFloat)spacing;
-- (UIImage *)imageOverlyingFromImages:(NSArray <NSDictionary <NSNumber *, UIImage *>*>*)attributedImages;
++ (UIImage *)imageWithSpacingFromImages:(NSArray <UIImage *>*)images spacing:(CGFloat)spacing;
++ (UIImage *)imageOverlyingFromImages:(NSArray <NSDictionary <NSNumber *, UIImage *>*>*)attributedImages;
 
 @end
 

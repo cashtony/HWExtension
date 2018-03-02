@@ -1,6 +1,6 @@
 //
 //  UIControl+Category.h
-//  HWExtensionExample
+//  HWExtension
 //
 //  Created by wanghouwen on 2018/1/7.
 //  Copyright © 2018年 wanghouwen. All rights reserved.
