@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'HWExtension'
-    s.version          = '1.0.4'
+    s.version          = '1.0.5'
     s.summary          = 'some convenient extension and tools.'
     s.homepage         = 'https://github.com/wanghouwen/HWExtension'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -46,6 +46,12 @@ Pod::Spec.new do |s|
             sss.public_header_files = 'HWExtension/UI/Graphic/*.h'
             sss.source_files = 'HWExtension/UI/Graphic/*.{h,m}'
             sss.dependency 'CorePlot', '~>2.2'
+        end
+        
+        ss.subspec 'Router' do |sss|
+            sss.public_header_files = 'HWExtension/UI/Router/*.h'
+            sss.source_files = 'HWExtension/UI/Router/*.{h,m}'
+            sss.dependency 'JLRoutes', '~> 2.1'
         end
     end
     

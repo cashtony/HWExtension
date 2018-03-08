@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D26D110204EB23A00DDDEE9 /* HWRouterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26D10F204EB23A00DDDEE9 /* HWRouterViewController.m */; };
+		5D26D113204EB5F200DDDEE9 /* HWRouterSubViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26D112204EB5F200DDDEE9 /* HWRouterSubViewController1.m */; };
+		5D26D116204EB5FC00DDDEE9 /* HWRouterSubViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26D115204EB5FC00DDDEE9 /* HWRouterSubViewController2.m */; };
+		5D26D119204EB60A00DDDEE9 /* HWRouterSubViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26D118204EB60A00DDDEE9 /* HWRouterSubViewController3.m */; };
+		5D309E77204D5277009BC8CA /* HWRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D309E75204D5277009BC8CA /* HWRouter.m */; };
 		5D32E7AF204958B100ED235A /* HWTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E74E204958B000ED235A /* HWTableViewDataSource.m */; };
 		5D32E7B0204958B100ED235A /* HWTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E74F204958B000ED235A /* HWTableViewViewModel.m */; };
 		5D32E7B1204958B100ED235A /* HWTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E754204958B000ED235A /* HWTableViewDelegate.m */; };
@@ -52,6 +57,7 @@
 		5D32E7DA204958B100ED235A /* HWFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E7AA204958B100ED235A /* HWFileHelper.m */; };
 		5D32E7DB204958B100ED235A /* HWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E7AB204958B100ED235A /* HWDirectoryWatcher.m */; };
 		5D32E7DE20495B8000ED235A /* WKWebView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E7DC20495B7F00ED235A /* WKWebView+Category.m */; };
+		5D424C03204D395B000214C3 /* UIApplication+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D424C02204D395B000214C3 /* UIApplication+Category.m */; };
 		5DCFDE702048FC7A000DF646 /* HWRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */; };
 		5DCFDE732048FD69000DF646 /* HWGraphicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -87,6 +93,16 @@
 		19D44659F49D27AABC24C560 /* Pods-HWExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWExtension_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HWExtension_Tests/Pods-HWExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		49BDB3F65C92762D1D6E1480 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4E5D1EBC56FB55219C45FA64 /* Pods_HWExtension_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HWExtension_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D26D10E204EB23A00DDDEE9 /* HWRouterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRouterViewController.h; sourceTree = "<group>"; };
+		5D26D10F204EB23A00DDDEE9 /* HWRouterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWRouterViewController.m; sourceTree = "<group>"; };
+		5D26D111204EB5F200DDDEE9 /* HWRouterSubViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRouterSubViewController1.h; sourceTree = "<group>"; };
+		5D26D112204EB5F200DDDEE9 /* HWRouterSubViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWRouterSubViewController1.m; sourceTree = "<group>"; };
+		5D26D114204EB5FC00DDDEE9 /* HWRouterSubViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRouterSubViewController2.h; sourceTree = "<group>"; };
+		5D26D115204EB5FC00DDDEE9 /* HWRouterSubViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWRouterSubViewController2.m; sourceTree = "<group>"; };
+		5D26D117204EB60A00DDDEE9 /* HWRouterSubViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRouterSubViewController3.h; sourceTree = "<group>"; };
+		5D26D118204EB60A00DDDEE9 /* HWRouterSubViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWRouterSubViewController3.m; sourceTree = "<group>"; };
+		5D309E75204D5277009BC8CA /* HWRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWRouter.m; sourceTree = "<group>"; };
+		5D309E76204D5277009BC8CA /* HWRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWRouter.h; sourceTree = "<group>"; };
 		5D32E74E204958B000ED235A /* HWTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTableViewDataSource.m; sourceTree = "<group>"; };
 		5D32E74F204958B000ED235A /* HWTableViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTableViewViewModel.m; sourceTree = "<group>"; };
 		5D32E750204958B000ED235A /* HWTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTableViewDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +196,8 @@
 		5D32E7AE204958B100ED235A /* HWDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDirectoryWatcher.h; sourceTree = "<group>"; };
 		5D32E7DC20495B7F00ED235A /* WKWebView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+Category.m"; sourceTree = "<group>"; };
 		5D32E7DD20495B7F00ED235A /* UIWebView+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Category.h"; sourceTree = "<group>"; };
+		5D424C01204D395B000214C3 /* UIApplication+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Category.h"; sourceTree = "<group>"; };
+		5D424C02204D395B000214C3 /* UIApplication+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Category.m"; sourceTree = "<group>"; };
 		5DCFDE6E2048FC7A000DF646 /* HWRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRootViewController.h; sourceTree = "<group>"; };
 		5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWRootViewController.m; sourceTree = "<group>"; };
 		5DCFDE712048FD69000DF646 /* HWGraphicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWGraphicViewController.h; sourceTree = "<group>"; };
@@ -261,6 +279,7 @@
 				5D32E757204958B000ED235A /* HWWebViewController.m */,
 				5D32E76B204958B000ED235A /* HWCountDownButton.h */,
 				5D32E75A204958B000ED235A /* HWCountDownButton.m */,
+				5D424BFD204D334F000214C3 /* Router */,
 				5D32E762204958B000ED235A /* Graphic */,
 				5D32E75B204958B000ED235A /* ModalTransition */,
 				5D32E74D204958B000ED235A /* UITableView+ViewModel */,
@@ -301,12 +320,12 @@
 		5D32E762204958B000ED235A /* Graphic */ = {
 			isa = PBXGroup;
 			children = (
-				5D32E763204958B000ED235A /* HWXYGraphInteractionView.h */,
-				5D32E764204958B000ED235A /* CPTXYAxis+Category.h */,
 				5D32E765204958B000ED235A /* HWXYGraphHostingView.h */,
-				5D32E766204958B000ED235A /* CPTXYAxis+Category.m */,
-				5D32E767204958B000ED235A /* HWXYGraphInteractionView.m */,
 				5D32E768204958B000ED235A /* HWXYGraphHostingView.m */,
+				5D32E763204958B000ED235A /* HWXYGraphInteractionView.h */,
+				5D32E767204958B000ED235A /* HWXYGraphInteractionView.m */,
+				5D32E764204958B000ED235A /* CPTXYAxis+Category.h */,
+				5D32E766204958B000ED235A /* CPTXYAxis+Category.m */,
 			);
 			path = Graphic;
 			sourceTree = "<group>";
@@ -337,6 +356,8 @@
 				5D32E785204958B000ED235A /* UIDevice+Category.m */,
 				5D32E772204958B000ED235A /* UIGestureRecognizer+Category.h */,
 				5D32E78B204958B000ED235A /* UIGestureRecognizer+Category.m */,
+				5D424C01204D395B000214C3 /* UIApplication+Category.h */,
+				5D424C02204D395B000214C3 /* UIApplication+Category.m */,
 				5D32E783204958B000ED235A /* UIGraphics+Extension.h */,
 				5D32E79A204958B100ED235A /* UIGraphics+Extension.m */,
 				5D32E78A204958B000ED235A /* UIView+Utils.h */,
@@ -391,6 +412,15 @@
 			path = ../HWExtension/Tool;
 			sourceTree = "<group>";
 		};
+		5D424BFD204D334F000214C3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5D309E76204D5277009BC8CA /* HWRouter.h */,
+				5D309E75204D5277009BC8CA /* HWRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +464,14 @@
 				5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */,
 				5DCFDE712048FD69000DF646 /* HWGraphicViewController.h */,
 				5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */,
+				5D26D10E204EB23A00DDDEE9 /* HWRouterViewController.h */,
+				5D26D10F204EB23A00DDDEE9 /* HWRouterViewController.m */,
+				5D26D111204EB5F200DDDEE9 /* HWRouterSubViewController1.h */,
+				5D26D112204EB5F200DDDEE9 /* HWRouterSubViewController1.m */,
+				5D26D114204EB5FC00DDDEE9 /* HWRouterSubViewController2.h */,
+				5D26D115204EB5FC00DDDEE9 /* HWRouterSubViewController2.m */,
+				5D26D117204EB60A00DDDEE9 /* HWRouterSubViewController3.h */,
+				5D26D118204EB60A00DDDEE9 /* HWRouterSubViewController3.m */,
 				6003F5A5195388D20070C39A /* HWViewController.h */,
 				6003F5A6195388D20070C39A /* HWViewController.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -618,11 +656,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-HWExtension_Example/Pods-HWExtension_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework",
 				"${BUILT_PRODUCTS_DIR}/HWExtension/HWExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/JLRoutes/JLRoutes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CorePlot.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HWExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JLRoutes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -709,9 +749,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D32E7CD204958B100ED235A /* NSData+Category.m in Sources */,
+				5D309E77204D5277009BC8CA /* HWRouter.m in Sources */,
+				5D26D110204EB23A00DDDEE9 /* HWRouterViewController.m in Sources */,
 				5D32E7BD204958B100ED235A /* NSMutableString+Category.m in Sources */,
 				5D32E7CB204958B100ED235A /* UIGestureRecognizer+Category.m in Sources */,
 				5DCFDE702048FC7A000DF646 /* HWRootViewController.m in Sources */,
+				5D26D116204EB5FC00DDDEE9 /* HWRouterSubViewController2.m in Sources */,
 				5D32E7B2204958B100ED235A /* UITableView+ViewModel.m in Sources */,
 				5D32E7AF204958B100ED235A /* HWTableViewDataSource.m in Sources */,
 				5D32E7BA204958B100ED235A /* HWXYGraphInteractionView.m in Sources */,
@@ -727,10 +770,12 @@
 				5D32E7D0204958B100ED235A /* UIWebView+Category.m in Sources */,
 				5D32E7B0204958B100ED235A /* HWTableViewViewModel.m in Sources */,
 				5D32E7D3204958B100ED235A /* UIColor+Category.m in Sources */,
+				5D26D113204EB5F200DDDEE9 /* HWRouterSubViewController1.m in Sources */,
 				5D32E7DE20495B8000ED235A /* WKWebView+Category.m in Sources */,
 				5D32E7BF204958B100ED235A /* NSDate+Category.m in Sources */,
 				5D32E7B9204958B100ED235A /* CPTXYAxis+Category.m in Sources */,
 				5D32E7B3204958B100ED235A /* HWWebViewController.m in Sources */,
+				5D424C03204D395B000214C3 /* UIApplication+Category.m in Sources */,
 				6003F59E195388D20070C39A /* HWAppDelegate.m in Sources */,
 				5D32E7C8204958B100ED235A /* UILabel+Category.m in Sources */,
 				6003F5A7195388D20070C39A /* HWViewController.m in Sources */,
@@ -738,6 +783,7 @@
 				5D32E7C6204958B100ED235A /* UIButton+Category.m in Sources */,
 				5D32E7CA204958B100ED235A /* UIBarButtonItem+Category.m in Sources */,
 				5D32E7D8204958B100ED235A /* HWSandboxBrowserViewController.m in Sources */,
+				5D26D119204EB60A00DDDEE9 /* HWRouterSubViewController3.m in Sources */,
 				5D32E7D7204958B100ED235A /* NSMutableAttributedString+Category.m in Sources */,
 				5D32E7D5204958B100ED235A /* NSAttributedString+Category.m in Sources */,
 				5DCFDE732048FD69000DF646 /* HWGraphicViewController.m in Sources */,

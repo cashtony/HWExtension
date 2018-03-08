@@ -9,6 +9,7 @@
 #import "HWRootViewController.h"
 #import "HWGraphicViewController.h"
 #import "HWSandboxBrowserViewController.h"
+#import "HWRouterViewController.h"
 
 @interface HWRootViewController ()
 
@@ -26,8 +27,8 @@
         
         self.tabBar.barTintColor = [UIColor whiteColor];
         
-        NSArray <Class>*vcClss = @[[HWGraphicViewController class], [HWSandboxBrowserViewController class]];
-        NSArray <NSString *>*vcNames = @[@"图表", @"沙盒"];
+        NSArray <Class>*vcClss = @[[HWGraphicViewController class], [HWSandboxBrowserViewController class], [HWRouterViewController class]];
+        NSArray <NSString *>*vcNames = @[@"图表", @"沙盒", @"路由"];
         
         NSMutableArray <UINavigationController *>*vcs = [NSMutableArray array];
         

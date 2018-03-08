@@ -42,6 +42,7 @@
 
 #import "UIViewController+Category.h"
 #import "UINavigationController+Category.h"
+#import "UIApplication+Category.h"
 
 #import "UIGraphics+Extension.h"
 

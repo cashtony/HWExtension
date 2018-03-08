@@ -118,6 +118,9 @@ NS_INLINE HWPropertyDataType propertyType(const char *cType) {
     NSLog(@"\n \"%@\" class hasn't \"%@\" key!!!\n",self.class,key);
 }
 
+- (void)setNilValueForKey:(NSString *)key {
+}
+
 // 递归遍历superclass
 + (void)recursionSuperclass:(Class)cls usingBlock:(void(NS_NOESCAPE ^)(Class cls , BOOL *stop))block {
     

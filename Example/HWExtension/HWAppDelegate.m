@@ -9,6 +9,8 @@
 #import "HWAppDelegate.h"
 #import "HWRootViewController.h"
 
+#import "HWRouter.h"
+
 @implementation HWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,6 +20,19 @@
     HWRootViewController *rootVC = [[HWRootViewController alloc] init];
     self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
+    
+    HWRouter.replaceVCNameBlock = ^NSString *(NSString *keyInURL) {
+        if ([keyInURL isEqualToString:@"routerSubVC1"]) {
+            return @"HWRouterSubViewController1";
+        } else if ([keyInURL isEqualToString:@"routerSubVC2"]) {
+            return @"HWRouterSubViewController2";
+        } else if ([keyInURL isEqualToString:@"routerSubVC3"]) {
+            return @"HWRouterSubViewController3";
+        }
+        return keyInURL;
+    };
+    
+    [HWRouter registerModules:@[@"RouterSubVC", @"Other"]];
     
     return YES;
 }

@@ -13,7 +13,5 @@ target 'HWExtension_Example' do
     
     #   pod list:
     
-#    pod 'CorePlot', '~>2.2'
-
   end
 end
