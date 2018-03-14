@@ -307,12 +307,12 @@
 		5D32E75B204958B000ED235A /* ModalTransition */ = {
 			isa = PBXGroup;
 			children = (
-				5D32E75C204958B000ED235A /* HWInteractiveModalTransitionNavigationController.h */,
-				5D32E75D204958B000ED235A /* HWInteractiveModalTransitionViewController.m */,
-				5D32E75E204958B000ED235A /* HWInteractiveModalTransition.m */,
-				5D32E75F204958B000ED235A /* HWInteractiveModalTransitionNavigationController.m */,
 				5D32E760204958B000ED235A /* HWInteractiveModalTransition.h */,
+				5D32E75E204958B000ED235A /* HWInteractiveModalTransition.m */,
 				5D32E761204958B000ED235A /* HWInteractiveModalTransitionViewController.h */,
+				5D32E75D204958B000ED235A /* HWInteractiveModalTransitionViewController.m */,
+				5D32E75C204958B000ED235A /* HWInteractiveModalTransitionNavigationController.h */,
+				5D32E75F204958B000ED235A /* HWInteractiveModalTransitionNavigationController.m */,
 			);
 			path = ModalTransition;
 			sourceTree = "<group>";

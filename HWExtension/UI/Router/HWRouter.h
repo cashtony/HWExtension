@@ -44,7 +44,6 @@ typedef NS_ENUM(NSInteger, HWRouteActionErrorDomain) {
     HWRouteActionErrorUnknown,
     HWRouteActionErrorAppRootVCNil,
     HWRouteActionErrorInvalidVCName,
-    HWRouteActionErrorModuleNotContainsVC,
 };
 
 @interface HWRouteOptions : NSObject

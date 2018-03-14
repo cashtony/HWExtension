@@ -1031,7 +1031,7 @@ CPTScatterPlotDataSource>
         __weak typeof(self) ws = self;
         self.interactionView = [[HWXYGraphInteractionView alloc]
                                 initWithFrame:self.bounds
-                                recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+                                interactiveHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
                                     __strong typeof(ws) ss = ws;
                                     
                                     if (ss.validLineCount == 0) return;

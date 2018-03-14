@@ -25,9 +25,9 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame recognizerWithHandler:(recognizerHandler)block {
+- (id)initWithFrame:(CGRect)frame interactiveHandler:(InteractiveHandler)handler {
     if (self = [super initWithFrame:frame]) {
-        self.recognizerHandler = block;
+        self.interactiveHandler = handler;
         [self setup];
     }
     return self;
@@ -43,15 +43,15 @@
     self.clearContex = YES;
 }
 
-- (void)setRecognizerHandler:(recognizerHandler)recognizerHandler {
-    if (_recognizerHandler != recognizerHandler) {
-        _recognizerHandler = nil;
-        _recognizerHandler = recognizerHandler;
+- (void)setInteractiveHandler:(InteractiveHandler)interactiveHandler {
+    if (_interactiveHandler != interactiveHandler) {
+        _interactiveHandler = nil;
+        _interactiveHandler = interactiveHandler;
     }
-    if (recognizerHandler) {
+    if (interactiveHandler) {
         if (!_longPrGestureRecognizer) {
             _longPrGestureRecognizer = [UILongPressGestureRecognizer gestureRecognizerWithHandler:^(__kindof UIGestureRecognizer *ges) {
-                performBlock(recognizerHandler, ges, ges.state, [ges locationInView:ges.view]);
+                performBlock(interactiveHandler, ges, ges.state, [ges locationInView:ges.view]);
             }];
             _longPrGestureRecognizer.minimumPressDuration = 0.1;
             _longPrGestureRecognizer.allowableMovement = 3.0;
