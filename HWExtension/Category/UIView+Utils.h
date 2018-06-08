@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (Utils)<CAAnimationDelegate>
+@interface UIView (Utils)
 
 /**
  * Shortcut for frame.origin.x.

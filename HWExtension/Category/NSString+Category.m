@@ -366,7 +366,7 @@
 
 - (NSString *)hw_stringByAddingPercentEncoding {
     if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 7.0) {
-        return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+        return [self stringByAddingPercentEncodingWithAllowedCharacters:[self.class URLComponentsAllowedCharacterSet]];
     } else {
         return [self stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     }
@@ -376,6 +376,113 @@
     NSString *string = [[self hw_stringByRemovingPercentEncoding] hw_stringByAddingPercentEncoding];
     NSURL *url = [NSURL URLWithString:string];
     return url;
+}
+
+#pragma mark -
+#pragma mark - private
+
++ (NSMutableCharacterSet *)URLComponentsAllowedCharacterSet {
+    NSMutableCharacterSet *set = [NSMutableCharacterSet characterSetWithCharactersInString:@""];
+    [set formUnionWithCharacterSet:[NSCharacterSet URLUserAllowedCharacterSet]];
+    [set formUnionWithCharacterSet:[NSCharacterSet URLPasswordAllowedCharacterSet]];
+    [set formUnionWithCharacterSet:[NSCharacterSet URLHostAllowedCharacterSet]];
+    [set formUnionWithCharacterSet:[NSCharacterSet URLPathAllowedCharacterSet]];
+    [set formUnionWithCharacterSet:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    [set formUnionWithCharacterSet:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    return set;
+}
+
+@end
+
+@implementation NSString (SQL)
+
+// SELECT
++ (NSString *(^)(NSString *, NSArray<NSString *> *))select {
+    return ^NSString *(NSString *table, NSArray<NSString *> *columns) {
+        NSString *columnsStr = [columns componentsJoinedByString:@","];
+        NSString *sql = [NSString stringWithFormat:@"SELECT %@ FROM %@", columnsStr.length ? columnsStr : @"*", table];
+        return sql;
+    };
+}
+
+// INSERT
++ (NSString *(^)(NSString *, NSDictionary <NSString *, id>*))insert {
+    
+    return ^NSString *(NSString *table, NSDictionary <NSString *, id>*keyValues) {
+        
+        if (!keyValues.count) return @"";
+        
+        NSArray *keys = keyValues.allKeys;
+        
+        NSString *columnsStr = [keys componentsJoinedByString:@","];
+        
+        NSMutableArray *values = [NSMutableArray array];
+        [keys enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [values addObject:keyValues[obj]];
+        }];
+        
+        NSString *valuesStr = [values componentsJoinedByString:@","];
+        
+        NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@ (%@) VALUES (%@)", table, columnsStr, valuesStr];
+        
+        return sql;
+    };
+}
+
+// UPDATE
++ (NSString *(^)(NSString *, NSDictionary <NSString *, id>*))update {
+    
+    return ^NSString *(NSString *table, NSDictionary <NSString *, id>*keyValues) {
+        
+        if (!keyValues.count) return @"";
+        
+        NSMutableString *setKeyValue = [NSMutableString string];
+        [keyValues enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            [setKeyValue appendFormat:@"%@=%@,", key, obj];
+        }];
+        
+        NSString *sql = [NSString stringWithFormat:@"UPDATE %@ SET %@", table, [setKeyValue substringToIndex:setKeyValue.length - 2]];
+        return sql;
+    };
+}
+
+// DELETE
++ (NSString *(^)(NSString *))delete {
+    return ^NSString *(NSString *table) {
+        return [NSString stringWithFormat:@"DELETE FROM %@", table];
+    };
+}
+
+#pragma mark -
+
+- (NSString *(^)(void))distinct {
+    return ^NSString *() {
+        return [self stringByReplacingOccurrencesOfString:@"SELECT " withString:@"SELECT DISTINCT "];
+    };
+}
+
+- (NSString *(^)(NSString *))where {
+    return ^NSString *(NSString *where) {
+        return where.length ? [self stringByAppendingFormat:@" WHERE %@", where] : self;
+    };
+}
+
+- (NSString *(^)(NSString *))and {
+    return ^NSString *(NSString *and) {
+        return and.length ? [self stringByAppendingFormat:@" AND %@", and] : self;
+    };
+}
+
+- (NSString *(^)(NSString *))or {
+    return ^NSString *(NSString *or) {
+        return or.length ? [self stringByAppendingFormat:@" OR %@", or] : self;
+    };
+}
+
+- (NSString *(^)(NSString *))orderBy {
+    return ^NSString *(NSString *orderBy) {
+        return orderBy.length ? [self stringByAppendingFormat:@" ORDER BY %@", orderBy] : self;
+    };
 }
 
 @end

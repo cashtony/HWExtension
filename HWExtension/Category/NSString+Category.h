@@ -130,3 +130,36 @@
 
 @end
 
+@interface NSString (SQL)
+
+// SELECT
+@property (readonly, class, copy) NSString *(^select)(NSString *table, NSArray <NSString *>*columns);
+
+// INSERT
+@property (readonly, class, copy) NSString *(^insert)(NSString *table, NSDictionary <NSString *, id>*keyValues);
+
+// UPDATE
+@property (readonly, class, copy) NSString *(^update)(NSString *table, NSDictionary <NSString *, id>*keyValues);
+
+// DELETE
+@property (readonly, class, copy) NSString *(^delete)(NSString *table);
+
+#pragma mark -
+
+// DISTINCT
+@property (nonatomic, copy, readonly) NSString *(^distinct)(void);
+
+// WHERE
+@property (nonatomic, copy, readonly) NSString *(^where)(NSString *where);
+
+// AND
+@property (nonatomic, copy, readonly) NSString *(^and)(NSString *and);
+
+// OR
+@property (nonatomic, copy, readonly) NSString *(^or)(NSString *or);
+
+// ORDER BY
+@property (nonatomic, copy, readonly) NSString *(^orderBy)(NSString *orderBy);
+
+@end
+
