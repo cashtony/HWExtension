@@ -394,12 +394,46 @@
 
 @end
 
-@implementation NSString (SQL)
+#pragma mark -
+
+HWSQLiteDataType const HWSQLiteDataTypeBool           = @"BOOLEAN";   // BOOL
+HWSQLiteDataType const HWSQLiteDataTypeInt            = @"INT";       // int
+HWSQLiteDataType const HWSQLiteDataTypeInteger        = @"INTEGER";   // NSInteger
+HWSQLiteDataType const HWSQLiteDataTypeLong           = @"BIGINT";    // long
+
+HWSQLiteDataType const HWSQLiteDataTypeDouble         = @"DOUBLE";    // double
+HWSQLiteDataType const HWSQLiteDataTypeReal           = @"REAL";      // double
+
+HWSQLiteDataType const HWSQLiteDataTypeNumber         = @"NUMERIC";   // NSNumber
+HWSQLiteDataType const HWSQLiteDataTypeDecimalNumber  = @"DECIMAL";   // NSDecimalNumber
+
+HWSQLiteDataType const HWSQLiteDataTypeChar           = @"CHAR";      // char
+HWSQLiteDataType const HWSQLiteDataTypeString         = @"STRING";    // NSString
+HWSQLiteDataType const HWSQLiteDataTypeText           = @"TEXT";      // NSString;
+HWSQLiteDataType const HWSQLiteDataTypeMutableString  = @"VARCHAR";   // NSMutableString
+
+HWSQLiteDataType const HWSQLiteDataTypeData           = @"BLOB";      // NSData
+
+HWSQLiteDataType const HWSQLiteDataTypeDate           = @"DATE";      // NSDate e.g.YYYY-MM-dd
+HWSQLiteDataType const HWSQLiteDataTypeTime           = @"TIME";      // NSDate e.g.HH:mm:ss
+HWSQLiteDataType const HWSQLiteDataTypeDateTime       = @"DATETIME";  // NSDate e.g.YYYY-MM-dd HH:mm:ss
+
+@implementation NSString (SQLite)
+
+#pragma mark -
+#pragma mark - creat/insert/delete/select/update
+
+// CREATE TABLE
++ (NSString *(^)(NSString *, NSArray <NSString *>*))creatTable {
+    return ^NSString *(NSString *table, NSArray <HWDBColumnInfo>*columnInfos) {
+        return [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (%@)", table, [columnInfos componentsJoinedByString:@", "]];
+    };
+}
 
 // SELECT
 + (NSString *(^)(NSString *, NSArray<NSString *> *))select {
     return ^NSString *(NSString *table, NSArray<NSString *> *columns) {
-        NSString *columnsStr = [columns componentsJoinedByString:@","];
+        NSString *columnsStr = [columns componentsJoinedByString:@", "];
         NSString *sql = [NSString stringWithFormat:@"SELECT %@ FROM %@", columnsStr.length ? columnsStr : @"*", table];
         return sql;
     };
@@ -414,14 +448,14 @@
         
         NSArray *keys = keyValues.allKeys;
         
-        NSString *columnsStr = [keys componentsJoinedByString:@","];
+        NSString *columnsStr = [keys componentsJoinedByString:@", "];
         
         NSMutableArray *values = [NSMutableArray array];
         [keys enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [values addObject:keyValues[obj]];
         }];
         
-        NSString *valuesStr = [values componentsJoinedByString:@","];
+        NSString *valuesStr = [values componentsJoinedByString:@", "];
         
         NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@ (%@) VALUES (%@)", table, columnsStr, valuesStr];
         
@@ -441,7 +475,7 @@
             [setKeyValue appendFormat:@"%@=%@,", key, obj];
         }];
         
-        NSString *sql = [NSString stringWithFormat:@"UPDATE %@ SET %@", table, [setKeyValue substringToIndex:setKeyValue.length - 2]];
+        NSString *sql = [NSString stringWithFormat:@"UPDATE %@ SET %@", table, [setKeyValue substringToIndex:setKeyValue.length - 1]];
         return sql;
     };
 }
@@ -453,37 +487,161 @@
     };
 }
 
-#pragma mark -
+#pragma mark - functions
 
-- (NSString *(^)(void))distinct {
-    return ^NSString *() {
-        return [self stringByReplacingOccurrencesOfString:@"SELECT " withString:@"SELECT DISTINCT "];
+// AVG
++ (NSString *(^)(NSString *, NSString *))avg {
+    return ^NSString *(NSString *table, NSString *column) {
+        return [NSString stringWithFormat:@"SELECT AVG(%@) FROM %@", column, table];
     };
 }
 
+// MIN
++ (NSString *(^)(NSString *, NSString *))min {
+    return ^NSString *(NSString *table, NSString *column) {
+        return [NSString stringWithFormat:@"SELECT MIN(%@) FROM %@", column, table];
+    };
+}
+
+// MAX
++ (NSString *(^)(NSString *, NSString *))max {
+    return ^NSString *(NSString *table, NSString *column) {
+        return [NSString stringWithFormat:@"SELECT MAX(%@) FROM %@", column, table];
+    };
+}
+
+// SUM
++ (NSString *(^)(NSString *, NSString *))sum {
+    return ^NSString *(NSString *table, NSString *column) {
+        return [NSString stringWithFormat:@"SELECT SUM(%@) FROM %@", column, table];
+    };
+}
+
+// COUNT
++ (NSString *(^)(NSString *, NSString *))count {
+    return ^NSString *(NSString *table, NSString *column) {
+        return [NSString stringWithFormat:@"SELECT COUNT(%@) FROM %@", column, table];
+    };
+}
+
+// COUNT DISTINCT
++ (NSString *(^)(NSString *, NSString *))countDistinct {
+    return ^NSString *(NSString *table, NSString *column) {
+        return [NSString stringWithFormat:@"SELECT COUNT(DISTINCT %@) FROM %@", column, table];
+    };
+}
+
+// FIRST
++ (NSString *(^)(NSString *, NSString *))first {
+    return ^NSString *(NSString *table, NSString *column) {
+        return [NSString stringWithFormat:@"SELECT FIRST(%@) FROM %@", column, table];
+    };
+}
+
+// LAST
++ (NSString *(^)(NSString *, NSString *))last {
+    return ^NSString *(NSString *table, NSString *column) {
+        return [NSString stringWithFormat:@"SELECT LAST(%@) FROM %@", column, table];
+    };
+}
+
+#pragma mark - condition
+
+// DISTINCT
+- (NSString *(^)(void))distinct {
+    return ^NSString *() {
+        if ([self.uppercaseString hasPrefix:@"SELECT "]) {
+            return [self stringByReplacingOccurrencesOfString:@"SELECT " withString:@"SELECT DISTINCT "];
+        }
+        return self;
+    };
+}
+
+// WHERE
 - (NSString *(^)(NSString *))where {
     return ^NSString *(NSString *where) {
         return where.length ? [self stringByAppendingFormat:@" WHERE %@", where] : self;
     };
 }
 
+// ALIAS
+- (NSString *(^)(NSString *))alias {
+    return ^NSString *(NSString *alias) {
+        return alias.length ? [self stringByAppendingFormat:@" AS %@", alias] : self;
+    };
+}
+
+// AND
 - (NSString *(^)(NSString *))and {
     return ^NSString *(NSString *and) {
         return and.length ? [self stringByAppendingFormat:@" AND %@", and] : self;
     };
 }
 
+// OR
 - (NSString *(^)(NSString *))or {
     return ^NSString *(NSString *or) {
         return or.length ? [self stringByAppendingFormat:@" OR %@", or] : self;
     };
 }
 
+// ORDER BY
 - (NSString *(^)(NSString *))orderBy {
     return ^NSString *(NSString *orderBy) {
         return orderBy.length ? [self stringByAppendingFormat:@" ORDER BY %@", orderBy] : self;
     };
 }
 
-@end
+// GROUP BY
+- (NSString *(^)(NSString *))groupBy {
+    return ^NSString *(NSString *groupBy) {
+        return groupBy.length ? [self stringByAppendingFormat:@" GROUP BY %@", groupBy] : self;
+    };
+}
 
+// HAVING
+- (NSString *(^)(NSString *))having {
+    return ^NSString *(NSString *having) {
+        return having.length ? [self stringByAppendingFormat:@" HAVING %@", having] : self;
+    };
+}
+
+// LIMIT
+- (NSString *(^)(NSUInteger))limit {
+    return ^NSString *(NSUInteger limit) {
+        return [self stringByAppendingFormat:@" LIMIT %@", @(limit)];
+    };
+}
+
+// LIKE
+- (NSString *(^)(NSString *))like {
+    return ^NSString *(NSString *like) {
+        return like.length ? [self stringByAppendingFormat:@" LIKE %@", like] : self;
+    };
+}
+
+// IN
+- (NSString *(^)(NSArray *))in {
+    return ^NSString *(NSArray *values) {
+        if (!values.count) return self;
+        return [self stringByAppendingFormat:@" IN (%@)", [values componentsJoinedByString:@", "]];
+    };
+}
+
+// BETWEEN
+- (NSString *(^)(NSString *, NSString *))between {
+    return ^NSString *(NSString *low, NSString *high) {
+        if (!low.length && !high.length) return self;
+        return [self stringByAppendingFormat:@" BETWEEN %@ AND %@", low, high];
+    };
+}
+
+// NOT BETWEEN
+- (NSString *(^)(NSString *, NSString *))notBetween {
+    return ^NSString *(NSString *low, NSString *high) {
+        if (!low.length && !high.length) return self;
+        return [self stringByAppendingFormat:@" NOT BETWEEN %@ AND %@", low, high];
+    };
+}
+
+@end

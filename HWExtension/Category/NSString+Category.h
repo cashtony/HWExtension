@@ -130,7 +130,43 @@
 
 @end
 
-@interface NSString (SQL)
+typedef NSString *HWDBColumnInfo;
+typedef NSString *HWSQLiteDataType NS_EXTENSIBLE_STRING_ENUM;
+
+#define HWDBColumnInfo(columnName, dataType) ((HWDBColumnInfo)[NSString stringWithFormat:@"%@ %@", columnName, dataType])
+
+/*
+ *  SQLite data types
+ */
+extern HWSQLiteDataType const HWSQLiteDataTypeBool;             // BOOL
+extern HWSQLiteDataType const HWSQLiteDataTypeInt;              // int
+extern HWSQLiteDataType const HWSQLiteDataTypeInteger;          // NSInteger
+extern HWSQLiteDataType const HWSQLiteDataTypeLong;             // long
+
+extern HWSQLiteDataType const HWSQLiteDataTypeDouble;           // double
+extern HWSQLiteDataType const HWSQLiteDataTypeReal;             // double
+
+extern HWSQLiteDataType const HWSQLiteDataTypeNumber;           // NSNumber
+extern HWSQLiteDataType const HWSQLiteDataTypeDecimalNumber;    // NSDecimalNumber
+
+extern HWSQLiteDataType const HWSQLiteDataTypeChar;             // char
+extern HWSQLiteDataType const HWSQLiteDataTypeString;           // NSString
+extern HWSQLiteDataType const HWSQLiteDataTypeText;             // NSString
+extern HWSQLiteDataType const HWSQLiteDataTypeMutableString;    // NSMutableString
+
+extern HWSQLiteDataType const HWSQLiteDataTypeData;             // NSData
+
+extern HWSQLiteDataType const HWSQLiteDataTypeDate;             // NSDate e.g.YYYY-MM-dd
+extern HWSQLiteDataType const HWSQLiteDataTypeTime;             // NSDate e.g.HH:mm:ss
+extern HWSQLiteDataType const HWSQLiteDataTypeDateTime;         // NSDate e.g.YYYY-MM-dd HH:mm:ss
+
+@interface NSString (SQLite)
+
+#pragma mark -
+#pragma mark - creat/insert/delete/select/update
+
+// CREATE TABLE
+@property (readonly, class, copy) NSString *(^creatTable)(NSString *table, NSArray <HWDBColumnInfo>*columnInfos);
 
 // SELECT
 @property (readonly, class, copy) NSString *(^select)(NSString *table, NSArray <NSString *>*columns);
@@ -144,13 +180,43 @@
 // DELETE
 @property (readonly, class, copy) NSString *(^delete)(NSString *table);
 
-#pragma mark -
+
+#pragma mark - functions
+
+// AVG
+@property (readonly, class, copy) NSString *(^avg)(NSString *table, NSString *column);
+
+// MIN
+@property (readonly, class, copy) NSString *(^min)(NSString *table, NSString *column);
+
+// MAX
+@property (readonly, class, copy) NSString *(^max)(NSString *table, NSString *column);
+
+// SUM
+@property (readonly, class, copy) NSString *(^sum)(NSString *table, NSString *column);
+
+// COUNT
+@property (readonly, class, copy) NSString *(^count)(NSString *table, NSString *column);
+
+// COUNT DISTINCT
+@property (readonly, class, copy) NSString *(^countDistinct)(NSString *table, NSString *column);
+
+// FIRST
+@property (readonly, class, copy) NSString *(^first)(NSString *table, NSString *column);
+
+// LAST
+@property (readonly, class, copy) NSString *(^last)(NSString *table, NSString *column);
+
+#pragma mark - condition
 
 // DISTINCT
 @property (nonatomic, copy, readonly) NSString *(^distinct)(void);
 
 // WHERE
 @property (nonatomic, copy, readonly) NSString *(^where)(NSString *where);
+
+// ALIAS
+@property (nonatomic, copy, readonly) NSString *(^alias)(NSString *alias);
 
 // AND
 @property (nonatomic, copy, readonly) NSString *(^and)(NSString *and);
@@ -161,5 +227,25 @@
 // ORDER BY
 @property (nonatomic, copy, readonly) NSString *(^orderBy)(NSString *orderBy);
 
-@end
+// GROUP BY
+@property (nonatomic, copy, readonly) NSString *(^groupBy)(NSString *groupBy);
 
+// HAVING
+@property (nonatomic, copy, readonly) NSString *(^having)(NSString *having);
+
+// LIMIT
+@property (nonatomic, copy, readonly) NSString *(^limit)(NSUInteger limit);
+
+// LIKE
+@property (nonatomic, copy, readonly) NSString *(^like)(NSString *like);
+
+// IN
+@property (nonatomic, copy, readonly) NSString *(^in)(NSArray *values);
+
+// BETWEEN
+@property (nonatomic, copy, readonly) NSString *(^between)(NSString *low, NSString *high);
+
+// NOT BETWEEN
+@property (nonatomic, copy, readonly) NSString *(^notBetween)(NSString *low, NSString *high);
+
+@end

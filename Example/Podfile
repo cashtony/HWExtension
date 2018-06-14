@@ -7,11 +7,11 @@ install! 'cocoapods', :deterministic_uuids => false
 
 target 'HWExtension_Example' do
   pod 'HWExtension', :path => '../'
+  
+  # pod list:
 
   target 'HWExtension_Tests' do
     inherit! :search_paths
-    
-    #   pod list:
     
   end
 end
