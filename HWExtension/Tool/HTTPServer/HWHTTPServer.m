@@ -1,27 +1,27 @@
 //
-//  BIHTTPServer.m
+//  HWHTTPServer.m
 //  Test
 //
 //  Created by Wang,Houwen on 2019/8/3.
 //  Copyright © 2019 Wang,Houwen. All rights reserved.
 //
 
-#import "BIHTTPServer.h"
+#import "HWHTTPServer.h"
 #import <HTTPFileResponse.h>
 #import <objc/message.h>
 #import <DAVConnection.h>
 
-NSString *BIHTTPServerConnectionChangedNotification = @"BIHTTPServerConnectionChangedNotification";
-typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *request, GCDAsyncSocket *socket);
+NSString *HWHTTPServerConnectionChangedNotification = @"HWHTTPServerConnectionChangedNotification";
+typedef WebSocket * (^HWWebSocketSupplierBlock)(NSString *URI, HTTPMessage *request, GCDAsyncSocket *socket);
 
-@interface BIHTTPConnection : HTTPConnection
+@interface HWHTTPConnection : HTTPConnection
 
 @property (class, nonatomic, strong) NSMutableOrderedSet<BOOL (^)(NSString *key)> *shouldResponseBlocks;
-@property (class, nonatomic, strong) NSMutableDictionary<NSString *, BIHTTPServerResponderBlock> *responderMap;
+@property (class, nonatomic, strong) NSMutableDictionary<NSString *, HWHTTPServerResponderBlock> *responderMap;
 
 @end
 
-@implementation BIHTTPConnection
+@implementation HWHTTPConnection
 
 @dynamic responderMap;
 @dynamic shouldResponseBlocks;
@@ -29,7 +29,7 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
     __weak typeof(self) ws = self;
     __block NSObject<HTTPResponse> *res = nil;
-    [self.class.responderMap enumerateKeysAndObjectsUsingBlock:^(NSString *key, BIHTTPServerResponderBlock responder, BOOL *stopResponder) {
+    [self.class.responderMap enumerateKeysAndObjectsUsingBlock:^(NSString *key, HWHTTPServerResponderBlock responder, BOOL *stopResponder) {
         [ws.class.shouldResponseBlocks enumerateObjectsUsingBlock:^(BOOL (^obj)(NSString *), NSUInteger idx, BOOL *stop) {
             if (obj(key)) {
                 res = responder([self valueForKey:@"request"]);
@@ -41,7 +41,7 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
     return res;
 }
 
-+ (NSMutableDictionary<NSString *, BIHTTPServerResponderBlock> *)responderMap {
++ (NSMutableDictionary<NSString *, HWHTTPServerResponderBlock> *)responderMap {
     static NSMutableDictionary *map = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -61,29 +61,29 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
 
 - (void)start {
     [super start];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BIHTTPServerConnectionChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:HWHTTPServerConnectionChangedNotification object:nil];
 }
 
 - (void)stop {
     [super stop];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BIHTTPServerConnectionChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:HWHTTPServerConnectionChangedNotification object:nil];
 }
 
 - (void)die {
     [super die];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BIHTTPServerConnectionChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:HWHTTPServerConnectionChangedNotification object:nil];
 }
 
 @end
 
-@interface BIHTTPWebSocketConnection : HTTPConnection
+@interface HWHTTPWebSocketConnection : HTTPConnection
 
 @property (class, nonatomic, strong) NSMutableOrderedSet<BOOL (^)(NSString *key)> *shouldSupplierWebSocketBlocks;
-@property (class, nonatomic, strong) NSMutableDictionary<NSString *, BIWebSocketSupplierBlock> *webSocketSupplierMap;
+@property (class, nonatomic, strong) NSMutableDictionary<NSString *, HWWebSocketSupplierBlock> *webSocketSupplierMap;
 
 @end
 
-@implementation BIHTTPWebSocketConnection
+@implementation HWHTTPWebSocketConnection
 
 @dynamic shouldSupplierWebSocketBlocks;
 @dynamic webSocketSupplierMap;
@@ -91,7 +91,7 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
 - (WebSocket *)webSocketForURI:(NSString *)path {
     __weak typeof(self) ws = self;
     __block WebSocket *webSocket = nil;
-    [self.class.webSocketSupplierMap enumerateKeysAndObjectsUsingBlock:^(NSString *key, BIWebSocketSupplierBlock supplier, BOOL *stopResponder) {
+    [self.class.webSocketSupplierMap enumerateKeysAndObjectsUsingBlock:^(NSString *key, HWWebSocketSupplierBlock supplier, BOOL *stopResponder) {
         [ws.class.shouldSupplierWebSocketBlocks enumerateObjectsUsingBlock:^(BOOL (^obj)(NSString *), NSUInteger idx, BOOL *stop) {
             if (obj(key)) {
                 webSocket = supplier(path, [self valueForKey:@"request"], [self valueForKey:@"asyncSocket"]);
@@ -103,7 +103,7 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
     return webSocket;
 }
 
-+ (NSMutableDictionary<NSString *, BIWebSocketSupplierBlock> *)webSocketSupplierMap {
++ (NSMutableDictionary<NSString *, HWWebSocketSupplierBlock> *)webSocketSupplierMap {
     static NSMutableDictionary *map = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -123,48 +123,48 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
 
 - (void)start {
     [super start];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BIHTTPServerConnectionChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:HWHTTPServerConnectionChangedNotification object:nil];
 }
 
 - (void)stop {
     [super stop];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BIHTTPServerConnectionChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:HWHTTPServerConnectionChangedNotification object:nil];
 }
 
 - (void)die {
     [super die];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BIHTTPServerConnectionChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:HWHTTPServerConnectionChangedNotification object:nil];
 }
 
 @end
 
 #pragma mark - servers
 
-@interface BIHTTPServer ()
+@interface HWHTTPServer ()
 @property (nonatomic, strong) HTTPServer *httpServer;
 @property (nonatomic, assign) UInt16 port;
 @property (nonatomic, copy) NSString *type;
-@property (nonatomic, copy) BIHTTPServerResponderBlock responder;
+@property (nonatomic, copy) HWHTTPServerResponderBlock responder;
 
 @end
 
-@implementation BIHTTPServer
+@implementation HWHTTPServer
 
-+ (instancetype)serverWithPort:(UInt16)port type:(NSString *)type responder:(BIHTTPServerResponderBlock)responder {
++ (instancetype)serverWithPort:(UInt16)port type:(NSString *)type responder:(HWHTTPServerResponderBlock)responder {
     NSAssert(responder, @"can not set a nil responder");
     
-    BIHTTPServer *ser = [[self alloc] init];
+    HWHTTPServer *ser = [[self alloc] init];
     ser.responder = responder;
     ser.httpServer = [[HTTPServer alloc] init];
     ser.type = type;
     ser.port = port;
 
     NSString *iden = [NSString stringWithFormat:@"%p", ser];
-    BIHTTPConnection.responderMap[iden] = responder;
-    [BIHTTPConnection.shouldResponseBlocks addObject:^BOOL(NSString *key) {
+    HWHTTPConnection.responderMap[iden] = responder;
+    [HWHTTPConnection.shouldResponseBlocks addObject:^BOOL(NSString *key) {
         return [key isEqualToString:iden];
     }];
-    [ser.httpServer setConnectionClass:[BIHTTPConnection class]];
+    [ser.httpServer setConnectionClass:[HWHTTPConnection class]];
 
     return ser;
 }
@@ -218,14 +218,14 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
 
 @end
 
-@interface BIHTTPWebServer ()
+@interface HWHTTPWebServer ()
 
 @property (nonatomic, copy) NSString *docRoot;
-@property (nonatomic, copy) BIHTTPWebServerMsgHandlerBlock msgHandler;
+@property (nonatomic, copy) HWHTTPWebServerMsgHandlerBlock msgHandler;
 
 @end
 
-@implementation BIHTTPWebServer
+@implementation HWHTTPWebServer
 
 - (void)dealloc{
     
@@ -234,9 +234,9 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
 + (instancetype)serverWithPort:(UInt16)port
                           type:(NSString *)type
                        docRoot:(NSString *)root
-                    msgHandler:(BIHTTPWebServerMsgHandlerBlock)msgHandler {
+                    msgHandler:(HWHTTPWebServerMsgHandlerBlock)msgHandler {
     
-    __block BIHTTPWebServer *ser = [super serverWithPort:port
+    __block HWHTTPWebServer *ser = [super serverWithPort:port
                                                     type:(NSString *)type
                                                responder:^NSObject<HTTPResponse> *(HTTPMessage *request) {
         return nil;
@@ -244,7 +244,7 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
     ser.msgHandler = msgHandler;
     ser.docRoot = [root copy];
     
-    BIWebSocketSupplierBlock supplierBlock = ^WebSocket *(NSString *URI, HTTPMessage *request, GCDAsyncSocket *socket) {
+    HWWebSocketSupplierBlock supplierBlock = ^WebSocket *(NSString *URI, HTTPMessage *request, GCDAsyncSocket *socket) {
         if ([URI hasPrefix:[@"/" stringByAppendingString:root.lastPathComponent]]) {
             WebSocket *ws = [[WebSocket alloc] initWithRequest:request socket:socket];
             ws.delegate = ser;
@@ -255,12 +255,12 @@ typedef WebSocket * (^BIWebSocketSupplierBlock)(NSString *URI, HTTPMessage *requ
     };
 
     NSString *iden = [NSString stringWithFormat:@"%p", ser];
-    BIHTTPWebSocketConnection.webSocketSupplierMap[iden] = supplierBlock;
-    [BIHTTPWebSocketConnection.shouldSupplierWebSocketBlocks addObject:^BOOL(NSString *key) {
+    HWHTTPWebSocketConnection.webSocketSupplierMap[iden] = supplierBlock;
+    [HWHTTPWebSocketConnection.shouldSupplierWebSocketBlocks addObject:^BOOL(NSString *key) {
         return [key isEqualToString:iden];
     }];
     
-    [ser.httpServer setConnectionClass:[BIHTTPWebSocketConnection class]];
+    [ser.httpServer setConnectionClass:[HWHTTPWebSocketConnection class]];
     return ser;
 }
 

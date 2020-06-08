@@ -9,7 +9,7 @@
 #import "ServerMangerViewController.h"
 #import <ifaddrs.h>
 #import <arpa/inet.h>
-#import "BIHTTPServerManager.h"
+#import "HWHTTPServerManager.h"
 #import <GCDAsyncSocket.h>
 
 @interface ManagerHeaderView : UITableViewHeaderFooterView
@@ -51,7 +51,7 @@
 
 @interface ServerMangerViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, copy) NSOrderedSet<BIHTTPServer *> *servers;
+@property (nonatomic, copy) NSOrderedSet<HWHTTPServer *> *servers;
 @end
 
 @implementation ServerMangerViewController
@@ -65,7 +65,7 @@
     [self initUI];
     [self reload];
     __weak typeof(self) ws = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:BIHTTPServerConnectionChangedNotification
+    [[NSNotificationCenter defaultCenter] addObserverForName:HWHTTPServerConnectionChangedNotification
                                                       object:nil
                                                        queue:[NSOperationQueue mainQueue]
                                                   usingBlock:^(NSNotification *note) {
@@ -95,7 +95,7 @@
 
 - (void)reload {
     self.title = [NSString stringWithFormat:@"IP : %@", [self getIpAddresses]];
-    _servers = [BIHTTPServerManager manager].servers;
+    _servers = [HWHTTPServerManager manager].servers;
     [_tableView reloadData];
 }
 
@@ -104,21 +104,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    BIHTTPServer *server = _servers[section];
-    return [server isKindOfClass:[BIHTTPWebServer class]] ? ((BIHTTPWebServer *)server).webSockets.count : server.connections.count;
+    HWHTTPServer *server = _servers[section];
+    return [server isKindOfClass:[HWHTTPWebServer class]] ? ((HWHTTPWebServer *)server).webSockets.count : server.connections.count;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    BIHTTPServer *server = _servers[section];
+    HWHTTPServer *server = _servers[section];
     ManagerHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"HeaderId"];
     view.textLabel.text = [NSString stringWithFormat:@"%@ : %hu", server.name, server.listeningPort];
-    NSInteger count = [server isKindOfClass:[BIHTTPWebServer class]] ? ((BIHTTPWebServer *)server).webSockets.count : server.connections.count;
+    NSInteger count = [server isKindOfClass:[HWHTTPWebServer class]] ? ((HWHTTPWebServer *)server).webSockets.count : server.connections.count;
     view.detailTextLabel.text = [NSString stringWithFormat:@"连接数 %ld", count];
     view.swith.on = server.isRunning;
 
     __weak typeof(self) ws = self;
     view.swithBlock = ^(ManagerHeaderView *view, BOOL isOn) {
-        BIHTTPServer *server = ws.servers[section];
+        HWHTTPServer *server = ws.servers[section];
 
         if (isOn && !server.isRunning) {
             [server start:nil];
@@ -134,12 +134,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ManagerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId"];
-    BIHTTPServer *server = _servers[indexPath.section];
-    if ([server isKindOfClass:[BIHTTPWebServer class]]) {
-        WebSocket *ws = ((BIHTTPWebServer *)server).webSockets[indexPath.row];
+    HWHTTPServer *server = _servers[indexPath.section];
+    if ([server isKindOfClass:[HWHTTPWebServer class]]) {
+        WebSocket *ws = ((HWHTTPWebServer *)server).webSockets[indexPath.row];
         GCDAsyncSocket *socket = [ws valueForKey:@"asyncSocket"];
         cell.textLabel.text = [NSString stringWithFormat:@"%@ : %hu", socket.connectedHost, socket.connectedPort];
-    } else if ([server isKindOfClass:[BIHTTPServer class]]) {
+    } else if ([server isKindOfClass:[HWHTTPServer class]]) {
         HTTPConnection *cnt = server.connections[indexPath.row];
         GCDAsyncSocket *socket = [cnt valueForKey:@"asyncSocket"];
         cell.textLabel.text = [NSString stringWithFormat:@"%@ : %hu", socket.connectedHost, socket.connectedPort];

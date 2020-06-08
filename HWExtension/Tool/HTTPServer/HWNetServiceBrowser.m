@@ -1,43 +1,43 @@
 //
-//  BINetServiceBrowser.m
-//  BILogUpload
+//  HWNetServiceBrowser.m
+//  HWExtension
 //
 //  Created by Wang,Houwen on 2019/11/17.
 //  Copyright © 2019 Wang,Houwen. All rights reserved.
 //
 
-#import "BINetServiceBrowser.h"
+#import "HWNetServiceBrowser.h"
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <net/if.h>
 #include <ifaddrs.h>
 #import <dlfcn.h>
 
-@interface BIScanningHandler : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate>
+@interface HWScanningHandler : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate>
 
 @property (nonatomic, strong) NSNetServiceBrowser *browser;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *domain;
 @property (nonatomic, assign) NSTimeInterval timeout;
 
-@property (nonatomic, copy) void (^willSearch)(BIScanningHandler *handler);
-@property (nonatomic, copy) void (^didStopSearch)(BIScanningHandler *handler);
-@property (nonatomic, copy) void (^didNotSearch)(BIScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error);
+@property (nonatomic, copy) void (^willSearch)(HWScanningHandler *handler);
+@property (nonatomic, copy) void (^didStopSearch)(HWScanningHandler *handler);
+@property (nonatomic, copy) void (^didNotSearch)(HWScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error);
 
-@property (nonatomic, copy) void (^didFindDomain)(BIScanningHandler *handler, NSString *domain, BOOL moreComing);
-@property (nonatomic, copy) void (^didFindService)(BIScanningHandler *handler, NSNetService *service, BOOL moreComing);
-@property (nonatomic, copy) void (^didRemoveDomain)(BIScanningHandler *handler, NSString *domain, BOOL moreComing);
-@property (nonatomic, copy) void (^didRemoveService)(BIScanningHandler *handler, NSNetService *service, BOOL moreComing);
+@property (nonatomic, copy) void (^didFindDomain)(HWScanningHandler *handler, NSString *domain, BOOL moreComing);
+@property (nonatomic, copy) void (^didFindService)(HWScanningHandler *handler, NSNetService *service, BOOL moreComing);
+@property (nonatomic, copy) void (^didRemoveDomain)(HWScanningHandler *handler, NSString *domain, BOOL moreComing);
+@property (nonatomic, copy) void (^didRemoveService)(HWScanningHandler *handler, NSNetService *service, BOOL moreComing);
 
-@property (nonatomic, copy) void (^willResolveAddress)(BIScanningHandler *handler, NSNetService *service);
-@property (nonatomic, copy) void (^didResolveAddress)(BIScanningHandler *handler, NSNetService *service);
-@property (nonatomic, copy) void (^didNotResolve)(BIScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error);
+@property (nonatomic, copy) void (^willResolveAddress)(HWScanningHandler *handler, NSNetService *service);
+@property (nonatomic, copy) void (^didResolveAddress)(HWScanningHandler *handler, NSNetService *service);
+@property (nonatomic, copy) void (^didNotResolve)(HWScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error);
 
-@property (nonatomic, copy) void (^didFinish)(BIScanningHandler *handler);
+@property (nonatomic, copy) void (^didFinish)(HWScanningHandler *handler);
 
 @end
 
-@implementation BIScanningHandler
+@implementation HWScanningHandler
 
 - (void)servicesScanning {
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:_timeout]];
@@ -144,34 +144,34 @@
 
 @end
 
-@interface BINetServiceBrowser ()
-@property (nonatomic, strong) NSMutableSet<BIScanningHandler *> *serviceHandlers;
-@property (nonatomic, strong) NSMutableSet<BIScanningHandler *> *domainHandlers;
+@interface HWNetServiceBrowser ()
+@property (nonatomic, strong) NSMutableSet<HWScanningHandler *> *serviceHandlers;
+@property (nonatomic, strong) NSMutableSet<HWScanningHandler *> *domainHandlers;
 @end
 
-@implementation BINetServiceBrowser
+@implementation HWNetServiceBrowser
 
 - (NSString *)searchForBrowsableDomainsWithTimeout:(NSTimeInterval)timeout
-                                        willSearch:(void (^)(BINetServiceBrowser *browser))willSearch
-                                     didStopSearch:(void (^)(BINetServiceBrowser *browser))didStopSearch
-                                      didNotSearch:(void (^)(BINetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error))didNotSearch
-                                     didFindDomain:(void (^)(BINetServiceBrowser *browser, NSString *domain, BOOL moreComing))didFindDomain
-                                         didFinish:(void (^)(BINetServiceBrowser *browser))didFinish {
-    BIScanningHandler *handler = [BIScanningHandler new];
+                                        willSearch:(void (^)(HWNetServiceBrowser *browser))willSearch
+                                     didStopSearch:(void (^)(HWNetServiceBrowser *browser))didStopSearch
+                                      didNotSearch:(void (^)(HWNetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error))didNotSearch
+                                     didFindDomain:(void (^)(HWNetServiceBrowser *browser, NSString *domain, BOOL moreComing))didFindDomain
+                                         didFinish:(void (^)(HWNetServiceBrowser *browser))didFinish {
+    HWScanningHandler *handler = [HWScanningHandler new];
     __weak typeof(self) ws = self;
-    handler.willSearch = ^(BIScanningHandler *handler) {
+    handler.willSearch = ^(HWScanningHandler *handler) {
         !willSearch ?: willSearch(ws);
     };
-    handler.didStopSearch = ^(BIScanningHandler *handler) {
+    handler.didStopSearch = ^(HWScanningHandler *handler) {
         !didStopSearch ?: didStopSearch(ws);
     };
-    handler.didNotSearch = ^(BIScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error) {
+    handler.didNotSearch = ^(HWScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error) {
         !didNotSearch ?: didNotSearch(ws, error);
     };
-    handler.didFindDomain = ^(BIScanningHandler *handler, NSString *domain, BOOL moreComing) {
+    handler.didFindDomain = ^(HWScanningHandler *handler, NSString *domain, BOOL moreComing) {
         !didFindDomain ?: didFindDomain(ws, domain, moreComing);
     };
-    handler.didFinish = ^(BIScanningHandler *hd) {
+    handler.didFinish = ^(HWScanningHandler *hd) {
         [ws.domainHandlers removeObject:hd];
         !didFinish ?: didFinish(ws);
     };
@@ -192,36 +192,36 @@
 - (NSArray<NSString *> *)searchForServicesOfTypes:(NSArray<NSString *> *)types
                                          inDomain:(NSString *)domain
                                           timeout:(NSTimeInterval)timeout
-                                       willSearch:(void (^)(BINetServiceBrowser *browser))willSearch
-                                    didStopSearch:(void (^)(BINetServiceBrowser *browser))didStopSearch
-                                     didNotSearch:(void (^)(BINetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error))didNotSearch
-                                   didFindService:(void (^)(BINetServiceBrowser *browser, NSNetService *service, BOOL moreComing))didFindService
-                               willResolveAddress:(void (^)(BINetServiceBrowser *browser, NSNetService *service))willResolveAddress
-                                didResolveAddress:(void (^)(BINetServiceBrowser *browser, NSNetService *service, NSString *IP))didResolveAddress
-                                    didNotResolve:(void (^)(BINetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error))didNotResolve
-                                        didFinish:(void (^)(BINetServiceBrowser *browser))didFinish {
+                                       willSearch:(void (^)(HWNetServiceBrowser *browser))willSearch
+                                    didStopSearch:(void (^)(HWNetServiceBrowser *browser))didStopSearch
+                                     didNotSearch:(void (^)(HWNetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error))didNotSearch
+                                   didFindService:(void (^)(HWNetServiceBrowser *browser, NSNetService *service, BOOL moreComing))didFindService
+                               willResolveAddress:(void (^)(HWNetServiceBrowser *browser, NSNetService *service))willResolveAddress
+                                didResolveAddress:(void (^)(HWNetServiceBrowser *browser, NSNetService *service, NSString *IP))didResolveAddress
+                                    didNotResolve:(void (^)(HWNetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error))didNotResolve
+                                        didFinish:(void (^)(HWNetServiceBrowser *browser))didFinish {
     NSMutableArray *idens = [NSMutableArray array];
     for (NSString *type in types) {
-        BIScanningHandler *handler = [BIScanningHandler new];
+        HWScanningHandler *handler = [HWScanningHandler new];
         __weak typeof(self) ws = self;
-        handler.willSearch = ^(BIScanningHandler *handler) {
+        handler.willSearch = ^(HWScanningHandler *handler) {
             !willSearch ?: willSearch(ws);
         };
-        handler.didStopSearch = ^(BIScanningHandler *handler) {
+        handler.didStopSearch = ^(HWScanningHandler *handler) {
             !didStopSearch ?: didStopSearch(ws);
         };
-        handler.didNotSearch = ^(BIScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error) {
+        handler.didNotSearch = ^(HWScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error) {
             !didNotSearch ?: didNotSearch(ws, error);
         };
 
-        handler.didFindService = ^(BIScanningHandler *handler, NSNetService *service, BOOL moreComing) {
+        handler.didFindService = ^(HWScanningHandler *handler, NSNetService *service, BOOL moreComing) {
             !didFindService ?: didFindService(ws, service, moreComing);
         };
 
-        handler.willResolveAddress = ^(BIScanningHandler *handler, NSNetService *service) {
+        handler.willResolveAddress = ^(HWScanningHandler *handler, NSNetService *service) {
             !willResolveAddress ?: willResolveAddress(ws, service);
         };
-        handler.didResolveAddress = ^(BIScanningHandler *handler, NSNetService *service) {
+        handler.didResolveAddress = ^(HWScanningHandler *handler, NSNetService *service) {
             NSData *address = [service.addresses firstObject];
             struct sockaddr_in *socketAddress = (struct sockaddr_in *)[address bytes];
             //        NSString *hostName = [service hostName];
@@ -232,10 +232,10 @@
             //        NSLog(@"server info: ip:%s, hostName:%@, text:%s, length:%d", ip, hostName, textData, lenth);
             !didResolveAddress ?: didResolveAddress(ws, service, [NSString stringWithUTF8String:ip]);
         };
-        handler.didNotResolve = ^(BIScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error) {
+        handler.didNotResolve = ^(HWScanningHandler *handler, NSDictionary<NSString *, NSNumber *> *error) {
             !didNotResolve ?: didNotResolve(ws, error);
         };
-        handler.didFinish = ^(BIScanningHandler *hd) {
+        handler.didFinish = ^(HWScanningHandler *hd) {
             [ws.serviceHandlers removeObject:hd];
             !didFinish ?: didFinish(ws);
         };
@@ -261,7 +261,7 @@
     __weak typeof(self) ws = self;
     NSString *iden = [taskId componentsSeparatedByString:@"-"].lastObject;
     if ([taskId hasPrefix:@"servicesScanning"]) {
-        [_serviceHandlers enumerateObjectsUsingBlock:^(BIScanningHandler *obj, BOOL *stop) {
+        [_serviceHandlers enumerateObjectsUsingBlock:^(HWScanningHandler *obj, BOOL *stop) {
             if ([[NSString stringWithFormat:@"%p", obj] isEqualToString:iden]) {
                 [obj.browser stop];
                 [ws.serviceHandlers removeObject:obj];
@@ -269,7 +269,7 @@
             }
         }];
     } else if ([taskId hasPrefix:@"domainScanning"]) {
-        [_domainHandlers enumerateObjectsUsingBlock:^(BIScanningHandler *obj, BOOL *stop) {
+        [_domainHandlers enumerateObjectsUsingBlock:^(HWScanningHandler *obj, BOOL *stop) {
             if ([[NSString stringWithFormat:@"%p", obj] isEqualToString:iden]) {
                 [obj.browser stop];
                 [ws.domainHandlers removeObject:obj];
@@ -280,25 +280,25 @@
 }
 
 - (void)stopAll {
-    [_serviceHandlers enumerateObjectsUsingBlock:^(BIScanningHandler *obj, BOOL *stop) {
+    [_serviceHandlers enumerateObjectsUsingBlock:^(HWScanningHandler *obj, BOOL *stop) {
         [obj.browser stop];
     }];
     [_serviceHandlers removeAllObjects];
 
-    [_domainHandlers enumerateObjectsUsingBlock:^(BIScanningHandler *obj, BOOL *stop) {
+    [_domainHandlers enumerateObjectsUsingBlock:^(HWScanningHandler *obj, BOOL *stop) {
         [obj.browser stop];
     }];
     [_domainHandlers removeAllObjects];
 }
 
-- (NSMutableSet<BIScanningHandler *> *)domainHandlers {
+- (NSMutableSet<HWScanningHandler *> *)domainHandlers {
     if (!_domainHandlers) {
         _domainHandlers = [NSMutableSet set];
     }
     return _domainHandlers;
 }
 
-- (NSMutableSet<BIScanningHandler *> *)serviceHandlers {
+- (NSMutableSet<HWScanningHandler *> *)serviceHandlers {
     if (!_serviceHandlers) {
         _serviceHandlers = [NSMutableSet set];
     }

@@ -1,13 +1,13 @@
 //
 //  FindServiceViewController.m
-//  BILogUpload
+//  HWExtension
 //
 //  Created by Wang,Houwen on 2019/11/17.
 //  Copyright © 2019 Wang,Houwen. All rights reserved.
 //
 
 #import "FindServiceViewController.h"
-#import "BINetServiceBrowser.h"
+#import "HWNetServiceBrowser.h"
 #import "UIBarButtonItem+Category.h"
 #import "UITableView+Category.h"
 #import "ServiceInfo.h"
@@ -17,7 +17,7 @@
 
 @interface FindServiceViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) BINetServiceBrowser *serviceBrowser;
+@property (nonatomic, strong) HWNetServiceBrowser *serviceBrowser;
 @property (nonatomic, strong) NSMutableOrderedSet<NSString *> *domains;
 @property (nonatomic, strong) NSMutableDictionary<NSString *, NSMutableOrderedSet<ServiceInfo *> *> *services;
 @end
@@ -38,7 +38,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
-    _serviceBrowser = [[BINetServiceBrowser alloc] init];
+    _serviceBrowser = [[HWNetServiceBrowser alloc] init];
 
     __weak typeof(self) ws = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithTitle:@"🔍"
@@ -63,29 +63,29 @@
 
     __weak typeof(self) ws = self;
     [_serviceBrowser searchForBrowsableDomainsWithTimeout:60
-        willSearch:^(BINetServiceBrowser *browser) {
+        willSearch:^(HWNetServiceBrowser *browser) {
         }
-        didStopSearch:^(BINetServiceBrowser *browser) {
+        didStopSearch:^(HWNetServiceBrowser *browser) {
         }
-        didNotSearch:^(BINetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error) {
+        didNotSearch:^(HWNetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error) {
         }
-        didFindDomain:^(BINetServiceBrowser *browser, NSString *domain, BOOL moreComing) {
+        didFindDomain:^(HWNetServiceBrowser *browser, NSString *domain, BOOL moreComing) {
             [ws.domains addObject:domain];
 
             [browser searchForServicesOfTypes:@[ @"_livelog._tcp.", @"_livescreen._tcp.", @"_file._tcp." ]
                 inDomain:domain
                 timeout:60
-                willSearch:^(BINetServiceBrowser *browser) {
+                willSearch:^(HWNetServiceBrowser *browser) {
                 }
-                didStopSearch:^(BINetServiceBrowser *browser) {
+                didStopSearch:^(HWNetServiceBrowser *browser) {
                 }
-                didNotSearch:^(BINetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error) {
+                didNotSearch:^(HWNetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error) {
                 }
-                didFindService:^(BINetServiceBrowser *browser, NSNetService *service, BOOL moreComing) {
+                didFindService:^(HWNetServiceBrowser *browser, NSNetService *service, BOOL moreComing) {
                 }
-                willResolveAddress:^(BINetServiceBrowser *browser, NSNetService *service) {
+                willResolveAddress:^(HWNetServiceBrowser *browser, NSNetService *service) {
                 }
-                didResolveAddress:^(BINetServiceBrowser *browser, NSNetService *service, NSString *IP) {
+                didResolveAddress:^(HWNetServiceBrowser *browser, NSNetService *service, NSString *IP) {
                     NSLog(@"解析服务成功: name: %@, type: %@, domain: %@, hostName: %@, IP: %@, port: %@",
                           service.name,
                           service.type,
@@ -115,9 +115,9 @@
                     [set addObject:info];
                     [ws.tableView reloadData];
                 }
-                didNotResolve:^(BINetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error) {
+                didNotResolve:^(HWNetServiceBrowser *browser, NSDictionary<NSString *, NSNumber *> *error) {
                 }
-                didFinish:^(BINetServiceBrowser *browser) {
+                didFinish:^(HWNetServiceBrowser *browser) {
                     count++;
                     if (count == ws.domains.count) {
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -126,7 +126,7 @@
                     }
                 }];
         }
-        didFinish:^(BINetServiceBrowser *browser){
+        didFinish:^(HWNetServiceBrowser *browser){
         }];
 }
 

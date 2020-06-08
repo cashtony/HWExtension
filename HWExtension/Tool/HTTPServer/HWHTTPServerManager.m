@@ -1,33 +1,33 @@
 //
-//  BIHTTPServerManager.m
+//  HWHTTPServerManager.m
 //  Test
 //
 //  Created by Wang,Houwen on 2019/8/4.
 //  Copyright © 2019 Wang,Houwen. All rights reserved.
 //
 
-#import "BIHTTPServerManager.h"
+#import "HWHTTPServerManager.h"
 
-@interface BIHTTPServerManager ()
+@interface HWHTTPServerManager ()
 
-@property (nonatomic, strong) NSMutableOrderedSet <BIHTTPServer *>*servers_innser;
+@property (nonatomic, strong) NSMutableOrderedSet <HWHTTPServer *>*servers_innser;
 
 @end
 
-@implementation BIHTTPServerManager
+@implementation HWHTTPServerManager
 
 + (instancetype)manager
 {
     static dispatch_once_t onceToken;
-    static BIHTTPServerManager *m = nil;
+    static HWHTTPServerManager *m = nil;
     dispatch_once(&onceToken, ^{
-        m = [BIHTTPServerManager new];
+        m = [HWHTTPServerManager new];
         m.servers_innser = [NSMutableOrderedSet orderedSet];
     });
     return m;
 }
 
-- (void)addServer:(BIHTTPServer *)server
+- (void)addServer:(HWHTTPServer *)server
 {
     if (server)
     {
@@ -35,7 +35,7 @@
     }
 }
 
-- (void)removeServer:(BIHTTPServer *)server
+- (void)removeServer:(HWHTTPServer *)server
 {
     if (server)
     {
@@ -43,7 +43,7 @@
     }
 }
 
-- (NSOrderedSet <BIHTTPServer *>*)servers
+- (NSOrderedSet <HWHTTPServer *>*)servers
 {
     return [_servers_innser copy];
 }
