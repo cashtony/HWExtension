@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  min-width: 1140px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.color-75de73 {
+  color: #75DE73;
+}
+
+.header {
+  height: 720px;
+  background-color: #606161;
+}
+
+.header .header-main {
+  position: relative;
+  width: 1140px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* logo */
+.header-main .logo {
+  position: relative;
+  padding: 35px 0 0 25px;
+  font-size: 0;
+  text-indent: -999em;
+  z-index: 10;
+}
+
+.logo a {
+  display: block;
+}
+
+.logo a img {
+  width: 119px;
+  height: 43px;
+}
+
+/* 描述 */
+.header-main .describe {
+  position: relative;
+  margin-top: 224px;
+  color: #fff;
+  font-size: 40px;
+  line-height: 56px;
+  text-align: center;
+  z-index: 10;
+}
+
+/* 背景层 */
+.header-main .layer-con {
+  position: absolute;
+  left: 50%;
+  top: 97px;
+  width: 1039px;
+  height: 607px;
+  margin-left: -520px;
+  background-color: #4D4E4D;
+  border-radius: 15px;
+}
+
+.layer-con .layer {
+  width: 100%;
+  height: 100%;
+  padding: 97px 120px 16px;
+  border-radius: 15px;
+}
+
+.layer-con .layer.layer-1 {
+  background-color: #4D4E4D;
+}
+
+.layer-con .layer.layer-2 {
+  background-color: #363736;
+}
+
+.layer-con .layer.layer-3 {
+  background-color: #242524;
+}
+
+.layer-con .layer.layer-4 {
+  background-color: #111312;
+}
+
+.layer-con .layer.layer-5 {
+  position: relative;
+  padding: 0;
+  background-color: #010604;
+}
+
+.layer-con .layer.layer-5:after {
+  position: absolute;
+  left: 50%;
+  top: 57px;
+  content: "";
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  border-radius: 50%;
+  background-color: rgba(102, 219, 96, .3);
+}
+
+.layer-con .layer.layer-5:before {
+  position: absolute;
+  left: 50%;
+  top: 68px;
+  content: "";
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  border-radius: 50%;
+  background-color: #66DB60;
+}
+
+/* feature */
+.feature {
+  height: 550px;
+  background-color: #fff;
+}
+
+.feature .subject {
+  padding: 30px 0 22px;
+  font-size: 24px;
+  color: #010604;
+  line-height: 33px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.feature .function-con {
+  width: 1140px;
+  margin: 0 auto;
+  font-size: 0;
+  text-align: center;
+}
+
+.function-con .function-item {
+  display: inline-block;
+  width: 370px;
+  height: 200px;
+  padding-bottom: 36px;
+}
+
+.function-item .img-con {
+  height: 115px;
+}
+
+.function-item .img-con i {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.function-item .img-con img {
+  vertical-align: middle;
+}
+
+.function-item p {
+  font-size: 18px;
+  color: #010604;
+  line-height: 25px;
+}
+
+/* Use Cases */
+.use-cases {
+  height: 850px;
+  background-color: #F2F2F2;
+}
+
+.use-cases .subject {
+  padding: 37px 0 60px;
+  font-size: 24px;
+  color: #000000;
+  line-height: 33px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.use-cases .case-list {
+  width: 1140px;
+  margin: 0 auto;
+  font-size: 0;
+}
+
+.case-list .case-item {
+  position: relative;
+  display: inline-block;
+  width: 540px;
+  height: 300px;
+  margin: 0 50px 50px 0;
+  text-align: center;
+}
+
+.case-list .case-item:nth-child(2n) {
+  margin-right: 0;
+}
+
+.case-item .case-img {
+  width: 100%;
+  height: 100%;
+}
+
+.case-item .opa-con {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, .6);
+  text-align: left;
+  padding: 20px 30px;
+}
+
+.case-item .opa-con:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 6px;
+  height: 100%;
+  background-color: #66DB60;
+}
+
+.opa-con .title {
+  height: 33px;
+  font-size: 24px;
+  line-height: 33px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.opa-con .describe {
+  height: 25px;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 500;
+  color: rgba(255, 255, 254, .6);
+}
+
+/* Supported Platforms */
+.supported-platforms {
+  height: 400px;
+  background-color: #66DB60;
+  font-size: 0;
+}
+
+.supported-platforms .subject {
+  display: inline-block;
+  width: 50%;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  line-height: 400px;
+  vertical-align: top;
+}
+
+.supported-platforms .subject i {
+  margin-right: 8px;
+}
+
+.supported-platforms .platforms {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  padding-top: 40px;
+  vertical-align: top;
+}
+
+.platforms .platform-item {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 25px;
+  margin-bottom: 22px;
+}
+
+.platforms .platform-item > span {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 14px;
+}
+
+.support-icon {
+  display: inline-block;
+  width: 30px;
+  height: 24px;
+  background: url('../images/support.png') no-repeat;
+}
+
+.android-icon {
+  display: inline-block;
+  width: 22px;
+  height: 27px;
+  background: url('../images/android.png') no-repeat;
+}
+
+.arm-icon {
+  display: inline-block;
+  width: 20px;
+  height: 26px;
+  background: url('../images/arm.png') no-repeat;
+}
+
+.windows-icon {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: url('../images/windows.png') no-repeat;
+}
+
+.linux-icon {
+  display: inline-block;
+  width: 22px;
+  height: 26px;
+  background: url('../images/linux.png') no-repeat;
+}
+
+.apple-icon {
+  display: inline-block;
+  width: 21px;
+  height: 27px;
+  background: url('../images/apple.png') no-repeat;
+}
+
+/* Contact */
+.contact {
+  height: 300px;
+  background-color: #242524;
+  text-align: center;
+}
+
+.contact .subject {
+  padding: 40px 0 57px;
+  font-size: 24px;
+  color: #4D4E4D;
+  line-height: 33px;
+  font-weight: normal;
+}
+
+.contact .mail {
+  display: inline-block;
+  width: 308px;
+  height: 70px;
+  font-size: 24px;
+  color: #66DB60;
+  font-weight: bold;
+  line-height: 66px;
+  border-radius: 70px;
+  background-color: rgba(102, 219, 96, .1);
+  border: 2px solid #66DB60;
+}
+
+/* footer */
+.footer {
+  height: 50px;
+  background-color: #E5E5E5;
+}
+
+.footer .footer-main {
+  width: 1140px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #545454;
+  line-height: 50px;
+  padding: 0 10px 0 40px;
+  overflow: hidden;
+}
+
+.copyright {
+  float: left;
+}
+
+.rights {
+  float: right;
+}

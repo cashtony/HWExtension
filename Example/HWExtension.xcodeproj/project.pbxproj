@@ -73,6 +73,17 @@
 		5DCFDE702048FC7A000DF646 /* HWRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */; };
 		5DCFDE732048FD69000DF646 /* HWGraphicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */; };
 		5DEAD548248E25DE00D5D595 /* NSObject+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD547248E25DE00D5D595 /* NSObject+Hook.m */; };
+		5DEAD566248E33A400D5D595 /* ToolResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5DEAD54B248E33A300D5D595 /* ToolResources.bundle */; };
+		5DEAD568248E33A400D5D595 /* HWFileBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD54D248E33A300D5D595 /* HWFileBrowserViewController.m */; };
+		5DEAD569248E33A400D5D595 /* HWFileContentBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD54E248E33A300D5D595 /* HWFileContentBrowserViewController.m */; };
+		5DEAD584248E33E900D5D595 /* ServiceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD575248E33E900D5D595 /* ServiceInfo.m */; };
+		5DEAD585248E33E900D5D595 /* ServiceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD576248E33E900D5D595 /* ServiceInfoViewController.m */; };
+		5DEAD586248E33E900D5D595 /* WebServer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5DEAD577248E33E900D5D595 /* WebServer.bundle */; };
+		5DEAD587248E33E900D5D595 /* BIHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD578248E33E900D5D595 /* BIHTTPServer.m */; };
+		5DEAD588248E33E900D5D595 /* FindServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD579248E33E900D5D595 /* FindServiceViewController.m */; };
+		5DEAD589248E33E900D5D595 /* BIHTTPServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD57C248E33E900D5D595 /* BIHTTPServerManager.m */; };
+		5DEAD58A248E33E900D5D595 /* BINetServiceBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD581248E33E900D5D595 /* BINetServiceBrowser.m */; };
+		5DEAD58B248E33E900D5D595 /* ServerMangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD582248E33E900D5D595 /* ServerMangerViewController.m */; };
 		5DFF06D420C540FD0023F3A2 /* HWRunLoopObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF06D220C540FD0023F3A2 /* HWRunLoopObserver.m */; };
 		5DFF06D720C544270023F3A2 /* HWRunLoopSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF06D620C544270023F3A2 /* HWRunLoopSource.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -245,6 +256,26 @@
 		5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWGraphicViewController.m; sourceTree = "<group>"; };
 		5DEAD546248E25DD00D5D595 /* NSObject+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Hook.h"; sourceTree = "<group>"; };
 		5DEAD547248E25DE00D5D595 /* NSObject+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Hook.m"; sourceTree = "<group>"; };
+		5DEAD54A248E33A300D5D595 /* HWFileContentBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWFileContentBrowserViewController.h; sourceTree = "<group>"; };
+		5DEAD54B248E33A300D5D595 /* ToolResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ToolResources.bundle; sourceTree = "<group>"; };
+		5DEAD54D248E33A300D5D595 /* HWFileBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWFileBrowserViewController.m; sourceTree = "<group>"; };
+		5DEAD54E248E33A300D5D595 /* HWFileContentBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWFileContentBrowserViewController.m; sourceTree = "<group>"; };
+		5DEAD550248E33A300D5D595 /* HWFileBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWFileBrowserViewController.h; sourceTree = "<group>"; };
+		5DEAD575248E33E900D5D595 /* ServiceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceInfo.m; sourceTree = "<group>"; };
+		5DEAD576248E33E900D5D595 /* ServiceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceInfoViewController.m; sourceTree = "<group>"; };
+		5DEAD577248E33E900D5D595 /* WebServer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WebServer.bundle; sourceTree = "<group>"; };
+		5DEAD578248E33E900D5D595 /* BIHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIHTTPServer.m; sourceTree = "<group>"; };
+		5DEAD579248E33E900D5D595 /* FindServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindServiceViewController.m; sourceTree = "<group>"; };
+		5DEAD57A248E33E900D5D595 /* ServerMangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerMangerViewController.h; sourceTree = "<group>"; };
+		5DEAD57B248E33E900D5D595 /* BINetServiceBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINetServiceBrowser.h; sourceTree = "<group>"; };
+		5DEAD57C248E33E900D5D595 /* BIHTTPServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIHTTPServerManager.m; sourceTree = "<group>"; };
+		5DEAD57D248E33E900D5D595 /* ServiceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceInfoViewController.h; sourceTree = "<group>"; };
+		5DEAD57E248E33E900D5D595 /* ServiceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceInfo.h; sourceTree = "<group>"; };
+		5DEAD57F248E33E900D5D595 /* FindServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindServiceViewController.h; sourceTree = "<group>"; };
+		5DEAD580248E33E900D5D595 /* BIHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIHTTPServer.h; sourceTree = "<group>"; };
+		5DEAD581248E33E900D5D595 /* BINetServiceBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINetServiceBrowser.m; sourceTree = "<group>"; };
+		5DEAD582248E33E900D5D595 /* ServerMangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerMangerViewController.m; sourceTree = "<group>"; };
+		5DEAD583248E33E900D5D595 /* BIHTTPServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIHTTPServerManager.h; sourceTree = "<group>"; };
 		5DFF06D220C540FD0023F3A2 /* HWRunLoopObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWRunLoopObserver.m; sourceTree = "<group>"; };
 		5DFF06D320C540FD0023F3A2 /* HWRunLoopObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWRunLoopObserver.h; sourceTree = "<group>"; };
 		5DFF06D520C544270023F3A2 /* HWRunLoopSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRunLoopSource.h; sourceTree = "<group>"; };
@@ -488,6 +519,8 @@
 		5D32E7A6204958B100ED235A /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				5DEAD574248E33E900D5D595 /* HTTPServer */,
+				5DEAD549248E33A300D5D595 /* FileBrower */,
 				5D32E7A8204958B100ED235A /* HWDefines.h */,
 				5D32E7AD204958B100ED235A /* HWFileHelper.h */,
 				5D32E7AA204958B100ED235A /* HWFileHelper.m */,
@@ -511,6 +544,40 @@
 			);
 			name = Tool;
 			path = ../HWExtension/Tool;
+			sourceTree = "<group>";
+		};
+		5DEAD549248E33A300D5D595 /* FileBrower */ = {
+			isa = PBXGroup;
+			children = (
+				5DEAD550248E33A300D5D595 /* HWFileBrowserViewController.h */,
+				5DEAD54D248E33A300D5D595 /* HWFileBrowserViewController.m */,
+				5DEAD54A248E33A300D5D595 /* HWFileContentBrowserViewController.h */,
+				5DEAD54E248E33A300D5D595 /* HWFileContentBrowserViewController.m */,
+				5DEAD54B248E33A300D5D595 /* ToolResources.bundle */,
+			);
+			path = FileBrower;
+			sourceTree = "<group>";
+		};
+		5DEAD574248E33E900D5D595 /* HTTPServer */ = {
+			isa = PBXGroup;
+			children = (
+				5DEAD57E248E33E900D5D595 /* ServiceInfo.h */,
+				5DEAD575248E33E900D5D595 /* ServiceInfo.m */,
+				5DEAD580248E33E900D5D595 /* BIHTTPServer.h */,
+				5DEAD578248E33E900D5D595 /* BIHTTPServer.m */,
+				5DEAD57B248E33E900D5D595 /* BINetServiceBrowser.h */,
+				5DEAD581248E33E900D5D595 /* BINetServiceBrowser.m */,
+				5DEAD583248E33E900D5D595 /* BIHTTPServerManager.h */,
+				5DEAD57C248E33E900D5D595 /* BIHTTPServerManager.m */,
+				5DEAD57D248E33E900D5D595 /* ServiceInfoViewController.h */,
+				5DEAD576248E33E900D5D595 /* ServiceInfoViewController.m */,
+				5DEAD57F248E33E900D5D595 /* FindServiceViewController.h */,
+				5DEAD579248E33E900D5D595 /* FindServiceViewController.m */,
+				5DEAD57A248E33E900D5D595 /* ServerMangerViewController.h */,
+				5DEAD582248E33E900D5D595 /* ServerMangerViewController.m */,
+				5DEAD577248E33E900D5D595 /* WebServer.bundle */,
+			);
+			path = HTTPServer;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -721,6 +788,8 @@
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				5D2F6BE021FAFDC400105E55 /* JSBundle.bundle in Resources */,
+				5DEAD586248E33E900D5D595 /* WebServer.bundle in Resources */,
+				5DEAD566248E33A400D5D595 /* ToolResources.bundle in Resources */,
 				5D32E7D9204958B100ED235A /* ToolResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -811,6 +880,7 @@
 				5D121F3224892D120016E773 /* HWDB+NSObject.m in Sources */,
 				5DCFDE702048FC7A000DF646 /* HWRootViewController.m in Sources */,
 				5D2F6BF421FB038900105E55 /* HWWebViewController+JavaScript.m in Sources */,
+				5DEAD584248E33E900D5D595 /* ServiceInfo.m in Sources */,
 				5D26D116204EB5FC00DDDEE9 /* HWRouterSubViewController2.m in Sources */,
 				5D32E7B2204958B100ED235A /* UITableView+ViewModel.m in Sources */,
 				5DEAD548248E25DE00D5D595 /* NSObject+Hook.m in Sources */,
@@ -818,6 +888,7 @@
 				5D32E7BA204958B100ED235A /* HWXYGraphInteractionView.m in Sources */,
 				5D32E7D2204958B100ED235A /* NSObject+Category.m in Sources */,
 				5D2F6BE321FAFDC400105E55 /* UIWebView+Category.m in Sources */,
+				5DEAD58B248E33E900D5D595 /* ServerMangerViewController.m in Sources */,
 				5D32E7C9204958B100ED235A /* UIDevice+Category.m in Sources */,
 				5D32E7C0204958B100ED235A /* UIView+Utils.m in Sources */,
 				5D32E7BB204958B100ED235A /* HWXYGraphHostingView.m in Sources */,
@@ -833,19 +904,24 @@
 				5D2F6BDE21FAFDC400105E55 /* HWWebViewController.m in Sources */,
 				5D32E7BF204958B100ED235A /* NSDate+Category.m in Sources */,
 				5D32E7B9204958B100ED235A /* CPTXYAxis+Category.m in Sources */,
+				5DEAD587248E33E900D5D595 /* BIHTTPServer.m in Sources */,
+				5DEAD585248E33E900D5D595 /* ServiceInfoViewController.m in Sources */,
 				5D424C03204D395B000214C3 /* UIApplication+Category.m in Sources */,
 				6003F59E195388D20070C39A /* HWAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* HWViewController.m in Sources */,
 				5D32E7B1204958B100ED235A /* HWTableViewDelegate.m in Sources */,
 				5D32E7C6204958B100ED235A /* UIButton+Category.m in Sources */,
+				5DEAD58A248E33E900D5D595 /* BINetServiceBrowser.m in Sources */,
 				5D2F6BF721FB038900105E55 /* HWWebViewController+Router.m in Sources */,
 				5D32E7CA204958B100ED235A /* UIBarButtonItem+Category.m in Sources */,
 				5D1A493823CF13F60047DC26 /* BSBacktraceLogger.m in Sources */,
 				5D2F6BF521FB038900105E55 /* HWWebViewController+UIGestureRecognizer.m in Sources */,
+				5DEAD589248E33E900D5D595 /* BIHTTPServerManager.m in Sources */,
 				5D32E7D8204958B100ED235A /* HWSandboxBrowserViewController.m in Sources */,
 				5D2F6BF621FB038900105E55 /* HWWebViewController+Cookie.m in Sources */,
 				5D26D119204EB60A00DDDEE9 /* HWRouterSubViewController3.m in Sources */,
 				5D32E7D7204958B100ED235A /* NSMutableAttributedString+Category.m in Sources */,
+				5DEAD569248E33A400D5D595 /* HWFileContentBrowserViewController.m in Sources */,
 				5D32E7D5204958B100ED235A /* NSAttributedString+Category.m in Sources */,
 				5DB0A7082489EBEA00B1D263 /* HWTabBar.m in Sources */,
 				5D121F37248936390016E773 /* HWRouter.m in Sources */,
@@ -853,11 +929,13 @@
 				5D32E7DB204958B100ED235A /* HWDirectoryWatcher.m in Sources */,
 				5D32E7B7204958B100ED235A /* HWInteractiveModalTransition.m in Sources */,
 				5D32E7B4204958B100ED235A /* HWDatePicker.m in Sources */,
+				5DEAD588248E33E900D5D595 /* FindServiceViewController.m in Sources */,
 				5D32E7B5204958B100ED235A /* HWCountDownButton.m in Sources */,
 				5D1A493523CEC6200047DC26 /* HWStuckMonitor.m in Sources */,
 				5DFF06D420C540FD0023F3A2 /* HWRunLoopObserver.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				5DFF06D720C544270023F3A2 /* HWRunLoopSource.m in Sources */,
+				5DEAD568248E33A400D5D595 /* HWFileBrowserViewController.m in Sources */,
 				5D32E7CE204958B100ED235A /* UIViewController+Category.m in Sources */,
 				5D32E7CC204958B100ED235A /* NSString+Category.m in Sources */,
 				5D32E7BE204958B100ED235A /* UIImageView+Category.m in Sources */,

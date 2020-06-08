@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta name="theme-color" content="#000000">
+        <title>Live log</title>
+        <script>
+            var dpr,rem,docEl=document.documentElement,fontEl=document.createElement("style"),scale=(docEl.clientWidth/375).toFixed(2);dpr=window.devicePixelRatio||1,1.4<scale&&(scale=1),rem=12*scale,docEl.setAttribute("data-dpr",dpr),docEl.setAttribute("data-scale",scale),docEl.firstElementChild.appendChild(fontEl),fontEl.innerHTML="html{font-size:"+rem+"px!important;}"
+        </script>
+        <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+        <script type="text/javascript">  
+            console.log(returnCitySN["cip"]+','+returnCitySN["cname"])  
+        </script>
+        
+<!--        <script type="text/javascript">-->
+<!--          document.write("userAgent: " + navigator.userAgent + "<br><br>");-->
+<!--          document.write("platform: " + navigator.platform + "<br><br>");-->
+<!--        </script>-->
+        
+        <style>
+            html,body{ width: 100%; height: 100%; }
+            ul,li { list-style: none; padding: 0;}
+            ul{ padding: 5px; }
+            ul li{
+                font-size: 13px; line-height:25px; letter-spacing:1px;
+            }
+            .error{ color: red; font-weight: 700; }
+            .warning{ color: #fda400; font-weight: 700; }
+            .message{ color: #000; font-weight: 400; }
+            .open, .close{ color: blue; font-weight: 400; }
+        </style>
+    </head>
+    <body>
+        <!-- <a id="openApp">打开浏览器审查元素，进入console界面</a> -->
+        <ul id="log-wrap">
+        </ul>
+        <script>
+            function pushConsole(className, data) {
+                var oLi = document.createElement('li');
+                oLi.className = className;
+                oLi.innerHTML = data;
+                oLog.appendChild(oLi);
+            }
+            function isErrorMsg(msg) {
+                var loc = msg.indexOf("error");
+                return loc != -1;
+            }
+            function isWarningMsg(msg) {
+                var loc = msg.indexOf("warn");
+                return loc != -1;
+            }
+            var oLog = document.getElementById('log-wrap');
+            var url = window.location.origin.replace("http","ws")+"/livelog";
+            var ws = new WebSocket(url);
+            ws.onclose = function (event) {
+<!--                console.log("ws close:",event.data);-->
+                pushConsole('close', "已断开" + event.data)
+            }
+            ws.onerror = function (event) {
+<!--                console.log("ws error:",event.data);-->
+                pushConsole('error', event.data)
+            }
+            ws.onmessage = function (event) {
+<!--                console.log("ws message:", event.data);-->
+                if(isErrorMsg(event.data))
+                {
+                    pushConsole('error', event.data)
+                } else if (isWarningMsg(event.data))
+                {
+                    pushConsole('warning', event.data)
+                } else
+                {
+                    pushConsole('message', event.data)
+                }
+            }
+            ws.onopen = function (event) {
+<!--                console.log("ws opened");-->
+                pushConsole('opened', "已连接")
+            }
+            window.webs = ws;
+        </script>
+    </body>
+</html>
