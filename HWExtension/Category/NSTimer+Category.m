@@ -11,12 +11,12 @@
 @implementation NSTimer (Category)
 
 + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval fireDate:(NSDate *)date repeats:(BOOL)repeats block:(void (^)(NSTimer *timer))block {
-    
-    __weak typeof(self) weakSelf = self;
-    
-    NSTimer *timer = [self scheduledTimerWithTimeInterval:interval target:weakSelf selector:@selector(schedule:) userInfo:block ? [block copy] : nil repeats:repeats];
+    NSTimer *timer = [self scheduledTimerWithTimeInterval:interval
+                                                   target:self
+                                                 selector:@selector(schedule:)
+                                                 userInfo:block
+                                                  repeats:repeats];
     timer.fireDate = date;
-    
     return timer;
 }
 

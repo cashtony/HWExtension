@@ -11,6 +11,6 @@
 
 @interface UITableView (ViewModel)
 
-@property (nonatomic, strong) HWTableViewViewModel *viewModel;  //
+@property (nonatomic, strong) HWTableViewViewModel *viewModel;  
 
 @end

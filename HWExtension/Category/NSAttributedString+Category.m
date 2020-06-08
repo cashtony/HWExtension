@@ -33,7 +33,6 @@
 }
 
 - (NSAttributedString *)attributedStringByResetLineSpacing:(CGFloat)lineSpacing alignment:(NSTextAlignment)alignment range:(NSRange)range {
-    
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineSpacing = lineSpacing;

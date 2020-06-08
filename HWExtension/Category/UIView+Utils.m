@@ -104,13 +104,13 @@
     CGFloat x = 0.0f;
     for (UIView *view = self; view; view = view.superview) {
         x += view.left;
-        
+
         if ([view isKindOfClass:[UIScrollView class]]) {
             UIScrollView *scrollView = (UIScrollView *)view;
             x -= scrollView.contentOffset.x;
         }
     }
-    
+
     return x;
 }
 
@@ -118,7 +118,7 @@
     CGFloat y = 0;
     for (UIView *view = self; view; view = view.superview) {
         y += view.top;
-        
+
         if ([view isKindOfClass:[UIScrollView class]]) {
             UIScrollView *scrollView = (UIScrollView *)view;
             y -= scrollView.contentOffset.y;
@@ -153,12 +153,12 @@
 
 - (CGFloat)orientationWidth {
     return UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ? self.height
-    : self.width;
+                                                                                                     : self.width;
 }
 
 - (CGFloat)orientationHeight {
     return UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ? self.width
-    : self.height;
+                                                                                                     : self.height;
 }
 
 @end

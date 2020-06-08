@@ -37,16 +37,15 @@
                                                               indexPath:(NSIndexPath *)indexPath
                                                                nilBlock:(nonnull DequeueCellNilBlock)nilBlock
                                                               initBlock:(nullable CellInitBlock)initBlock {
-    
     UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:identifier];
-    
+
     if (cell == nil && nilBlock) {
         cell = nilBlock(indexPath);
         if (cell && [cell isKindOfClass:[UITableViewCell class]]) {
             [cell setValue:identifier forKey:@"reuseIdentifier"];
         }
     }
-    
+
     if (cell && initBlock) {
         BOOL didInitialize = [objc_getAssociatedObject(cell, _cmd) boolValue];
         if (!didInitialize) {
@@ -54,7 +53,7 @@
             objc_setAssociatedObject(cell, _cmd, @(YES), OBJC_ASSOCIATION_ASSIGN);
         }
     }
-    
+
     return cell;
 }
 
@@ -70,16 +69,15 @@
                                                                                         section:(NSInteger)section
                                                                                        nilBlock:(nonnull DequeueHeaderFooterNilBlock)nilBlock
                                                                                       initBlock:(nullable HeaderFooterInitBlock)initBlock {
-    
     UITableViewHeaderFooterView *headerFooter = [self dequeueReusableHeaderFooterViewWithIdentifier:identifier];
-    
+
     if (headerFooter == nil && initBlock) {
         headerFooter = nilBlock(section);
         if (headerFooter && [headerFooter isKindOfClass:[UITableViewHeaderFooterView class]]) {
             [headerFooter setValue:identifier forKey:@"reuseIdentifier"];
         }
     }
-    
+
     if (headerFooter && initBlock) {
         BOOL didInitialize = [objc_getAssociatedObject(headerFooter, _cmd) boolValue];
         if (!didInitialize) {
@@ -87,7 +85,7 @@
             objc_setAssociatedObject(headerFooter, _cmd, @(YES), OBJC_ASSOCIATION_ASSIGN);
         }
     }
-    
+
     return headerFooter;
 }
 

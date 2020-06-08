@@ -10,23 +10,19 @@
 
 @implementation NSArray (Category)
 
-- (NSArray <NSArray *>*)componentsByDividedLength:(NSUInteger)length {
-    
+- (NSArray<NSArray *> *)componentsByDividedLength:(NSUInteger)length {
     if (length <= 0) {
-        
-        return @[@[]];
-        
+        return @[ @[] ];
+
     } else if (length >= self.count) {
-        
-        return [[NSArray alloc] initWithArray:@[[self subarrayWithRange:NSMakeRange(0, self.count)]] copyItems:YES];
-        
+        return [[NSArray alloc] initWithArray:@[ [self subarrayWithRange:NSMakeRange(0, self.count)] ] copyItems:YES];
+
     } else {
-        
-        NSMutableArray <NSArray *>*result = [NSMutableArray array];
-        for (int i = 0; i<self.count; i+=length) {
+        NSMutableArray<NSArray *> *result = [NSMutableArray array];
+        for (int i = 0; i < self.count; i += length) {
             [result addObject:[self subarrayWithRange:NSMakeRange(i, MIN(length, self.count - i))]];
         }
-        
+
         return [[NSArray alloc] initWithArray:result copyItems:YES];
     }
 }

@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (GIF)
 
 //  解析gif数据
-+ (NSArray <HWGIFItem *>*)gitItemsWithGIFData:(NSData *)data;
++ (NSArray<HWGIFItem *> *)gitItemsWithGIFData:(NSData *)data;
 
 //  遍历gif图片
 + (void)enumerateGifItemsWithGIFData:(NSData *)data usingBlock:(void (^)(HWGIFItem *item, NSUInteger index, NSUInteger cout, BOOL *stop))block;
@@ -44,16 +44,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (Graphics)
 
 - (UIImage *)imageWithCornerRadius:(CGFloat)cornerRadius;
-+ (UIImage *)imageWithSpacingFromImages:(NSArray <UIImage *>*)images spacing:(CGFloat)spacing;
-+ (UIImage *)imageOverlyingFromImages:(NSArray <NSDictionary <NSNumber *, UIImage *>*>*)attributedImages;
++ (UIImage *)imageWithSpacingFromImages:(NSArray<UIImage *> *)images spacing:(CGFloat)spacing;
++ (UIImage *)imageOverlyingFromImages:(NSArray<NSDictionary<NSNumber *, UIImage *> *> *)attributedImages;
 
 @end
 
 @interface HWGIFItem : NSObject
 
-@property (nonatomic, strong, readonly) NSDictionary *gifDictionary;    //
-@property (nonatomic, strong, readonly) UIImage *image;                 //
-@property (nonatomic, assign, readonly) CGFloat delayTime;              //
+@property (nonatomic, strong, readonly) NSDictionary *gifDictionary;
+@property (nonatomic, strong, readonly) UIImage *image;
+@property (nonatomic, assign, readonly) CGFloat delayTime;
 
 @end
 

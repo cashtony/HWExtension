@@ -1,39 +1,56 @@
 PODS:
   - CorePlot (2.2)
-  - HWExtension (1.0.5):
-    - HWExtension/Category (= 1.0.5)
-    - HWExtension/UI (= 1.0.5)
-  - HWExtension/Category (1.0.5)
-  - HWExtension/UI (1.0.5):
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - HWExtension (2.0.0):
+    - HWExtension/Category (= 2.0.0)
+    - HWExtension/DB (= 2.0.0)
+    - HWExtension/Router (= 2.0.0)
+    - HWExtension/UI (= 2.0.0)
+  - HWExtension/Category (2.0.0)
+  - HWExtension/DB (2.0.0):
+    - FMDB
     - HWExtension/Category
-    - HWExtension/UI/Graphic (= 1.0.5)
-    - HWExtension/UI/ModalTransition (= 1.0.5)
-    - HWExtension/UI/Router (= 1.0.5)
-    - HWExtension/UI/UITableView+ViewModel (= 1.0.5)
-  - HWExtension/UI/Graphic (1.0.5):
+  - HWExtension/Router (2.0.0):
+    - HWExtension/Category
+    - JLRoutes
+  - HWExtension/UI (2.0.0):
+    - HWExtension/Category
+    - HWExtension/UI/Graphic (= 2.0.0)
+    - HWExtension/UI/ModalTransition (= 2.0.0)
+    - "HWExtension/UI/UITableView+ViewModel (= 2.0.0)"
+    - HWExtension/UI/Web (= 2.0.0)
+  - HWExtension/UI/Graphic (2.0.0):
     - CorePlot (~> 2.2)
     - HWExtension/Category
-  - HWExtension/UI/ModalTransition (1.0.5):
+  - HWExtension/UI/ModalTransition (2.0.0):
     - HWExtension/Category
-  - HWExtension/UI/Router (1.0.5):
+  - "HWExtension/UI/UITableView+ViewModel (2.0.0)":
     - HWExtension/Category
-    - JLRoutes (~> 2.1)
-  - HWExtension/UI/UITableView+ViewModel (1.0.5):
+  - HWExtension/UI/Web (2.0.0):
     - HWExtension/Category
   - JLRoutes (2.1)
 
 DEPENDENCIES:
   - HWExtension (from `../`)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CorePlot
+    - FMDB
+    - JLRoutes
+
 EXTERNAL SOURCES:
   HWExtension:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
-  HWExtension: dee734dbabaeb8cfef25383df7ff759294853e9f
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  HWExtension: 0d160f0e4234edc5008edbae79546bfdd6e4523c
   JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
 
-PODFILE CHECKSUM: e2080cca424804e04d09fb2f16c7f1f684b4c2f5
+PODFILE CHECKSUM: 43fa6acb3dfc94986b8bbd400f534172038ce811
 
-COCOAPODS: 1.4.0.rc.1
+COCOAPODS: 1.9.1

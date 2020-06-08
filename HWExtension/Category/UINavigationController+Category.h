@@ -10,13 +10,13 @@
 #import "UIViewController+Category.h"
 
 typedef NS_ENUM(NSUInteger, HWPopSearchDirection) {
-    HWPopSearchDirectionPositive,   // 正向
-    HWPopSearchDirectionNegative,   // 逆向
+    HWPopSearchDirectionPositive, // 正向
+    HWPopSearchDirectionNegative, // 逆向
 };
 
 @interface UINavigationController (Category)
 
-@property (nonatomic, assign, readonly) NSUInteger stackLength;  // 管理视图控制器的栈长度
+@property (nonatomic, assign, readonly) NSUInteger stackLength; // 管理视图控制器的栈长度
 
 // pop 到指定 identifier 的视图控制器
 // return : poped ViewControllers

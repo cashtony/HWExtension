@@ -23,44 +23,44 @@
 }
 
 // 检查相机权限
-+ (void)checkCameraAuthorizationStatusWithComplete:(void(^)(AVAuthorizationStatus status))complete {
-    
++ (void)checkCameraAuthorizationStatusWithComplete:(void (^)(AVAuthorizationStatus status))complete {
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    
+
     // 用户未选择权限
     if (status == AVAuthorizationStatusNotDetermined) {
-        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-            performBlock(complete, granted ? AVAuthorizationStatusAuthorized : AVAuthorizationStatusDenied);
-        }];
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo
+                                 completionHandler:^(BOOL granted) {
+                                     performBlock(complete, granted ? AVAuthorizationStatusAuthorized : AVAuthorizationStatusDenied);
+                                 }];
     } else {
         performBlock(complete, status);
     }
 }
 
 // 检查图库权限
-+ (void)checkPhotoLibraryAuthorizationStatusWithComplete:(void(^)(ALAuthorizationStatus status))complete {
-    
++ (void)checkPhotoLibraryAuthorizationStatusWithComplete:(void (^)(ALAuthorizationStatus status))complete {
     if ([UIDevice currentDevice].systemVersion.floatValue < 8.0f) {
-        
-        ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];;
-        
+        ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
+        ;
+
         // 用户未选择权限
         if (status == ALAuthorizationStatusNotDetermined) {
-            
             ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
-            
-            [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-                performBlock(complete, ALAuthorizationStatusAuthorized);
-                *stop = TRUE;
-            } failureBlock:^(NSError *error) {
-                performBlock(complete, ALAuthorizationStatusDenied);
-            }];
+
+            [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll
+                usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+                    performBlock(complete, ALAuthorizationStatusAuthorized);
+                    *stop = TRUE;
+                }
+                failureBlock:^(NSError *error) {
+                    performBlock(complete, ALAuthorizationStatusDenied);
+                }];
         } else {
             performBlock(complete, status);
         }
     } else {
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-        
+
         // 用户未选择权限
         if (status == PHAuthorizationStatusNotDetermined) {
             [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
@@ -84,18 +84,19 @@
 
 #if DEBUG
 
-@implementation HWApplicationInfo;
+@implementation HWApplicationInfo
 
 - (NSString *)description {
-    return self.keyValueDictionary.description;
+    return self.propertyKeyValues.description;
 }
 
 /* replaced : original */
-+ (NSDictionary <NSString *, NSString *>*)replacedPropertyNames {
-    return @{@"bundleID" : @"applicationIdentifier",
-             @"build"    : @"bundleVersion",
-             @"version"  : @"shortVersionString"
-             };
++ (NSDictionary<NSString *, NSString *> *)replacedPropertyNames {
+    return @{ @"bundleID" : @"boundApplicationIdentifier",
+              @"build" : @"bundleVersion",
+              @"version" : @"shortVersionString",
+              @"appName" : @"localizedName"
+    };
 }
 
 @end
@@ -105,18 +106,17 @@
 @class LSApplicationWorkspace;
 @class LSApplicationProxy;
 
-+ (NSArray <HWApplicationInfo *>*)installedApplications {
-    
++ (NSArray<HWApplicationInfo *> *)installedApplications {
     Class workspaceCls = NSClassFromString(@"LSApplicationWorkspace");
-    
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-    
+
     NSObject *defaultWorkspace = [workspaceCls performSelector:@selector(defaultWorkspace)];
-    NSArray <LSApplicationProxy *>*apps = [defaultWorkspace performSelector:@selector(allApplications)];
-    
+    NSArray<LSApplicationProxy *> *apps = [defaultWorkspace performSelector:@selector(allApplications)];
+
 #pragma clang diagnostic pop
-    
+
     NSMutableArray *appInfos = [NSMutableArray array];
     for (LSApplicationProxy *proxy in apps) {
         [appInfos addObject:[self applicationInfoWithApplicationProxy:proxy]];
@@ -127,35 +127,31 @@
 #pragma mark - private
 
 + (HWApplicationInfo *)applicationInfoWithApplicationProxy:(LSApplicationProxy *)proxy {
-    
     HWApplicationInfo *info = [[HWApplicationInfo alloc] init];
-    
     NSObject *proxy_t = (NSObject *)proxy;
-    
+    NSLog(@"%@", [proxy_t valueForKey:@"LSBundleProxy"]);
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    
-    for (NSString *pName in [HWApplicationInfo propertyNameList]) {
-        
+
+    for (NSString *pName in propertyNameList([HWApplicationInfo class])) {
         NSString *opName = [[HWApplicationInfo replacedPropertyNames].allKeys containsObject:pName] ? [HWApplicationInfo replacedPropertyNames][pName] : [pName copy];
-        
+
         id value = nil;
-        
+
         // deviceIdentifierVendorName 是成员变量
         if ([pName isEqualToString:@"deviceIdentifierVendorName"]) {
             value = [proxy_t valueForKey:@"deviceIdentifierVendorName"];
         } else {
             value = [proxy_t performSelector:NSSelectorFromString(opName)];
         }
-        
+
         if (value) {
             [info setValue:value forKey:pName];
         }
     }
-    
 #pragma clang diagnostic pop
-    
     return info;
 }
 

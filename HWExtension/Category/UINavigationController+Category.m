@@ -9,27 +9,28 @@
 #import "UINavigationController+Category.h"
 
 #if DEBUG
-    #define AddMemoryMonitorForViewController(vc, isPop)    \
-    {  \
-        __weak typeof(vc) weakVC = vc;  \
+#define AddMemoryMonitorForViewController(vc, isPop)                                                                \
+    {                                                                                                               \
+        __weak typeof(vc) weakVC = vc;                                                                              \
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ \
-            if (weakVC) \
-            {   \
+            if (weakVC) {                                                                                           \
                 NSLog(@"\n************************************************************************\n   \
                 \n             %@ 内存未被释放！！！                                                     \
                 \n             INFO : it did %@ but after 2s later it still hasn't been released \n   \
                 \n************************************************************************\n          \
-                ",NSStringFromClass([weakVC class]),isPop ? @"poped" : @"dismissed" );\
-            }\
-        });\
+                ",                                                                                                  \
+                      NSStringFromClass([weakVC class]), isPop ? @"poped" : @"dismissed");                          \
+            }                                                                                                       \
+        });                                                                                                         \
     }
 #else
-    #define AddMemoryMonitorForViewController(vc, isPop) {NSLog(@"%@,%@", vc, @(isPop));}
+#define AddMemoryMonitorForViewController(vc, isPop) \
+    { NSLog(@"%@,%@", vc, @(isPop)); }
 #endif
 
 @implementation UINavigationController (Category)
 
-+ (void) load {
++ (void)load {
     [self exchangeImplementations:@selector(popViewControllerAnimated:) otherMethod:@selector(hw_popViewControllerAnimated:) isInstance:YES];
     [self exchangeImplementations:@selector(popToViewController:animated:) otherMethod:@selector(hw_popToViewController:animated:) isInstance:YES];
     [self exchangeImplementations:@selector(popToRootViewControllerAnimated:) otherMethod:@selector(hw_popToRootViewControllerAnimated:) isInstance:YES];

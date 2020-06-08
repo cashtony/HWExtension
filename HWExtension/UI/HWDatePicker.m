@@ -21,10 +21,10 @@ void *HWDatePickerObserverContext = &HWDatePickerObserverContext;
 
 @interface HWDateFormatComponent : NSObject
 
-@property (nonatomic, copy) NSString *dateFormat;               //
-@property (nonatomic, assign) NSCalendarUnit unit;              //
-@property (nonatomic, assign) NSInteger index;                  //
-@property (nonatomic, copy, readonly) NSString *normalFormat;   //
+@property (nonatomic, copy) NSString *dateFormat;
+@property (nonatomic, assign) NSCalendarUnit unit;
+@property (nonatomic, assign) NSInteger index;
+@property (nonatomic, copy, readonly) NSString *normalFormat;   
 
 @end
 

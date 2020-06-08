@@ -11,7 +11,7 @@
 @interface NSArray (Category)
 
 // 将数组按一定长度分段
-- (NSArray <NSArray *>*)componentsByDividedLength:(NSUInteger)length;
+- (NSArray<NSArray *> *)componentsByDividedLength:(NSUInteger)length;
 
 // 交集
 - (NSArray *)intersectArrayWithArray:(NSArray *)otherArray;

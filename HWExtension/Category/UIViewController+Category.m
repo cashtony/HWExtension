@@ -11,27 +11,28 @@
 const NSString *HWPopBackIdentifierPrefix = @"pop_back_identifier_from_";
 
 #if DEBUG
-    #define AddMemoryMonitorForViewController(vc, isPop)    \
-    {  \
-        __weak typeof(vc) weakVC = vc;  \
+#define AddMemoryMonitorForViewController(vc, isPop)                                                                \
+    {                                                                                                               \
+        __weak typeof(vc) weakVC = vc;                                                                              \
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ \
-            if (weakVC) \
-            {   \
+            if (weakVC) {                                                                                           \
                 NSLog(@"\n************************************************************************\n   \
                 \n             %@ 内存未被释放！！！                                                     \
                 \n             INFO : it did %@ but after 2s later it still hasn't been released \n   \
                 \n************************************************************************\n          \
-                ",NSStringFromClass([weakVC class]),isPop ? @"poped" : @"dismissed" );\
-            }\
-        });\
+                ",                                                                                                  \
+                      NSStringFromClass([weakVC class]), isPop ? @"poped" : @"dismissed");                          \
+            }                                                                                                       \
+        });                                                                                                         \
     }
 #else
-    #define AddMemoryMonitorForViewController(vc, isPop) {NSLog(@"%@,%@", vc, @(isPop));}
+#define AddMemoryMonitorForViewController(vc, isPop) \
+    { NSLog(@"%@,%@", vc, @(isPop)); }
 #endif
 
 @implementation UIViewController (Category)
 
-+ (void) load {
++ (void)load {
     [self exchangeImplementations:@selector(dismissViewControllerAnimated:completion:)
                       otherMethod:@selector(hw_dismissViewControllerAnimated:completion:)
                        isInstance:YES];
@@ -43,12 +44,12 @@ const NSString *HWPopBackIdentifierPrefix = @"pop_back_identifier_from_";
 }
 
 // 是否处于navigationController栈中
-- (BOOL) includedInNavigationController {
+- (BOOL)includedInNavigationController {
     return self.navigationController ? YES : NO;
 }
 
 // 是否是navigationController的RootViewController
-- (BOOL) isNavigationRootViewController {
+- (BOOL)isNavigationRootViewController {
     if ([self includedInNavigationController]) {
         return [self.navigationController.viewControllers[0] isEqual:self] ? YES : NO;
     }

@@ -18,13 +18,13 @@ typedef NS_ENUM(NSInteger, HWSHAType) {
 
 @interface NSData (Enumerator)
 
-- (void)enumerateSubdataWithLength:(NSUInteger)length usingBlock:(void(^)(NSData *subdata, NSRange range, BOOL *stop))block;
+- (void)enumerateSubdataWithLength:(NSUInteger)length usingBlock:(void (^)(NSData *subdata, NSRange range, BOOL *stop))block;
 
 @end
 
 @interface NSData (CommonCrypto)
 
-@property (nonatomic, copy, readonly) NSString *md5String;    //
-- (NSString *)shaStringWithType:(HWSHAType)type;              //
+@property (nonatomic, copy, readonly) NSString *md5String;
+- (NSString *)shaStringWithType:(HWSHAType)type;
 
 @end

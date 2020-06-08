@@ -12,13 +12,13 @@ typedef void(^HWAnimationStartBlock)(id <UIViewControllerContextTransitioning>co
 
 @interface HWModalTransitioningContext ()
 
-@property (nonatomic, strong) UIView *containerView;            //
-@property (nonatomic, strong) UIViewController *fromVC;         //
-@property (nonatomic, strong) UIViewController *toVC;           //
+@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, strong) UIViewController *fromVC;
+@property (nonatomic, strong) UIViewController *toVC;
 
-@property (nonatomic, strong) UIViewController *presentedVC;    //
-@property (nonatomic, strong) UIViewController *presentingVC;   //
-@property (nonatomic, strong) UIViewController *sourceVC;       //
+@property (nonatomic, strong) UIViewController *presentedVC;
+@property (nonatomic, strong) UIViewController *presentingVC;
+@property (nonatomic, strong) UIViewController *sourceVC;
 
 @end
 
@@ -27,8 +27,8 @@ typedef void(^HWAnimationStartBlock)(id <UIViewControllerContextTransitioning>co
 
 @interface HWTransitionAnimator ()
 
-@property (nonatomic, assign) NSTimeInterval duration;              //
-@property (nonatomic, copy) HWAnimationStartBlock animationStart;   //
+@property (nonatomic, assign) NSTimeInterval duration;
+@property (nonatomic, copy) HWAnimationStartBlock animationStart;
 
 @end
 
@@ -57,16 +57,16 @@ typedef void(^HWAnimationStartBlock)(id <UIViewControllerContextTransitioning>co
 
 @interface HWInteractiveModalTransition ()
 
-@property (nonatomic, weak) UIViewController *presentedVC;    //
-@property (nonatomic, weak) UIViewController *presentingVC;   //
-@property (nonatomic, weak) UIViewController *sourceVC;       //
+@property (nonatomic, weak) UIViewController *presentedVC;
+@property (nonatomic, weak) UIViewController *presentingVC;
+@property (nonatomic, weak) UIViewController *sourceVC;
 
 // animator
 @property (nonatomic, strong) HWTransitionAnimator *presentAnimator;  // present
 @property (nonatomic, strong) HWTransitionAnimator *dismissAnimator;  // dismiss
 
 // interactive
-@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactiveTransition;  //
+@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactiveTransition;  
 
 @end
 

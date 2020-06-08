@@ -11,7 +11,7 @@
 
 @interface UITableViewCell (Utils)
 
-@property (nonatomic, strong) id userInfo;  //
+@property (nonatomic, strong) id userInfo; 
 
 + (instancetype)defaultStyleCellWithReuseIdentifier:(NSString *)reuseIdentifier;
 

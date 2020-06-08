@@ -18,16 +18,16 @@ extern const NSString *HWPopBackIdentifierPrefix;
 @interface UIViewController (Category)
 
 // 标识符
-@property (nonatomic, copy) NSString *identifier;  //
+@property (nonatomic, copy) NSString *identifier;
 
 // 是否处于navigationController栈中
-@property (nonatomic, assign, readonly) BOOL includedInNavigationController;  //
+@property (nonatomic, assign, readonly) BOOL includedInNavigationController;
 
 // 是否是navigationController的RootViewController
-@property (nonatomic, assign, readonly) BOOL isNavigationRootViewController;  //
+@property (nonatomic, assign, readonly) BOOL isNavigationRootViewController;
 
 // navigationController栈深度
-@property (nonatomic, assign, readonly) NSUInteger navigationControllerStackLength;  //
+@property (nonatomic, assign, readonly) NSUInteger navigationControllerStackLength;
 
 @end
 

@@ -11,55 +11,40 @@
 
 @interface HWRunLoopObserver ()
 
-@property (nonatomic, assign) CFRunLoopActivity activity;    //
-@property (nonatomic, assign) void *info;                    //
-@property (nonatomic, assign) BOOL repeats;                  //
-
-@property (nonatomic, assign) CFRunLoopObserverRef observerRef;    //
+@property (nonatomic, assign) CFOptionFlags activities;         //
+@property (nonatomic, assign) BOOL repeats;                     //
+@property (nonatomic, assign) CFRunLoopObserverRef observerRef; //
 
 @end
 
 @implementation HWRunLoopObserver
 
-+ (instancetype)observerWithActivity:(CFRunLoopActivity)act
-                                info:(nullable void *)info
++ (instancetype)observerWithActivity:(CFOptionFlags)activities
                              repeats:(BOOL)repeats
-                            callBack:(void(^)(HWRunLoopObserver *observer, CFRunLoopActivity activity, void *info))callBack;
+                            callBack:(void (^)(HWRunLoopObserver *observer, CFRunLoopActivity activity))callBack;
 {
-    CFRunLoopObserverContext context = {0, info, NULL, NULL, NULL};
-    
-    HWRunLoopObserver *observer = nil;
-    
-    void (^block_t)(CFRunLoopObserverRef, CFRunLoopActivity, void *) = ^(CFRunLoopObserverRef observerRef,
-                                                                         CFRunLoopActivity activity,
-                                                                         void *info)
-    {
-        if (callBack) {
-            callBack(observer, activity, info);
-        }
-    };
-    IMP imp = imp_implementationWithBlock(block_t);
-    
-    CFRunLoopObserverRef observerRef = CFRunLoopObserverCreate(kCFAllocatorDefault,
-                                                               act,
-                                                               repeats,
-                                                               0,
-                                                               (CFRunLoopObserverCallBack)imp,
-                                                               &context);
+    __block HWRunLoopObserver *observer = nil;
+    CFRunLoopObserverRef observerRef = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault,
+                                                                          activities,
+                                                                          repeats,
+                                                                          0, ^(CFRunLoopObserverRef observerRef,
+                                                                               CFRunLoopActivity activity) {
+                                                                              !callBack ?: callBack(observer, activity);
+                                                                          });
     if (observerRef) {
         observer = [[self alloc] init];
         observer.observerRef = observerRef;
-        observer.activity = act;
-        observer.info = info;
+        observer.activities = activities;
         observer.repeats = repeats;
         return observer;
     }
     return nil;
 }
 
-- (void)observerRunLoop:(NSRunLoop *)runLoop forMode:(NSRunLoopMode)mode
-{
-    CFRunLoopAddObserver([runLoop getCFRunLoop], self.observerRef, (__bridge CFRunLoopMode)mode);
+- (void)observerRunLoop:(NSRunLoop *)runLoop forModes:(NSArray<NSRunLoopMode> *)modes {
+    for (NSRunLoopMode m in modes) {
+        CFRunLoopAddObserver([runLoop getCFRunLoop], self.observerRef, (__bridge CFRunLoopMode)m);
+    }
 }
 
 @end

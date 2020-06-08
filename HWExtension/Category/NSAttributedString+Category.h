@@ -25,7 +25,6 @@
 // 对齐方式 & 行间距
 - (NSAttributedString *)attributedStringByResetLineSpacing:(CGFloat)lineSpacing alignment:(NSTextAlignment)alignment range:(NSRange)range;
 
-
 #pragma mark - color / font / range
 
 - (NSAttributedString *)attributedStringByResetFont:(UIFont *)font;

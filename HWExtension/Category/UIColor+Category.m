@@ -27,27 +27,25 @@
 }
 
 + (UIColor *)colorWithHexString:(NSString *)hex alpha:(CGFloat)alpha {
-    
-    __block UIColor *color = [UIColor clearColor];
-    
+    __block UIColor *color = nil;
     if (hex && hex.length) {
-        
         NSString *htmlStr = [NSString stringWithFormat:@"<font color=\"%@\">t</font>", hex];
-        
-        NSDictionary *option = @{NSDocumentTypeDocumentOption : NSHTMLTextDocumentType,
-                                 NSCharacterEncodingDocumentOption : @(NSUTF8StringEncoding)};
-        
+        NSDictionary *option = @{ NSDocumentTypeDocumentOption : NSHTMLTextDocumentType,
+                                  NSCharacterEncodingDocumentOption : @(NSUTF8StringEncoding) };
         NSAttributedString *attStr = [[NSAttributedString alloc] initWithData:[htmlStr dataUsingEncoding:NSUTF8StringEncoding]
                                                                       options:option
                                                            documentAttributes:nil
                                                                         error:NULL];
-        
-        [attStr enumerateAttribute:NSForegroundColorAttributeName inRange:NSMakeRange(0, 1) options:NSAttributedStringEnumerationReverse usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
-            if (value && [value isKindOfClass:[UIColor class]]) {
-                color = value;
-            }
-            *stop = YES;
-        }];
+
+        [attStr enumerateAttribute:NSForegroundColorAttributeName
+                           inRange:NSMakeRange(0, 1)
+                           options:NSAttributedStringEnumerationReverse
+                        usingBlock:^(id value, NSRange range, BOOL *stop) {
+                            if (value && [value isKindOfClass:[UIColor class]]) {
+                                color = value;
+                                *stop = YES;
+                            }
+                        }];
     }
     return color;
 }

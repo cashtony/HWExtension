@@ -13,6 +13,6 @@
 - (void)add:(NSString *)str; // 追加
 
 // 替换一组string
-- (void)replaceOccurrencesOfStrings:(NSArray <NSString *>*)targets withStings:(NSString *)string;
+- (void)replaceOccurrencesOfStrings:(NSArray<NSString *> *)targets withStings:(NSString *)string;
 
 @end

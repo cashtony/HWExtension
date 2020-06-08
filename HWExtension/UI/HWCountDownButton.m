@@ -10,16 +10,16 @@
 
 @interface HWCountDownButton ()
 
-@property (nonatomic, copy) void(^updateBlock)(HWCountDownButton *button, NSTimeInterval remainingTimeInterval, BOOL didFinish);    //
+@property (nonatomic, copy) void(^updateBlock)(HWCountDownButton *button, NSTimeInterval remainingTimeInterval, BOOL didFinish);    
 
-@property (nonatomic, assign) BOOL didPause;   //
-@property (nonatomic, assign) BOOL didFinish;  //
+@property (nonatomic, assign) BOOL didPause;
+@property (nonatomic, assign) BOOL didFinish;
 
-@property (nonatomic, strong) NSTimer *timer;    //
+@property (nonatomic, strong) NSTimer *timer;
 
-@property (nonatomic, strong) NSDate *fireDate;  //
-@property (nonatomic, strong) NSDate *endDate;   //
-@property (nonatomic, strong) NSDate *stopDate;  //
+@property (nonatomic, strong) NSDate *fireDate;
+@property (nonatomic, strong) NSDate *endDate;
+@property (nonatomic, strong) NSDate *stopDate;
 
 @property (nonatomic, assign) NSTimeInterval totalTime;       // 总时间
 @property (nonatomic, assign) NSTimeInterval timeInterval;    // 倒计时间隔

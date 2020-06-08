@@ -134,59 +134,59 @@
         case NSCalendarUnitEra:
             coms.era = value;
             break;
-            
+
         case NSCalendarUnitYear:
             coms.year = value;
             break;
-            
+
         case NSCalendarUnitMonth:
             coms.month = value;
             break;
-            
+
         case NSCalendarUnitDay:
             coms.day = value;
             break;
-            
+
         case NSCalendarUnitHour:
             coms.hour = value;
             break;
-            
+
         case NSCalendarUnitMinute:
             coms.minute = value;
             break;
-            
+
         case NSCalendarUnitSecond:
             coms.second = value;
             break;
-            
+
         case NSCalendarUnitNanosecond:
             coms.nanosecond = value;
             break;
-            
+
         case NSCalendarUnitWeekday:
             coms.weekday = value;
             break;
-            
+
         case NSCalendarUnitWeekdayOrdinal:
             coms.weekdayOrdinal = value;
             break;
-            
+
         case NSCalendarUnitQuarter:
             coms.quarter = value;
             break;
-            
+
         case NSCalendarUnitWeekOfMonth:
             coms.weekOfMonth = value;
             break;
-            
+
         case NSCalendarUnitWeekOfYear:
             coms.weekOfYear = value;
             break;
-            
+
         case NSCalendarUnitYearForWeekOfYear:
             coms.yearForWeekOfYear = value;
             break;
-            
+
         default:
             break;
     }

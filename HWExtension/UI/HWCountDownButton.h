@@ -11,9 +11,9 @@
 
 @interface HWCountDownButton : UIButton
 
-@property (nonatomic, assign, readonly) BOOL didPause;   //
-@property (nonatomic, assign, readonly) BOOL didFinish;   //
-@property (nonatomic, assign, readonly) BOOL isCounting;  //
+@property (nonatomic, assign, readonly) BOOL didPause;
+@property (nonatomic, assign, readonly) BOOL didFinish;
+@property (nonatomic, assign, readonly) BOOL isCounting;  
 
 @property (nonatomic, assign, readonly) NSTimeInterval totalTime;       // 总时间
 @property (nonatomic, assign, readonly) NSTimeInterval timeInterval;    // 倒计时间隔

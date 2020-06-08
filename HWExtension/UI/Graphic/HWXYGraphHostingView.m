@@ -1840,7 +1840,10 @@ CPTScatterPlotDataSource>
 
 - (UILabel *)nullPointsInfoLabel {
     if (!_nullPointsInfoLabel) {
-        _nullPointsInfoLabel =  [UILabel labelWithText:nil font:[UIFont systemFontOfSize:15] textColor:kNullPointsInfoLabelTextColor alignment:NSTextAlignmentCenter];
+        _nullPointsInfoLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _nullPointsInfoLabel.font = [UIFont systemFontOfSize:15];
+        _nullPointsInfoLabel.textColor = kNullPointsInfoLabelTextColor;
+        _nullPointsInfoLabel.textAlignment = NSTextAlignmentCenter;
         _nullPointsInfoLabel.layer.transform = CATransform3DMakeScale((CGFloat)1.0, (CGFloat)-1.0, (CGFloat)1.0);
     }
     return _nullPointsInfoLabel;

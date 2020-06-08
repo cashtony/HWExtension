@@ -11,11 +11,11 @@
 @implementation NSMutableString (Category)
 
 - (void)add:(NSString *)str {
-    [self appendString:str ? str : @"" ];
+    [self appendString:str ? str : @""];
 }
 
 // 替换一组string
-- (void)replaceOccurrencesOfStrings:(NSArray <NSString *>*)targets withStings:(NSString *)string {
+- (void)replaceOccurrencesOfStrings:(NSArray<NSString *> *)targets withStings:(NSString *)string {
     if (targets && targets.count && string && string.length) {
         for (NSString *target in targets) {
             [self replaceOccurrencesOfString:target withString:string options:NSCaseInsensitiveSearch range:NSMakeRange(0, self.length)];

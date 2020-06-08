@@ -14,14 +14,14 @@
 
 @required
 
-@property (nonatomic, strong, readonly) HWTableViewDelegate *tableViewDelegate;       //
-@property (nonatomic, strong, readonly) HWTableViewDataSource *tableViewDataSource;   //
+@property (nonatomic, strong, readonly) HWTableViewDelegate *tableViewDelegate;
+@property (nonatomic, strong, readonly) HWTableViewDataSource *tableViewDataSource;
 
 @end
 
 @interface HWTableViewViewModel : NSObject<HWTableViewAdapter>
 
-@property (nonatomic, strong, readonly) HWTableViewDelegate *tableViewDelegate;       //
-@property (nonatomic, strong, readonly) HWTableViewDataSource *tableViewDataSource;   //
+@property (nonatomic, strong, readonly) HWTableViewDelegate *tableViewDelegate;
+@property (nonatomic, strong, readonly) HWTableViewDataSource *tableViewDataSource;   
 
 @end

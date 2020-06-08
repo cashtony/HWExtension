@@ -43,19 +43,19 @@ typedef void(^HWTransitionAnimatorBlock)(HWModalTransitioningContext *context,
 
 @interface HWModalTransitioningContext : NSObject
 
-@property (nonatomic, strong, readonly) UIView *containerView;              //
-@property (nonatomic, strong, readonly) UIViewController *fromVC;           //
-@property (nonatomic, strong, readonly) UIViewController *toVC;             //
+@property (nonatomic, strong, readonly) UIView *containerView;
+@property (nonatomic, strong, readonly) UIViewController *fromVC;
+@property (nonatomic, strong, readonly) UIViewController *toVC;
 
-@property (nonatomic, strong, readonly) UIViewController *presentedVC;      //
-@property (nonatomic, strong, readonly) UIViewController *presentingVC;     //
-@property (nonatomic, strong, readonly) UIViewController *sourceVC;         //
+@property (nonatomic, strong, readonly) UIViewController *presentedVC;
+@property (nonatomic, strong, readonly) UIViewController *presentingVC;
+@property (nonatomic, strong, readonly) UIViewController *sourceVC;
 
 @end
 
 @interface HWTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
-@property (nonatomic, assign, readonly) NSTimeInterval duration;    //
+@property (nonatomic, assign, readonly) NSTimeInterval duration;    
 @property (nonatomic, copy) HWTransitionAnimatorBlock animate;      // custom your animations
 
 + (instancetype)transitionAnimatorWithDuration:(NSTimeInterval)duration animate:(HWTransitionAnimatorBlock)animate;

@@ -1,6 +1,6 @@
 {
   "name": "HWExtension",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "summary": "some convenient extension and tools.",
   "homepage": "https://github.com/wanghouwen/HWExtension",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/wanghouwen/HWExtension.git",
-    "tag": "1.0.5"
+    "tag": "2.0.0"
   },
   "requires_arc": true,
   "platforms": {
@@ -22,10 +22,31 @@
     {
       "name": "Category",
       "public_header_files": "HWExtension/Category/*.h",
-      "source_files": "HWExtension/Category/*.{h,m,js}",
-      "resource_bundles": {
-        "HWExtension": [
-          "HWExtension/Category/JSBundle.bundle"
+      "source_files": "HWExtension/Category/*.{h,m}"
+    },
+    {
+      "name": "DB",
+      "public_header_files": "HWExtension/DB/*.h",
+      "source_files": "HWExtension/DB/*.{h,m}",
+      "dependencies": {
+        "HWExtension/Category": [
+
+        ],
+        "FMDB": [
+
+        ]
+      }
+    },
+    {
+      "name": "Router",
+      "public_header_files": "HWExtension/Router/*.h",
+      "source_files": "HWExtension/Router/*.{h,m}",
+      "dependencies": {
+        "JLRoutes": [
+
+        ],
+        "HWExtension/Category": [
+
         ]
       }
     },
@@ -39,6 +60,16 @@
         ]
       },
       "subspecs": [
+        {
+          "name": "Web",
+          "public_header_files": "HWExtension/UI/Web/*.h",
+          "source_files": "HWExtension/UI/Web/*.{h,m}",
+          "resource_bundles": {
+            "HWExtension": [
+              "HWExtension/UI/Web/JSBundle.bundle"
+            ]
+          }
+        },
         {
           "name": "ModalTransition",
           "public_header_files": "HWExtension/UI/ModalTransition/*.h",
@@ -56,16 +87,6 @@
           "dependencies": {
             "CorePlot": [
               "~>2.2"
-            ]
-          }
-        },
-        {
-          "name": "Router",
-          "public_header_files": "HWExtension/UI/Router/*.h",
-          "source_files": "HWExtension/UI/Router/*.{h,m}",
-          "dependencies": {
-            "JLRoutes": [
-              "~> 2.1"
             ]
           }
         }

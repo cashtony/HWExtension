@@ -15,16 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface HWRunLoopObserver : NSObject
 
-@property (nonatomic, assign, readonly) CFRunLoopActivity activity;    //
-@property (nonatomic, assign, readonly) void *info;                    //
-@property (nonatomic, assign, readonly) BOOL repeats;                  //
+@property (nonatomic, assign, readonly) CFOptionFlags activities; //
+@property (nonatomic, assign, readonly) BOOL repeats;             //
 
-+ (instancetype)observerWithActivity:(CFRunLoopActivity)act
-                                info:(nullable void *)info
++ (instancetype)observerWithActivity:(CFOptionFlags)activities
                              repeats:(BOOL)repeats
-                            callBack:(void(^)(HWRunLoopObserver *observer, CFRunLoopActivity activity, void *info))callBack;
+                            callBack:(void (^)(HWRunLoopObserver *observer, CFRunLoopActivity activity))callBack;
 
-- (void)observerRunLoop:(NSRunLoop *)runLoop forMode:(NSRunLoopMode)mode;
+- (void)observerRunLoop:(NSRunLoop *)runLoop forModes:(NSArray<NSRunLoopMode> *)modes;
 
 @end
 

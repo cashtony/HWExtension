@@ -10,8 +10,8 @@
 
 @interface HWTableViewViewModel ()
 
-@property (nonatomic, strong) HWTableViewDelegate *tableViewDelegate;       //
-@property (nonatomic, strong) HWTableViewDataSource *tableViewDataSource;   //
+@property (nonatomic, strong) HWTableViewDelegate *tableViewDelegate;
+@property (nonatomic, strong) HWTableViewDataSource *tableViewDataSource;   
 
 @end
 

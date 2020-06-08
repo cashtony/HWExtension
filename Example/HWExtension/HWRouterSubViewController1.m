@@ -12,7 +12,7 @@
 
 @interface HWRouterSubViewController1 ()
 
-@property (nonatomic, strong) UILabel *label;    //
+@property (nonatomic, strong) UILabel *label;    
 
 @end
 
@@ -28,7 +28,9 @@
     [super viewDidAppear:animated];
     
     if (self.label == nil) {
-        self.label = [UILabel labelWithText:nil font:[UIFont systemFontOfSize:17] textColor:[UIColor orangeColor]];
+        self.label = [[UILabel alloc] initWithFrame:CGRectZero];
+        self.label.font = [UIFont systemFontOfSize:17];
+        self.label.textColor = [UIColor orangeColor];
         self.label.textAlignment = NSTextAlignmentCenter;
         self.label.numberOfLines = 0;
         [self.view addSubview:self.label];

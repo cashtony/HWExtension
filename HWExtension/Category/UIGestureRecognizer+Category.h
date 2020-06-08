@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^HWUIGestureRecognizerHandler)(__kindof UIGestureRecognizer *ges);
+typedef void (^HWUIGestureRecognizerHandler)(__kindof UIGestureRecognizer *ges);
 
 @interface UIGestureRecognizer (Block)
 

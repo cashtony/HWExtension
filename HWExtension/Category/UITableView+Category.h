@@ -11,11 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef __kindof UITableViewCell * _Nonnull (^DequeueCellNilBlock)(NSIndexPath *indexPath);
-typedef void(^CellInitBlock)(__kindof UITableViewCell * _Nonnull cell, NSIndexPath *indexPath);
+typedef __kindof UITableViewCell *_Nonnull (^DequeueCellNilBlock)(NSIndexPath *indexPath);
+typedef void (^CellInitBlock)(__kindof UITableViewCell *_Nonnull cell, NSIndexPath *indexPath);
 
-typedef __kindof UITableViewHeaderFooterView * _Nonnull (^DequeueHeaderFooterNilBlock)(NSInteger section);
-typedef void(^HeaderFooterInitBlock)(__kindof UITableViewHeaderFooterView * _Nonnull headerFooter, NSInteger section);
+typedef __kindof UITableViewHeaderFooterView *_Nonnull (^DequeueHeaderFooterNilBlock)(NSInteger section);
+typedef void (^HeaderFooterInitBlock)(__kindof UITableViewHeaderFooterView *_Nonnull headerFooter, NSInteger section);
 
 @interface UITableView (Utils)
 

@@ -11,6 +11,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-UIKIT_EXTERN UIImage * _Nullable beginImageContextWithOptions(CGSize size, BOOL opaque, CGFloat scale, void(^_Nullable rendering)(CGContextRef __nonnull ctx));
+UIKIT_EXTERN UIImage *_Nullable beginImageContextWithOptions(CGSize size, BOOL opaque, CGFloat scale, void (^_Nullable rendering)(CGContextRef __nonnull ctx));
 
 NS_ASSUME_NONNULL_END

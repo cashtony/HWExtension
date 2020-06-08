@@ -27,10 +27,10 @@ typedef NS_ENUM(NSInteger, HWInteractionState) {
 // 标注风格
 typedef NS_ENUM(NSInteger, HWXYGraphAnnotationStyle) {
     HWXYGraphAnnotationStyleNone,
-    HWXYGraphAnnotationStyleBottomLeft,             //
-    HWXYGraphAnnotationStyleBottomRight,            //
-    HWXYGraphAnnotationStyleTopLeft,                //
-    HWXYGraphAnnotationStyleTopRight,               //
+    HWXYGraphAnnotationStyleBottomLeft,
+    HWXYGraphAnnotationStyleBottomRight,
+    HWXYGraphAnnotationStyleTopLeft,
+    HWXYGraphAnnotationStyleTopRight,
     HWXYGraphAnnotationStyleRoundedRectangle        // 圆角矩形
 };
 
@@ -39,8 +39,8 @@ typedef NS_ENUM(NSInteger, HWXYGraphAnnotationStyle) {
 // value
 @interface HWXYGraphValue : NSObject <NSCopying, NSMutableCopying>
 
-@property (strong, nonatomic, readonly) NSDecimalNumber *xValue;  //
-@property (strong, nonatomic, readonly) NSDecimalNumber *yValue;  //
+@property (strong, nonatomic, readonly) NSDecimalNumber *xValue;
+@property (strong, nonatomic, readonly) NSDecimalNumber *yValue;
 
 + (instancetype)xyValueWithStringX:(nullable NSString *)x stringY:(nullable NSString *)y;
 
@@ -50,8 +50,8 @@ typedef NS_ENUM(NSInteger, HWXYGraphAnnotationStyle) {
 
 @interface HWXYGraphAnnotationInfo : NSObject <NSCopying, NSMutableCopying>
 
-@property (nonatomic, copy, readonly) NSAttributedString *text;    //
-@property (nonatomic, strong, readonly) UIColor *backgroundColor;  //
+@property (nonatomic, copy, readonly) NSAttributedString *text;
+@property (nonatomic, strong, readonly) UIColor *backgroundColor;
 
 + (instancetype)annotationInfoWithText:(NSAttributedString *)text backgroundColor:(UIColor *)backgroundColor;
 @end
@@ -66,10 +66,10 @@ typedef NS_ENUM(NSInteger, HWXYGraphAnnotationStyle) {
 @property (nonatomic, copy, readonly) NSString *xTickLabel;          // X轴刻度标签
 
 // annotation
-@property (nonatomic, assign) BOOL showAnnotation;                                   //
+@property (nonatomic, assign) BOOL showAnnotation;
 // 默认风格, 如果超出边界，会自动被调整, default is HWXYGraphAnnotationStyleBottomRight
 @property (nonatomic, assign) HWXYGraphAnnotationStyle defaultAnnotationStyle;
-@property (nonatomic, strong, nullable) NSArray <HWXYGraphAnnotationInfo *>*annotationInfos;   //
+@property (nonatomic, strong, nullable) NSArray <HWXYGraphAnnotationInfo *>*annotationInfos;
 
 + (instancetype)pointWithXYValue:(nullable HWXYGraphValue *)xyValue plotSymbol:(nullable CPTPlotSymbol *)plotSymbol xTickLabel:(nullable NSString *)xTickLabel;
 
@@ -94,8 +94,8 @@ typedef NS_ENUM(NSInteger, HWXYGraphAnnotationStyle) {
 // 曲线范围
 @interface HWXYGraphLineRange : NSObject <NSCopying, NSMutableCopying>
 
-@property (nonatomic, strong, readonly) HWXYGraphValue *xRange;  //
-@property (nonatomic, strong, readonly) HWXYGraphValue *yRange;  //
+@property (nonatomic, strong, readonly) HWXYGraphValue *xRange;
+@property (nonatomic, strong, readonly) HWXYGraphValue *yRange;
 
 + (instancetype)xyGraphLineRangeWithXRange:(HWXYGraphValue *)xRange yRange:(HWXYGraphValue *)yRange;
 
@@ -125,8 +125,8 @@ typedef NS_ENUM(NSInteger, HWXYGraphAnnotationStyle) {
 
 @interface HWDirectionRange : NSObject <NSCopying, NSMutableCopying>
 
-@property (nonatomic, strong, readonly) NSDecimalNumber *positiveRange;  //
-@property (nonatomic, strong, readonly) NSDecimalNumber *negativeRange;  //
+@property (nonatomic, strong, readonly) NSDecimalNumber *positiveRange;
+@property (nonatomic, strong, readonly) NSDecimalNumber *negativeRange;  
 
 + (instancetype)directionRangeWithPositiveRange:(NSDecimalNumber *)positiveRange negativeRange:(NSDecimalNumber *)negativeRange;
 + (instancetype)directionRangeWithPositiveRangeString:(NSString *)positiveRange negativeRangeString:(NSString *)negativeRange;
@@ -187,7 +187,7 @@ typedef NS_ENUM(NSInteger, HWXYGraphAnnotationStyle) {
 - (void)removeAllLine;
 
 // 所有已添加
-- (NSArray<HWXYGraphLine *> *)allLines ;
+- (NSArray<HWXYGraphLine *> *)allLines;
 
 // 刷新, resetAxisSet : 是否重新计算所有曲线范围，并重新设置坐标范围
 - (void)reloadDataWithResetAxisSet:(BOOL)resetAxisSet;

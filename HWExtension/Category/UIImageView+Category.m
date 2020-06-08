@@ -11,13 +11,11 @@
 @implementation UIImage (Aspect)
 
 - (CGSize)aspectScaleToFitSize:(CGSize)size {
-    
     CGSize fitedSize = CGSizeMake(size.width, size.height);
-    
+
     if (self.size.width != 0.0f && self.size.height != 0.0f && size.height != 0.0f) {
-        
         CGFloat widthHightRatio = self.size.width / self.size.height;
-        
+
         if (size.width / size.height > widthHightRatio) {
             fitedSize.width = size.height * widthHightRatio;
             fitedSize.height = size.height;
