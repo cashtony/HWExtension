@@ -72,6 +72,7 @@
 		5DB0A7082489EBEA00B1D263 /* HWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0A7062489EBEA00B1D263 /* HWTabBar.m */; };
 		5DCFDE702048FC7A000DF646 /* HWRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */; };
 		5DCFDE732048FD69000DF646 /* HWGraphicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */; };
+		5DEAD548248E25DE00D5D595 /* NSObject+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD547248E25DE00D5D595 /* NSObject+Hook.m */; };
 		5DFF06D420C540FD0023F3A2 /* HWRunLoopObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF06D220C540FD0023F3A2 /* HWRunLoopObserver.m */; };
 		5DFF06D720C544270023F3A2 /* HWRunLoopSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF06D620C544270023F3A2 /* HWRunLoopSource.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -242,6 +243,8 @@
 		5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWRootViewController.m; sourceTree = "<group>"; };
 		5DCFDE712048FD69000DF646 /* HWGraphicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWGraphicViewController.h; sourceTree = "<group>"; };
 		5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWGraphicViewController.m; sourceTree = "<group>"; };
+		5DEAD546248E25DD00D5D595 /* NSObject+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Hook.h"; sourceTree = "<group>"; };
+		5DEAD547248E25DE00D5D595 /* NSObject+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Hook.m"; sourceTree = "<group>"; };
 		5DFF06D220C540FD0023F3A2 /* HWRunLoopObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWRunLoopObserver.m; sourceTree = "<group>"; };
 		5DFF06D320C540FD0023F3A2 /* HWRunLoopObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWRunLoopObserver.h; sourceTree = "<group>"; };
 		5DFF06D520C544270023F3A2 /* HWRunLoopSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRunLoopSource.h; sourceTree = "<group>"; };
@@ -502,6 +505,8 @@
 				5D32E7AB204958B100ED235A /* HWDirectoryWatcher.m */,
 				5D32E7AC204958B100ED235A /* HWSandboxBrowserViewController.h */,
 				5D32E7A7204958B100ED235A /* HWSandboxBrowserViewController.m */,
+				5DEAD546248E25DD00D5D595 /* NSObject+Hook.h */,
+				5DEAD547248E25DE00D5D595 /* NSObject+Hook.m */,
 				5D32E7A9204958B100ED235A /* ToolResources.bundle */,
 			);
 			name = Tool;
@@ -808,6 +813,7 @@
 				5D2F6BF421FB038900105E55 /* HWWebViewController+JavaScript.m in Sources */,
 				5D26D116204EB5FC00DDDEE9 /* HWRouterSubViewController2.m in Sources */,
 				5D32E7B2204958B100ED235A /* UITableView+ViewModel.m in Sources */,
+				5DEAD548248E25DE00D5D595 /* NSObject+Hook.m in Sources */,
 				5D32E7AF204958B100ED235A /* HWTableViewDataSource.m in Sources */,
 				5D32E7BA204958B100ED235A /* HWXYGraphInteractionView.m in Sources */,
 				5D32E7D2204958B100ED235A /* NSObject+Category.m in Sources */,
