@@ -91,6 +91,7 @@
     _referenceWidthForHeader = -1;
     _referenceWidthForFooter = -1;
     _animationFailed = YES;
+    _numberOfItems = 0;
     [_leftToolItems removeAllObjects];
     [_rightToolItems removeAllObjects];
     [_leftToolItemsWidth removeAllObjects];
@@ -167,6 +168,7 @@
         rt = [_dataSource numberOfItemsInTabBar:self];
     }
     _numberOfItems = rt;
+    _animationView.hidden = (_numberOfItems == 0);
     return rt;
 }
 

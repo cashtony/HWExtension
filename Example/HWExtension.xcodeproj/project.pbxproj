@@ -62,14 +62,16 @@
 		5D32E7D5204958B100ED235A /* NSAttributedString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E7A0204958B100ED235A /* NSAttributedString+Category.m */; };
 		5D32E7D6204958B100ED235A /* NSTimer+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E7A1204958B100ED235A /* NSTimer+Category.m */; };
 		5D32E7D7204958B100ED235A /* NSMutableAttributedString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E7A2204958B100ED235A /* NSMutableAttributedString+Category.m */; };
-		5D32E7D8204958B100ED235A /* HWSandboxBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E7A7204958B100ED235A /* HWSandboxBrowserViewController.m */; };
-		5D32E7D9204958B100ED235A /* ToolResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D32E7A9204958B100ED235A /* ToolResources.bundle */; };
 		5D32E7DA204958B100ED235A /* HWFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E7AA204958B100ED235A /* HWFileHelper.m */; };
 		5D32E7DB204958B100ED235A /* HWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32E7AB204958B100ED235A /* HWDirectoryWatcher.m */; };
 		5D424C03204D395B000214C3 /* UIApplication+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D424C02204D395B000214C3 /* UIApplication+Category.m */; };
 		5D57EBEF22642C030035112B /* HWWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D57EBEE22642C030035112B /* HWWebBrowser.m */; };
 		5D959E9620B2A07800B98F33 /* HWOperationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D959E9520B2A07700B98F33 /* HWOperationGroup.m */; };
-		5DB0A7082489EBEA00B1D263 /* HWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0A7062489EBEA00B1D263 /* HWTabBar.m */; };
+		5DB2D353249726C40060DC9F /* HWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2D34A249726C30060DC9F /* HWTabBar.m */; };
+		5DB2D35D249727410060DC9F /* HWPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2D357249727400060DC9F /* HWPageViewController.m */; };
+		5DB2D35E249727410060DC9F /* HWGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2D358249727400060DC9F /* HWGroupViewController.m */; };
+		5DB2D35F249727410060DC9F /* NSIndexPath+HWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2D35A249727410060DC9F /* NSIndexPath+HWAdditions.m */; };
+		5DB2D36224973B300060DC9F /* HWSandboxBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2D36124973B300060DC9F /* HWSandboxBrowserViewController.m */; };
 		5DCFDE702048FC7A000DF646 /* HWRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */; };
 		5DCFDE732048FD69000DF646 /* HWGraphicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFDE722048FD69000DF646 /* HWGraphicViewController.m */; };
 		5DEAD548248E25DE00D5D595 /* NSObject+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD547248E25DE00D5D595 /* NSObject+Hook.m */; };
@@ -233,12 +235,9 @@
 		5D32E7A2204958B100ED235A /* NSMutableAttributedString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Category.m"; sourceTree = "<group>"; };
 		5D32E7A3204958B100ED235A /* UIDevice+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Category.h"; sourceTree = "<group>"; };
 		5D32E7A4204958B100ED235A /* UIBarButtonItem+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Category.h"; sourceTree = "<group>"; };
-		5D32E7A7204958B100ED235A /* HWSandboxBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSandboxBrowserViewController.m; sourceTree = "<group>"; };
 		5D32E7A8204958B100ED235A /* HWDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDefines.h; sourceTree = "<group>"; };
-		5D32E7A9204958B100ED235A /* ToolResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ToolResources.bundle; sourceTree = "<group>"; };
 		5D32E7AA204958B100ED235A /* HWFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWFileHelper.m; sourceTree = "<group>"; };
 		5D32E7AB204958B100ED235A /* HWDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDirectoryWatcher.m; sourceTree = "<group>"; };
-		5D32E7AC204958B100ED235A /* HWSandboxBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSandboxBrowserViewController.h; sourceTree = "<group>"; };
 		5D32E7AD204958B100ED235A /* HWFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWFileHelper.h; sourceTree = "<group>"; };
 		5D424C01204D395B000214C3 /* UIApplication+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Category.h"; sourceTree = "<group>"; };
 		5D424C02204D395B000214C3 /* UIApplication+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Category.m"; sourceTree = "<group>"; };
@@ -248,8 +247,17 @@
 		5D959E9120B2A05300B98F33 /* HWDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDirectoryWatcher.h; sourceTree = "<group>"; };
 		5D959E9420B2A07700B98F33 /* HWOperationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWOperationGroup.h; sourceTree = "<group>"; };
 		5D959E9520B2A07700B98F33 /* HWOperationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWOperationGroup.m; sourceTree = "<group>"; };
-		5DB0A7062489EBEA00B1D263 /* HWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTabBar.m; sourceTree = "<group>"; };
-		5DB0A7072489EBEA00B1D263 /* HWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTabBar.h; sourceTree = "<group>"; };
+		5DB2D34A249726C30060DC9F /* HWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTabBar.m; sourceTree = "<group>"; };
+		5DB2D34D249726C30060DC9F /* HWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTabBar.h; sourceTree = "<group>"; };
+		5DB2D356249727400060DC9F /* NSIndexPath+HWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+HWAdditions.h"; sourceTree = "<group>"; };
+		5DB2D357249727400060DC9F /* HWPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPageViewController.m; sourceTree = "<group>"; };
+		5DB2D358249727400060DC9F /* HWGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWGroupViewController.m; sourceTree = "<group>"; };
+		5DB2D359249727410060DC9F /* HWGroupViewControllerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWGroupViewControllerContent.h; sourceTree = "<group>"; };
+		5DB2D35A249727410060DC9F /* NSIndexPath+HWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+HWAdditions.m"; sourceTree = "<group>"; };
+		5DB2D35B249727410060DC9F /* HWGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWGroupViewController.h; sourceTree = "<group>"; };
+		5DB2D35C249727410060DC9F /* HWPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPageViewController.h; sourceTree = "<group>"; };
+		5DB2D36024973B300060DC9F /* HWSandboxBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSandboxBrowserViewController.h; sourceTree = "<group>"; };
+		5DB2D36124973B300060DC9F /* HWSandboxBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSandboxBrowserViewController.m; sourceTree = "<group>"; };
 		5DCFDE6E2048FC7A000DF646 /* HWRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRootViewController.h; sourceTree = "<group>"; };
 		5DCFDE6F2048FC7A000DF646 /* HWRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWRootViewController.m; sourceTree = "<group>"; };
 		5DCFDE712048FD69000DF646 /* HWGraphicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWGraphicViewController.h; sourceTree = "<group>"; };
@@ -400,13 +408,20 @@
 		5D32E74C204958B000ED235A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				5D2F6BBC21FAF13E00105E55 /* Web */,
-				5DB0A7072489EBEA00B1D263 /* HWTabBar.h */,
-				5DB0A7062489EBEA00B1D263 /* HWTabBar.m */,
 				5D32E769204958B000ED235A /* HWDatePicker.h */,
 				5D32E758204958B000ED235A /* HWDatePicker.m */,
 				5D32E76B204958B000ED235A /* HWCountDownButton.h */,
 				5D32E75A204958B000ED235A /* HWCountDownButton.m */,
+				5DB2D34D249726C30060DC9F /* HWTabBar.h */,
+				5DB2D34A249726C30060DC9F /* HWTabBar.m */,
+				5DB2D35C249727410060DC9F /* HWPageViewController.h */,
+				5DB2D357249727400060DC9F /* HWPageViewController.m */,
+				5DB2D359249727410060DC9F /* HWGroupViewControllerContent.h */,
+				5DB2D35B249727410060DC9F /* HWGroupViewController.h */,
+				5DB2D358249727400060DC9F /* HWGroupViewController.m */,
+				5DB2D356249727400060DC9F /* NSIndexPath+HWAdditions.h */,
+				5DB2D35A249727410060DC9F /* NSIndexPath+HWAdditions.m */,
+				5D2F6BBC21FAF13E00105E55 /* Web */,
 				5D32E762204958B000ED235A /* Graphic */,
 				5D32E75B204958B000ED235A /* ModalTransition */,
 				5D32E74D204958B000ED235A /* UITableView+ViewModel */,
@@ -536,11 +551,8 @@
 				5D959E9520B2A07700B98F33 /* HWOperationGroup.m */,
 				5D959E9120B2A05300B98F33 /* HWDirectoryWatcher.h */,
 				5D32E7AB204958B100ED235A /* HWDirectoryWatcher.m */,
-				5D32E7AC204958B100ED235A /* HWSandboxBrowserViewController.h */,
-				5D32E7A7204958B100ED235A /* HWSandboxBrowserViewController.m */,
 				5DEAD546248E25DD00D5D595 /* NSObject+Hook.h */,
 				5DEAD547248E25DE00D5D595 /* NSObject+Hook.m */,
-				5D32E7A9204958B100ED235A /* ToolResources.bundle */,
 			);
 			name = Tool;
 			path = ../HWExtension/Tool;
@@ -553,6 +565,8 @@
 				5DEAD54D248E33A300D5D595 /* HWFileBrowserViewController.m */,
 				5DEAD54A248E33A300D5D595 /* HWFileContentBrowserViewController.h */,
 				5DEAD54E248E33A300D5D595 /* HWFileContentBrowserViewController.m */,
+				5DB2D36024973B300060DC9F /* HWSandboxBrowserViewController.h */,
+				5DB2D36124973B300060DC9F /* HWSandboxBrowserViewController.m */,
 				5DEAD54B248E33A300D5D595 /* ToolResources.bundle */,
 			);
 			path = FileBrower;
@@ -789,7 +803,6 @@
 				5D2F6BE021FAFDC400105E55 /* JSBundle.bundle in Resources */,
 				5DEAD586248E33E900D5D595 /* WebServer.bundle in Resources */,
 				5DEAD566248E33A400D5D595 /* ToolResources.bundle in Resources */,
-				5D32E7D9204958B100ED235A /* ToolResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,17 +824,25 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HWExtension_Example/Pods-HWExtension_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaHTTPServer/CocoaHTTPServer.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/HWExtension/HWExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/JLRoutes/JLRoutes.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaHTTPServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CorePlot.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HWExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JLRoutes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -883,6 +904,7 @@
 				5D26D116204EB5FC00DDDEE9 /* HWRouterSubViewController2.m in Sources */,
 				5D32E7B2204958B100ED235A /* UITableView+ViewModel.m in Sources */,
 				5DEAD548248E25DE00D5D595 /* NSObject+Hook.m in Sources */,
+				5DB2D36224973B300060DC9F /* HWSandboxBrowserViewController.m in Sources */,
 				5D32E7AF204958B100ED235A /* HWTableViewDataSource.m in Sources */,
 				5D32E7BA204958B100ED235A /* HWXYGraphInteractionView.m in Sources */,
 				5D32E7D2204958B100ED235A /* NSObject+Category.m in Sources */,
@@ -914,15 +936,15 @@
 				5D32E7CA204958B100ED235A /* UIBarButtonItem+Category.m in Sources */,
 				5D1A493823CF13F60047DC26 /* BSBacktraceLogger.m in Sources */,
 				5D2F6BF521FB038900105E55 /* HWWebViewController+UIGestureRecognizer.m in Sources */,
-				5D32E7D8204958B100ED235A /* HWSandboxBrowserViewController.m in Sources */,
+				5DB2D35D249727410060DC9F /* HWPageViewController.m in Sources */,
 				5D2F6BF621FB038900105E55 /* HWWebViewController+Cookie.m in Sources */,
 				5DEAD594248E374E00D5D595 /* HWHTTPServerManager.m in Sources */,
 				5D26D119204EB60A00DDDEE9 /* HWRouterSubViewController3.m in Sources */,
 				5D32E7D7204958B100ED235A /* NSMutableAttributedString+Category.m in Sources */,
 				5DEAD569248E33A400D5D595 /* HWFileContentBrowserViewController.m in Sources */,
 				5DEAD592248E374E00D5D595 /* HWNetServiceBrowser.m in Sources */,
+				5DB2D353249726C40060DC9F /* HWTabBar.m in Sources */,
 				5D32E7D5204958B100ED235A /* NSAttributedString+Category.m in Sources */,
-				5DB0A7082489EBEA00B1D263 /* HWTabBar.m in Sources */,
 				5D121F37248936390016E773 /* HWRouter.m in Sources */,
 				5DCFDE732048FD69000DF646 /* HWGraphicViewController.m in Sources */,
 				5D32E7DB204958B100ED235A /* HWDirectoryWatcher.m in Sources */,
@@ -934,6 +956,7 @@
 				5DFF06D420C540FD0023F3A2 /* HWRunLoopObserver.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				5DFF06D720C544270023F3A2 /* HWRunLoopSource.m in Sources */,
+				5DB2D35F249727410060DC9F /* NSIndexPath+HWAdditions.m in Sources */,
 				5DEAD568248E33A400D5D595 /* HWFileBrowserViewController.m in Sources */,
 				5D32E7CE204958B100ED235A /* UIViewController+Category.m in Sources */,
 				5D32E7CC204958B100ED235A /* NSString+Category.m in Sources */,
@@ -947,6 +970,7 @@
 				5D121F3124892D120016E773 /* HWDBTypes.m in Sources */,
 				5D2F6BE621FAFDC400105E55 /* WKWebView+Category.m in Sources */,
 				5D959E9620B2A07800B98F33 /* HWOperationGroup.m in Sources */,
+				5DB2D35E249727410060DC9F /* HWGroupViewController.m in Sources */,
 				5D57EBEF22642C030035112B /* HWWebBrowser.m in Sources */,
 				5D32E7B8204958B100ED235A /* HWInteractiveModalTransitionNavigationController.m in Sources */,
 			);

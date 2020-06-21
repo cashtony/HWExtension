@@ -9,7 +9,7 @@
 #import "ServiceInfoViewController.h"
 #import "UITableView+Category.h"
 #import "UIImage+Category.h"
-#import "UIView+MBProgressHUD.h"
+//#import "UIView+MBProgressHUD.h"
 
 @interface ServiceInfoViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -83,7 +83,7 @@
 
 - (void)copyLink:(id)sender {
     [UIPasteboard generalPasteboard].string = [NSString stringWithFormat:@"http://%@:%@", _info.IP2, @(_info.port)];
-    [self.view showToast:@"已复制" type:VSToastTypeText hideDelay:0.5f didHidden:nil];
+//    [self.view showToast:@"已复制" type:VSToastTypeText hideDelay:0.5f didHidden:nil];
 }
 
 - (void)setInfo:(ServiceInfo *)info {

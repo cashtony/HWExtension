@@ -9,6 +9,7 @@ install! 'cocoapods', :deterministic_uuids => false
 
 target 'HWExtension_Example' do
   pod 'HWExtension', :path => '../'
+  pod 'CocoaHTTPServer'
   
   # pod list:
 

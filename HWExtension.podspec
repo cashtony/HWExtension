@@ -42,6 +42,7 @@ Pod::Spec.new do |s|
         ss.public_header_files = 'HWExtension/UI/*.h'
         ss.source_files = 'HWExtension/UI/*.{h,m}'
         ss.dependency 'HWExtension/Category'
+        ss.dependency 'Masonry'
         
         ss.subspec 'Web' do |sss|
             sss.public_header_files = 'HWExtension/UI/Web/*.h'
